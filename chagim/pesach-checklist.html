@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>רשימות פסח</title>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700;900&family=Heebo:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/pesach-checklist.css">
+</head>
+<body>
+
+<header>
+  <button class="btn-reset-all" onclick="confirmResetAll()">🔄 איפוס הכל</button>
+  <button class="btn-print" onclick="doPrint()">🖨️ הדפסה / PDF</button>
+  <div class="ornament"><span>✦</span></div>
+  <h1><span>הכנות ל</span>פסח</h1>
+  <p>רשימות מקיפות לניקוי, הכשרה, בדיקה והכנות לסדר</p>
+  <div class="ornament"><span>✦</span></div>
+</header>
+
+<div class="reset-modal-overlay" id="resetModal" onclick="if(event.target===this)closeResetModal()">
+  <div class="reset-modal-box">
+    <div class="rm-header">🔄 איפוס כל הרשימות</div>
+    <div class="rm-body">פעולה זו תמחק את <strong>כל הסימונים</strong> בכל הלשוניות ותתחיל מחדש.<br>לא ניתן לבטל פעולה זו.</div>
+    <div class="rm-actions">
+      <button class="btn-rm-confirm" onclick="doResetAll()">כן, אפס הכל</button>
+      <button class="btn-rm-cancel" onclick="closeResetModal()">ביטול</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<div class="tabs" id="tabs">
+  <button class="tab-btn active" onclick="showSection('nikui')" id="tab-nikui">
+    <span class="tab-emoji">🧹</span> ניקוי והכשרה
+    <span class="tab-count" id="cnt-nikui">0</span>
+  </button>
+  <button class="tab-btn" onclick="showSection('bedika')" id="tab-bedika">
+    <span class="tab-emoji">🕯️</span> בדיקת חמץ
+    <span class="tab-count" id="cnt-bedika">0</span>
+  </button>
+  <button class="tab-btn" onclick="showSection('seder')" id="tab-seder">
+    <span class="tab-emoji">🍷</span> הכנות לסדר
+    <span class="tab-count" id="cnt-seder">0</span>
+  </button>
+  <button class="tab-btn" onclick="showSection('shopping')" id="tab-shopping">
+    <span class="tab-emoji">🛒</span> קניות
+    <span class="tab-count" id="cnt-shopping">0</span>
+  </button>
+  <button class="tab-btn" onclick="showSection('erev')" id="tab-erev">
+    <span class="tab-emoji">📋</span> ערב פסח
+    <span class="tab-count" id="cnt-erev">0</span>
+  </button>
+</div>
+
+<div class="glossary-overlay" id="glossaryOverlay" onclick="closeGlossaryOnBg(event)">
+  <div class="glossary-modal">
+    <div class="glossary-modal-header">
+      <h2>📖 מדריך שיטות הכשרה</h2>
+      <button class="glossary-close" onclick="closeGlossary()">✕</button>
+    </div>
+    <div class="glossary-body">
+
+      <div class="glossary-entry" id="gentry-hagshalah">
+        <div class="glossary-entry-title">
+          <span class="item-tag tag-hagshalah" style="font-size:0.78rem">הגעלה</span>
+          <h3>הגעלה — טבילת כלי במים רותחים</h3>
+        </div>
+        <p>
+          משמשת לכלים שנשתמשו בהם עם נוזלים חמים (סירים, כפות, סכינים, כוסות לשתייה חמה וכדומה).<br><br>
+          <strong>אופן ביצוע:</strong> מנקים את הכלי היטב ולא משתמשים בו <strong>24 שעות לפני ההגעלה</strong>. מרתיחים מים בסיר גדול מהכלי. מכניסים את הכלי לסיר הרותח — אפשר לשים אבן לוהטת בסיר הגדול כדי שהמים ירתחו גם בעת הטבילה. מוציאים ושוטפים במים קרים.<br><br>
+          <em>חשוב:</em> המים חייבים לרתוח בזמן הטבילה. הכלי חייב נקי לחלוטין לפני ההגעלה.
+        </p>
+      </div>
+
+      <div class="glossary-entry" id="gentry-iruy">
+        <div class="glossary-entry-title">
+          <span class="item-tag tag-iruy" style="font-size:0.78rem">עירוי רותחים</span>
+          <h3>עירוי רותחים — שפיכה ישירה על משטח</h3>
+        </div>
+        <p>
+          משמש למשטחים שלא ניתן לטבול (שיש, כיור, מדפים). מתאים לכלים שנשתמשו בהם בחמץ <strong>שלא על ידי בישול ישיר</strong>.<br><br>
+          <strong>אופן ביצוע:</strong> ניקוי יסודי של המשטח. שפיכת מים רותחים ישירות מהקומקום / מהסיר — המים חייבים לזרום על כל חלק של המשטח ברציפות. אין לחכות שהמים יתקררו לפני השפיכה.<br><br>
+          <em>חשוב:</em> עירוי חלש יותר מהגעלה — לכן במשטחי שיש ופולימר אשכנזים נוהגים להוסיף כיסוי לחומרה.
+        </p>
+      </div>
+
+      <div class="glossary-entry" id="gentry-shriya">
+        <div class="glossary-entry-title">
+          <span class="item-tag tag-hagshalah" style="font-size:0.78rem">שרייה 72 שעות</span>
+          <h3>שרייה 72 שעות — לכוסות זכוכית (ספרדים)</h3>
+        </div>
+        <p>
+          שיטה המיוחדת לכוסות זכוכית לשתייה קרה, לפי הפוסקים הספרדים. הגיון: זכוכית אינה סופגת, ושרייה ממושכת מסלקת כל שאריות.<br><br>
+          <strong>אופן ביצוע:</strong> שוטפים את הכוסות היטב. משרים במים קרים <strong>72 שעות רצופות (3 יממות)</strong>. מחליפים את המים פעם ביממה. מוציאים ושוטפים.<br><br>
+          <em>חשוב:</em> שיטה זו מתאימה לכוסות ששימשו לשתייה קרה בלבד. כוסות לשתייה חמה — דינן כסיר, וטעונות הגעלה גם לספרדים.
+        </p>
+      </div>
+
+      <div class="glossary-entry" id="gentry-soap">
+        <div class="glossary-entry-title">
+          <span class="item-tag tag-nikui" style="font-size:0.78rem">ניקוי עם סבון</span>
+          <h3>ניקוי עם סבון — חומר הפוגם את הטעם</h3>
+        </div>
+        <p>
+          סבון ביתי רגיל נחשב "<strong>פוגם</strong>" — כלומר מקלקל ומבטל את טעם החמץ הבלוע בכלי. לכן, שפשוף יסודי עם סבון לפני ההכשרה הוא תנאי הכרחי לכל שיטה.<br><br>
+          <strong>מתי זה רלוונטי לבדו?</strong> לכלים שלא ניתן להכשיר בדרך אחרת (כגון ידיות פלסטיק של מעבד מזון, או כלים שהחמץ בהם היה פגום מראש) — יש פוסקים המתירים ניקוי יסודי עם סבון כהכשרה מספקת בדיעבד.<br><br>
+          <em>חשוב:</em> אינו תחליף להגעלה / עירוי לכתחילה. חובה לוודא שאין שאריות ניקוי בכלי לאחר מכן.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- ===== SECTION: ניקוי והכשרה ===== -->
+<div class="section active" id="section-nikui">
+  <div class="note-card">
+    <strong>🔑 מדריך סימנים</strong> — לחץ על תגית לפירוט מלא:<br>
+    <span class="item-tag tag-hagshalah tag-link" onclick="openGlossary('hagshalah')">הגעלה</span> = טבילת כלי במים רותחים ·
+    <span class="item-tag tag-iruy tag-link" onclick="openGlossary('iruy')">עירוי רותחים</span> = שפיכת מים רותחים על משטח ·
+    <span class="item-tag tag-hagshalah tag-link" onclick="openGlossary('shriya')" style="background:#e3f2fd;color:#1565c0">שרייה 72 שעות</span> = לכוסות זכוכית קרות (ספרדים) ·
+    <span class="item-tag tag-nikui tag-link" onclick="openGlossary('soap')">ניקוי עם סבון</span> = חומר הפוגם את הטעם הבלוע ·
+    <span class="item-tag tag-libun">ליבון</span> = חימום עד לוהט ·
+    <span class="item-tag tag-kisuy">כיסוי</span> = כיסוי בנייר אלומיניום / ניילון
+  </div>
+
+  <div class="progress-card" id="prog-nikui">
+    <div class="progress-text">
+      <h3>ניקוי והכשרה</h3>
+      <p id="prog-nikui-txt">0 מתוך 0 פריטים הושלמו</p>
+      <div class="progress-bar-wrap"><div class="progress-bar-fill" id="bar-nikui" style="width:0%"></div></div>
+    </div>
+    <div class="progress-ring">
+      <svg width="56" height="56" viewBox="0 0 56 56">
+        <circle cx="28" cy="28" r="23" fill="none" stroke="#f0e0c0" stroke-width="4"/>
+        <circle id="ring-nikui" cx="28" cy="28" r="23" fill="none" stroke="#c9922a" stroke-width="4"
+          stroke-dasharray="144.5" stroke-dashoffset="144.5" stroke-linecap="round"/>
+      </svg>
+      <div class="progress-num" id="pct-nikui">0%</div>
+    </div>
+  </div>
+
+  <div class="section-actions">
+    <button class="btn-expand" onclick="toggleAllCats('nikui')">פתח / כווץ הכל</button>
+    <button class="btn-reset" onclick="resetSection('nikui')">🔄 אפס הכל</button>
+  </div>
+
+  <!-- מטבח -->
+  <div class="category" id="cat-nikui-0">
+    <div class="category-header" onclick="toggleCat(this)">
+      <span class="cat-emoji">🍳</span>
+      <h3>מטבח — כלים ומשטחים</h3>
+      <span class="cat-progress"></span>
+      <span class="cat-chevron">▲</span>
+    </div>
+    <div class="items-list" data-section="nikui">
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">כיור נירוסטה / ברזל</div><div class="item-note">ניקוי יסודי + עירוי מים רותחים — מספיק גם למחמירים</div></div><span class="item-tag tag-iruy">עירוי רותחים</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">כיור קרמי / פולימר</div><div class="item-note">ניקוי יסודי + עירוי רותחים. לאחר מכן אין להניח כלים חמים ואין להשתמש במים חמים ישירות בכיור. אשכנזים נוהגים להחמיר ולהשתמש בגיגית ייעודית לפסח</div></div><span class="item-tag tag-iruy">עירוי רותחים</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">ברז ומוצא המים</div><div class="item-note">ניקוי חיצוני מספיק לצורך הכשרה. פירוק מסננת — מומלץ כתחזוקה שוטפת אך אינו מעכב</div></div><span class="item-tag tag-nikui">ניקוי</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">משטח עבודה — שיש / פולימר</div><div class="item-note">עירוי מים רותחים על כל המשטח (כולל חריצי החיבור לכיור). אשכנזים נוהגים להחמיר ולכסות אחר כך בנייר אלומיניום. אין להניח אוכל חם ישירות על המשטח.</div></div><span class="item-tag tag-iruy">עירוי רותחים</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">משטח עבודה — זכוכית / נירוסטה</div><div class="item-note">עירוי מים רותחים מספיק — גם למחמירים אין צורך לכסות</div></div><span class="item-tag tag-iruy">עירוי רותחים</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">משטח עבודה — עץ / פורמייקה</div><div class="item-note">עירוי רותחים + כיסוי בנייר אלומיניום — הכיסוי הכרחי (עץ ופורמייקה סופגים)</div></div><span class="item-tag tag-kisuy">כיסוי</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">ארונות מטבח — עליונים ותחתונים</div><div class="item-note">ריקון מוחלט, ניקוי פנים + דפנות + ציר הדלת; פינות — מקום חמץ עיקרי</div></div><span class="item-tag tag-nikui">ניקוי</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">מגירות מטבח</div><div class="item-note">ריקון, ניקוי פינות; רצוי להניח נייר מגירה חדש לפסח</div></div><span class="item-tag tag-nikui">ניקוי</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">מחבתות (כל סוג)</div><div class="item-note">אינן ניתנות להכשרה — ברזל יצוק: ליבון פוגע בכלי; טפלון/נון-סטיק: הכשרה פוגעת בציפוי. עדיף מחבת ייעודית לפסח.</div></div><span class="item-tag tag-kinyan">קנייה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">סירים ותבניות מתכת</div><div class="item-note">הגעלה: ניקוי יסודי ← 24 שעות ללא שימוש ← טבילה במים רותחים. אם יש ידיות — לפרק לפני ההגעלה אם אפשר בלי לפגוע בסיר; אם לא ניתן — לנקות היטב את אזור החיבור לפני.</div></div><span class="item-tag tag-hagshalah">הגעלה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">סכינים, מזלגות, כפות — ידית מתכת</div><div class="item-note">ניקוי יסודי כולל הצומת בין להב לידית; 24 שעות ללא שימוש; הגעלה במים רותחים</div></div><span class="item-tag tag-hagshalah">הגעלה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">סכינים, מזלגות, כפות — ידית פלסטיק / עץ</div><div class="item-note">הגעלה עלולה לפגוע בידית או להרפות אותה. עדיף להשתמש בסכו"ם ייעודי לפסח.</div></div><span class="item-tag tag-kinyan">קנייה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">כוסות זכוכית — לשתייה חמה</div><div class="item-note">הגעלה במים רותחים — לאשכנזים ולספרדים כאחד (שימוש חם = ספיגה חמה)</div></div><span class="item-tag tag-hagshalah">הגעלה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">כוסות זכוכית — לשתייה קרה / כוסות יין</div><div class="item-note">לספרדים — שרייה במים 72 שעות (3 יממות) מספיקה. הגעלה עלולה לפגום בכוסות עדינות</div></div><span class="item-tag tag-hagshalah" style="background:#e3f2fd;color:#1565c0">שרייה 72 שעות</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">כלי אבן / חרס / קרמיקה</div><div class="item-note">אינם ניתנים להכשרה — מניחים בצד ופשוט לא משתמשים בהם בפסח. אין צורך למכור.</div></div><span class="item-tag tag-kinyan">קנייה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">ספוגים, מברשות כלים, סמרטוטים</div><div class="item-note">החלפה חדשה לפסח — לא ניתן להכשיר</div></div><span class="item-tag tag-kinyan">קנייה</span></div>
+    </div>
+  </div>
+
+  <!-- כיריים ותנור -->
+  <div class="category" id="cat-nikui-1">
+    <div class="category-header" onclick="toggleCat(this)">
+      <span class="cat-emoji">🔥</span>
+      <h3>כיריים, תנור וגריל</h3>
+      <span class="cat-progress"></span>
+      <span class="cat-chevron">▲</span>
+    </div>
+    <div class="items-list" data-section="nikui">
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">כיריים / גז — שבכות</div><div class="item-note">ניקוי יסודי, הדלקה עד לוהט כ-15 דקות (ליבון)</div></div><span class="item-tag tag-libun">ליבון</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">כיריים חשמלי / אינדוקציה</div><div class="item-note">ניקוי יסודי של המשטח, הדלקה על חום מקסימלי. אין צורך לכסות לוחות — הכשרה מתבצעת בחום ישיר</div></div><span class="item-tag tag-libun">ליבון</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">תנור חשמלי / גז</div><div class="item-note">ניקוי מוחלט (כולל שימוש בספריי תנור אם נדרש) + הדלקה על חום מקסימלי כשעה. הדפנות הפנימיות מתכשרות בחום.</div></div><span class="item-tag tag-libun">ליבון</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">מגשי תנור ורשתות</div><div class="item-note">מגשים אינם ניתנים להכשרה — הליבון הנדרש יהרוס אותם. משתמשים ברשת התנור + תבניות חד-פעמיות מעל</div></div><span class="item-tag tag-kinyan">קנייה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">מיקרוגל</div><div class="item-note">ניקוי יסודי פנים ומחוץ + הפעלת כוס מים עד אידוי מלא — זוהי ההכשרה (עירוי באדים). כיסוי אוכל במכסה מומלץ כל השנה (הפרדת בשרי-חלבי), לא ייחודי לפסח</div></div><span class="item-tag tag-iruy">עירוי רותחים</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">טוסטר / אוון קטן</div><div class="item-note">בדרך כלל קשה להכשיר — עדיף ייעודי לפסח</div></div><span class="item-tag tag-kinyan">קנייה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">גריל חשמלי / ברביקיו</div><div class="item-note">עדיף רשת ייעודית לפסח — קנייה זולה ופשוטה. ליבון רשת קיימת אפשרי אך מסורבל</div></div><span class="item-tag tag-kinyan">קנייה</span></div>
+    </div>
+  </div>
+
+  <!-- מכשירי חשמל -->
+  <div class="category" id="cat-nikui-2">
+    <div class="category-header" onclick="toggleCat(this)">
+      <span class="cat-emoji">⚡</span>
+      <h3>מכשירי חשמל ומדיח</h3>
+      <span class="cat-progress"></span>
+      <span class="cat-chevron">▲</span>
+    </div>
+    <div class="items-list" data-section="nikui">
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">מדיח כלים</div><div class="item-note">ניקוי יסודי כולל מסנן תחתי + הפעלת מחזור שטיפה ריק בחום גבוה. ניתן להשתמש לאחר מכן לכלי פסח.</div></div><span class="item-tag tag-hagshalah">הגעלה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">מקרר</div><div class="item-note">ריקון מוחלט, ניקוי יסודי של כל המדפים, החריצים וגומות הדלת</div></div><span class="item-tag tag-nikui">ניקוי</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">מקפיא</div><div class="item-note">ריקון, הפשרה וניקוי</div></div><span class="item-tag tag-nikui">ניקוי</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">בלנדר / מעבד מזון</div><div class="item-note">פירוק, שטיפה יסודית של כל החלקים, הגעלת חלקים הניתנים</div></div><span class="item-tag tag-hagshalah">הגעלה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">מכונת קפה / קפסולות</div><div class="item-note">ניקוי + בדיקה שאין חמץ בתוכה; רצוי ייעוץ רב</div></div><span class="item-tag tag-nikui">ניקוי</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">קומקום חשמלי / מיחם</div><div class="item-note">רצוי להסיר אבנית לפני ההכשרה (חומץ/לימון + רתיחה). לאחר מכן: רתיחת מים מלאה מספר פעמים — הגעלה.</div></div><span class="item-tag tag-hagshalah">הגעלה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">פלטת שבת</div><div class="item-note">ניקוי יסודי של משטח הפלטה + הדלקה על חום מקסימלי — ליבון. כיסוי בנייר אלומיניום לחומרה.</div></div><span class="item-tag tag-libun">ליבון</span></div>
+    </div>
+  </div>
+
+  <!-- סלון וחדרי שינה -->
+  <div class="category" id="cat-nikui-3">
+    <div class="category-header" onclick="toggleCat(this)">
+      <span class="cat-emoji">🛋️</span>
+      <h3>סלון וחדרי שינה</h3>
+      <span class="cat-progress"></span>
+      <span class="cat-chevron">▲</span>
+    </div>
+    <div class="items-list" data-section="nikui">
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">ספות וכורסאות</div><div class="item-note">הסרת כריות, ניקוי בין הרפידות — בדיקת פירורים</div></div><span class="item-tag tag-nikui">ניקוי</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">שולחן האוכל</div><div class="item-note">ניקוי יסודי של המשטח, הרגליים, הפינות והחריצים. אם אוכלים עליו ישירות בפסח — רצוי להניח מפה</div></div><span class="item-tag tag-nikui">ניקוי</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">מיטות (מתחת ומדפים)</div><div class="item-note">בדיקה מתחת למיטה, ניקוי שידות ומדפי ראש המיטה</div></div><span class="item-tag tag-nikui">ניקוי</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">ספריות וספרים</div><div class="item-note">בדיקת מדפי הספרייה ובין הספרים — פירורים מצטברים שם. ניגוב המדפים. ספרים שמשתמשים בהם בזמן אכילה — לבדוק בין הדפים</div></div><span class="item-tag tag-nikui">ניקוי</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">שטיחים</div><div class="item-note">שאיבה יסודית ורצוי שטיפה, שימו לב לשוליים</div></div><span class="item-tag tag-nikui">ניקוי</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">ארונות בגדים</div><div class="item-note">בדיקת כיסי בגדים — עיקר הבדיקה. שימו לב לשולי המגירות ופינות הארון</div></div><span class="item-tag tag-nikui">ניקוי</span></div>
+    </div>
+  </div>
+
+  <!-- חדרי ילדים -->
+  <div class="category" id="cat-nikui-4">
+    <div class="category-header" onclick="toggleCat(this)">
+      <span class="cat-emoji">🧸</span>
+      <h3>חדרי ילדים</h3>
+      <span class="cat-progress"></span>
+      <span class="cat-chevron">▲</span>
+    </div>
+    <div class="items-list" data-section="nikui">
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">תיקים וילקוטים של ילדים</div><div class="item-note">ריקון מוחלט, ניקוי פנים — מיקוד חמץ עיקרי!</div></div><span class="item-tag tag-nikui">ניקוי</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">שולחן לימוד ומגירות</div><div class="item-note">ריקון ובדיקת פינות ומגירות</div></div><span class="item-tag tag-nikui">ניקוי</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">צעצועים ומשחקים</div><div class="item-note">ניקוי משחקי לוח, בדיקת קופסאות ופסי רצפה</div></div><span class="item-tag tag-nikui">ניקוי</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">עגלת תינוק / כיסא אוכל</div><div class="item-note">פירוק מרבדים ושטיפה — מיקוד חמץ עיקרי!</div></div><span class="item-tag tag-nikui">ניקוי</span></div>
+    </div>
+  </div>
+
+  <!-- שירותים ומרפסת -->
+  <div class="category" id="cat-nikui-5">
+    <div class="category-header" onclick="toggleCat(this)">
+      <span class="cat-emoji">🚿</span>
+      <h3>שירותים, אמבטיה ומרפסת</h3>
+      <span class="cat-progress"></span>
+      <span class="cat-chevron">▲</span>
+    </div>
+    <div class="items-list" data-section="nikui">
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">ארון תרופות ותכשירים</div><div class="item-note">רוב קופות החולים מפרסמות רשימת תרופות כשרות לפסח — כדאי להדפיס. תרופות חיוניות: ייעוץ רב.</div></div><span class="item-tag tag-nikui">בדיקה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">מרפסת / חצר</div><div class="item-note">ניקוי מפירורים, בדיקת פינות ואזורי ישיבה</div></div><span class="item-tag tag-nikui">ניקוי</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">מחסן</div><div class="item-note">ריכוז חמץ הנמכר/נשמר, ניקוי</div></div><span class="item-tag tag-nikui">ניקוי</span></div>
+    </div>
+  </div>
+
+  <!-- רכב -->
+  <div class="category" id="cat-nikui-6">
+    <div class="category-header" onclick="toggleCat(this)">
+      <span class="cat-emoji">🚗</span>
+      <h3>רכב ותיקים</h3>
+      <span class="cat-progress"></span>
+      <span class="cat-chevron">▲</span>
+    </div>
+    <div class="items-list" data-section="nikui">
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">מושבי הרכב — שאיבה יסודית</div><div class="item-note">שאיבה בין ומתחת למושבים; הוצאת מושבי ילדים לניקוי נפרד</div></div><span class="item-tag tag-nikui">ניקוי</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">כיסי הדלתות ותא כפפות</div><div class="item-note">ריקון מוחלט, ניקוי פירורים, בדיקת פינות</div></div><span class="item-tag tag-nikui">ניקוי</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">קונסולה מרכזית ומחזיקי כוסות</div><div class="item-note">מקום חמץ נסתר — שאריות אוכל ושתייה</div></div><span class="item-tag tag-nikui">ניקוי</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">תיקים יומיומיים / ארנקים</div><div class="item-note">ריקון ובדיקת כיסים ופינות — מקום חמץ נסתר עיקרי</div></div><span class="item-tag tag-nikui">ניקוי</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">תרמיל / מזוודה</div><div class="item-note">ריקון, בדיקת כיסים קטנים וחריצים</div></div><span class="item-tag tag-nikui">ניקוי</span></div>
+    </div>
+  </div>
+
+  <!-- ציוד שטח -->
+  <div class="category" id="cat-nikui-shטach">
+    <div class="category-header" onclick="toggleCat(this)">
+      <span class="cat-emoji">🏕️</span>
+      <h3>ציוד שטח וטיול — למי שיוצא לטיול בפסח</h3>
+      <span class="cat-progress"></span>
+      <span class="cat-chevron">▲</span>
+    </div>
+    <div class="items-list" data-section="nikui">
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">אוהל</div><div class="item-note">ניקוי פנים האוהל מפירורים ושאריות מזון; ניקוי רצפת האוהל ופינות הדפנות</div></div><span class="item-tag tag-nikui">ניקוי</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">שק שינה / מזרון שטח</div><div class="item-note">בדיקת פינות ושולי שק השינה; ניקוי אם הביאו אוכל לתוכו</div></div><span class="item-tag tag-nikui">ניקוי</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">גזיה / כירה ניידת</div><div class="item-note">ניקוי יסודי של הרשת והמבער; הדלקה על חום גבוה עד לוהט — זהו הליבון</div></div><span class="item-tag tag-libun">ליבון</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">מיכל גז</div><div class="item-note">בדיקת כמות גז לפני היציאה; רכישת מיכל חדש אם נדרש</div></div><span class="item-tag tag-kinyan">קנייה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">סירי שדה וכלי בישול לשטח</div><div class="item-note">ניקוי יסודי + הגעלה (רתיחת מים בפנים). כלי פלסטיק — ניקוי בלבד, לא ניתן להגעלה</div></div><span class="item-tag tag-hagshalah">הגעלה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">ערכת קפה ניידת (פרנץ' פרס / מוקה)</div><div class="item-note">פירוק מלא + ניקוי כל החלקים; הגעלה בחלקים המתכתיים; הסרת משקעי קפה לפני כן</div></div><span class="item-tag tag-hagshalah">הגעלה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">כוסות וצלחות שטח (מלמין / פלסטיק)</div><div class="item-note">אינם ניתנים להגעלה — עדיף להשתמש בייעודיים חדשים לפסח. שטיפה יסודית לאחסון.</div></div><span class="item-tag tag-kinyan">קנייה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">תרמוס / כד מים</div><div class="item-note">ניקוי פנים יסודי; אם שתו בו תה/קפה חם — הגעלה (מילוי מים רותחים + המתנה)</div></div><span class="item-tag tag-hagshalah">הגעלה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">קופסאות אחסון מזון — פלסטיק</div><div class="item-note">אינן ניתנות להכשרה — יש להחליף בייעודיות לפסח</div></div><span class="item-tag tag-kinyan">קנייה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">קופסאות אחסון מזון — ברזל / זכוכית</div><div class="item-note">ניקוי יסודי + הגעלה (טבילה במים רותחים)</div></div><span class="item-tag tag-hagshalah">הגעלה</span></div>
+    </div>
+  </div>
+
+  <!-- משרד -->
+  <div class="category" id="cat-nikui-7">
+    <div class="category-header" onclick="toggleCat(this)">
+      <span class="cat-emoji">💼</span>
+      <h3>משרד / מקום עבודה</h3>
+      <span class="cat-progress"></span>
+      <span class="cat-chevron">▲</span>
+    </div>
+    <div class="items-list" data-section="nikui">
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">שולחן עבודה ומגירות</div><div class="item-note">ריקון מגירות, ניקוי פירורים מתחת לשולחן ובפינות; שים לב לאזור המקלדת</div></div><span class="item-tag tag-nikui">ניקוי</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">מקלדת ועכבר</div><div class="item-note">היפוך המקלדת וטלטול — פירורים נצברים; ניקוי בין המקשים</div></div><span class="item-tag tag-nikui">ניקוי</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">תיק עבודה / תיק מחשב</div><div class="item-note">ריקון כל הכיסים — כיס פנימי, כיסי צדדים; שאריות חטיפים / לחמנייה</div></div><span class="item-tag tag-nikui">ניקוי</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">מגירת חטיפים / אוכל</div><div class="item-note">ריקון מוחלט — פירורים, חטיפים, ביסקוויטים; ניקוי מדוקדק</div></div><span class="item-tag tag-nikui">ניקוי</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">פינת קפה / מטבחון משרדי</div><div class="item-note">ניקוי משטחים, מיקרוגל (אם קיים), כוסות ועלי תה. החלפת ספוגים.</div></div><span class="item-tag tag-nikui">ניקוי</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">מכירת חמץ של פינת הקפה — אם שייכת למעסיק</div><div class="item-note">אם פינת הקפה / המטבחון שייכים לחברה, האחריות על מכירת החמץ היא של הבעלים/מנהל. כדאי להזכיר לבוס / למנהל לדאוג למכירה, או לברר אם כבר נעשה</div></div><span class="item-tag tag-check">לזכור</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">מדפים וארונות משרד</div><div class="item-note">בדיקת חמץ בין תיקיות ומסמכים; ספות/כורסאות — בדיקת כריות</div></div><span class="item-tag tag-nikui">ניקוי</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">תא המטען — ציוד משרדי ותיקים</div><div class="item-note">אם מובילים ציוד עבודה ברכב — בדיקה נפרדת</div></div><span class="item-tag tag-nikui">ניקוי</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION: בדיקת חמץ ===== -->
+<div class="section" id="section-bedika">
+  <div class="note-card">
+    <strong>🕯️ סדר בדיקת חמץ:</strong> בדיקת חמץ נעשית בליל י"ד בניסן (ערב פסח), לאחר צאת הכוכבים. מדליקים נר, אומרים ברכה, ובודקים בסדר שיטתי מחדר לחדר — מהמקומות הפחות נקיים לנקיים.
+  </div>
+  <div class="note-card" style="border-right-color: var(--red);">
+    <strong>⚠️ מקומות שכדאי לבדוק לפני ליל הבדיקה:</strong> מקומות שאין אפשרות לבדוק בלילה — כגון <strong>משרד</strong>, <strong>מחסן שאינו ליד הבית</strong>, מגרש חניה מקורה וכדומה — כדאי לבדוק מספר ימים לפני, ביום. הבדיקה הלילית מתמקדת במקומות הנגישים בבית.
+  </div>
+
+  <div class="progress-card">
+    <div class="progress-text">
+      <h3>בדיקת חמץ</h3>
+      <p id="prog-bedika-txt">0 מתוך 0 אזורים נבדקו</p>
+      <div class="progress-bar-wrap"><div class="progress-bar-fill" id="bar-bedika" style="width:0%"></div></div>
+    </div>
+    <div class="progress-ring">
+      <svg width="56" height="56" viewBox="0 0 56 56">
+        <circle cx="28" cy="28" r="23" fill="none" stroke="#f0e0c0" stroke-width="4"/>
+        <circle id="ring-bedika" cx="28" cy="28" r="23" fill="none" stroke="#c9922a" stroke-width="4"
+          stroke-dasharray="144.5" stroke-dashoffset="144.5" stroke-linecap="round"/>
+      </svg>
+      <div class="progress-num" id="pct-bedika">0%</div>
+    </div>
+  </div>
+
+  <div class="section-actions">
+    <button class="btn-reset" onclick="resetSection('bedika')">🔄 אפס הכל</button>
+  </div>
+
+  <!-- בדיקה סדר לוגי -->
+  <div class="category" id="cat-bedika-0">
+    <div class="category-header" onclick="toggleCat(this)">
+      <span class="cat-emoji">📍</span>
+      <h3>הכנות לפני הבדיקה</h3>
+      <span class="cat-progress"></span>
+      <span class="cat-chevron">▲</span>
+    </div>
+    <div class="items-list" data-section="bedika">
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">הכנת נר דק / פנס</div><div class="item-note">נר שעוה יחיד ודק, או פנס חזק — לא מנורת חשמל בלבד</div></div><span class="item-tag tag-check">הכנה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">הנחת 10 חתיכות לחם</div><div class="item-note">מנהג — לעטוף כל חתיכה בנייר בנפרד, לזכרון כי מצאנו חמץ בבדיקה</div></div><span class="item-tag tag-check">מנהג</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">הכנת נוצה / מברשת קטנה וכף ושקית</div><div class="item-note">לאיסוף החמץ שנמצא. נוצה יפה ונוסטלגית, אבל כל מברשת קטנה — ואפילו ביד — כשרה לכך</div></div><span class="item-tag tag-check">הכנה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">ריקון פח הזבל + מיכל שואב האבק</div><div class="item-note">לפני הבדיקה — פח מלא עם פירורים נחשב חמץ ברשותו. גם מיכל שואב האבק וסמרטוטים / מטאטאים יש לנקות</div></div><span class="item-tag tag-check">הכנה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">אמירת הברכה</div><div class="item-note">בָּרוּךְ... אֲשֶׁר קִדְּשָׁנוּ... עַל בִּיעוּר חָמֵץ — לפני תחילת הבדיקה. <strong>לאחר הברכה אין לדבר בדברים שאינם צורך הבדיקה עד סיומה</strong></div></div><span class="item-tag tag-check">ברכה</span></div>
+    </div>
+  </div>
+
+  <div class="category" id="cat-bedika-1">
+    <div class="category-header" onclick="toggleCat(this)">
+      <span class="cat-emoji">1️⃣</span>
+      <h3>מטבח — ראשון (מקום הכי חשוב)</h3>
+      <span class="cat-progress"></span>
+      <span class="cat-chevron">▲</span>
+    </div>
+    <div class="items-list" data-section="bedika">
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">ארונות מטבח — פנים, דפנות, פינות</div><div class="item-note">בדיקה עם נר, מבט לכל פינה</div></div><span class="item-tag tag-check">בדיקה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">מגירות מטבח</div><div class="item-note">כל מגירה, שימו לב לחריצים</div></div><span class="item-tag tag-check">בדיקה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">מתחת לשיש ובין מכשירים</div><div class="item-note">בין קיר למקרר, מתחת לתנור</div></div><span class="item-tag tag-check">בדיקה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">מקרר — מדפים, מגירות ירקות</div><div class="item-note">כולל מגירות וצדדים</div></div><span class="item-tag tag-check">בדיקה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">מדיח כלים — פנים, מסננות</div><div class="item-note">פנים מדיח ומתחתיו</div></div><span class="item-tag tag-check">בדיקה</span></div>
+    </div>
+  </div>
+
+  <div class="category" id="cat-bedika-2">
+    <div class="category-header" onclick="toggleCat(this)">
+      <span class="cat-emoji">2️⃣</span>
+      <h3>פינת אוכל וסלון</h3>
+      <span class="cat-progress"></span>
+      <span class="cat-chevron">▲</span>
+    </div>
+    <div class="items-list" data-section="bedika">
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">שולחן האוכל — מתחת ובין הרגליים</div><div class="item-note">פירורים שנפלו</div></div><span class="item-tag tag-check">בדיקה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">כיסאות האוכל</div><div class="item-note">בין שלד הכיסא וכרית המושב</div></div><span class="item-tag tag-check">בדיקה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">ספות וכורסאות — בין כריות</div><div class="item-note">הרמת כריות ומושבים</div></div><span class="item-tag tag-check">בדיקה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">פינת מחשב / טלוויזיה</div><div class="item-note">מתחת ומאחורי מסך, שולחן המחשב ולוח המקשים — פירורים מצטברים שם בקלות</div></div><span class="item-tag tag-check">בדיקה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">מזנון / ויטרינה</div><div class="item-note">פנים מגירות ומדפים</div></div><span class="item-tag tag-check">בדיקה</span></div>
+    </div>
+  </div>
+
+  <div class="category" id="cat-bedika-3">
+    <div class="category-header" onclick="toggleCat(this)">
+      <span class="cat-emoji">3️⃣</span>
+      <h3>חדרי שינה</h3>
+      <span class="cat-progress"></span>
+      <span class="cat-chevron">▲</span>
+    </div>
+    <div class="items-list" data-section="bedika">
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">שידת לילה — מגירות ועל השידה</div><div class="item-note">רצוי לבדוק מגירות</div></div><span class="item-tag tag-check">בדיקה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">מתחת למיטה</div><div class="item-note">עם פנס, כל הפינות</div></div><span class="item-tag tag-check">בדיקה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">ארון בגדים — כיסי בגדים</div><div class="item-note">הכיסים — עיקר הבדיקה</div></div><span class="item-tag tag-check">בדיקה</span></div>
+    </div>
+  </div>
+
+  <div class="category" id="cat-bedika-4">
+    <div class="category-header" onclick="toggleCat(this)">
+      <span class="cat-emoji">4️⃣</span>
+      <h3>חדרי ילדים</h3>
+      <span class="cat-progress"></span>
+      <span class="cat-chevron">▲</span>
+    </div>
+    <div class="items-list" data-section="bedika">
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">שולחן לימוד ומגירות</div><div class="item-note">ילדים מביאים אוכל לחדר — חמץ עיקרי</div></div><span class="item-tag tag-check">בדיקה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">קופסאות משחק ומדפים</div><div class="item-note">בדיקת משחקים, ספרים ופינות</div></div><span class="item-tag tag-check">בדיקה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">ילקוטים / תיקים</div><div class="item-note">חשוב! לבדוק כל כיס</div></div><span class="item-tag tag-check">בדיקה</span></div>
+    </div>
+  </div>
+
+  <div class="category" id="cat-bedika-5">
+    <div class="category-header" onclick="toggleCat(this)">
+      <span class="cat-emoji">5️⃣</span>
+      <h3>כניסה, מרפסת, רכב ומקומות חיצוניים</h3>
+      <span class="cat-progress"></span>
+      <span class="cat-chevron">▲</span>
+    </div>
+    <div class="items-list" data-section="bedika">
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">כניסה / פרוזדור</div><div class="item-note">מכנסיות, כיסאות כניסה, פינות, תחת שטיח הכניסה</div></div><span class="item-tag tag-check">בדיקה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">מרפסת</div><div class="item-note">פינות ישיבה, תחת רהיטי מרפסת, פינות קיר</div></div><span class="item-tag tag-check">בדיקה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">רכב — מושבים ותא כפפות</div><div class="item-note">בין ומתחת מושבים, תא כפפות, קונסולה מרכזית</div></div><span class="item-tag tag-check">בדיקה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">🕍 מקום קבוע בבית הכנסת</div><div class="item-note">כל אחד אחראי לבדוק את המקום הקבוע שלו — בין הספסלים, כיס הסידור, מגירת הספסל. לוקרים בחדר כושר, ארוניות בעבודה או בכל מקום אחר — אחריות אישית לבדוק ולנקות</div></div><span class="item-tag tag-check">לזכור</span></div>
+    </div>
+  </div>
+
+  <div class="category" id="cat-bedika-6">
+    <div class="category-header" onclick="toggleCat(this)">
+      <span class="cat-emoji">✅</span>
+      <h3>סיום הבדיקה</h3>
+      <span class="cat-progress"></span>
+      <span class="cat-chevron">▲</span>
+    </div>
+    <div class="items-list" data-section="bedika">
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">איסוף כל החמץ שנמצא</div><div class="item-note">כולל 10 חתיכות הלחם שהנחנו</div></div><span class="item-tag tag-check">סיום</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">אמירת ביטול חמץ ("כל חמירא...")</div><div class="item-note">אחרי הבדיקה — ביטול בלב ופה</div></div><span class="item-tag tag-check">ביטול</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">שמירת החמץ לשריפה למחרת</div><div class="item-note">שמור בבטחה עד בוקר י"ד ניסן</div></div><span class="item-tag tag-check">סיום</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION: ליל הסדר ===== -->
+<div class="section" id="section-seder">
+  <div class="note-card">
+    <strong>🍷 הכנות לסדר</strong> — הכינו את כל הדברים ביום שלפני כדי לפתוח את הסדר רגועים ושמחים.
+  </div>
+
+  <div class="progress-card">
+    <div class="progress-text">
+      <h3>הכנות לסדר</h3>
+      <p id="prog-seder-txt">0 מתוך 0 פריטים הוכנו</p>
+      <div class="progress-bar-wrap"><div class="progress-bar-fill" id="bar-seder" style="width:0%"></div></div>
+    </div>
+    <div class="progress-ring">
+      <svg width="56" height="56" viewBox="0 0 56 56">
+        <circle cx="28" cy="28" r="23" fill="none" stroke="#f0e0c0" stroke-width="4"/>
+        <circle id="ring-seder" cx="28" cy="28" r="23" fill="none" stroke="#c9922a" stroke-width="4"
+          stroke-dasharray="144.5" stroke-dashoffset="144.5" stroke-linecap="round"/>
+      </svg>
+      <div class="progress-num" id="pct-seder">0%</div>
+    </div>
+  </div>
+
+  <div class="section-actions">
+    <button class="btn-reset" onclick="resetSection('seder')">🔄 אפס הכל</button>
+  </div>
+
+  <div class="category" id="cat-seder-0">
+    <div class="category-header" onclick="toggleCat(this)">
+      <span class="cat-emoji">🕍</span>
+      <h3>קערת הסדר</h3>
+      <span class="cat-progress"></span>
+      <span class="cat-chevron">▲</span>
+    </div>
+    <div class="items-list" data-section="seder">
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">זרוע — עצם עוף קלויה</div><div class="item-note">זכר לקרבן פסח. עדיף עוף (צוואר / כנף) — קל לקלות ומצוי. לחלופין עצם בהמה.</div></div><span class="item-tag tag-prep">הכנה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">ביצה קשה / קלויה</div><div class="item-note">זכר לקרבן החגיגה; רצוי גם לקלות קלות</div></div><span class="item-tag tag-prep">הכנה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">מרור — חסה / עלי חריין</div><div class="item-note">עלי חסה או שורש חריין — מרירות העבדות</div></div><span class="item-tag tag-prep">הכנה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">חזרת — לכורך</div><div class="item-note">חסה נוספת לאכילת הכורך עם מצה</div></div><span class="item-tag tag-prep">הכנה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">חרוסת</div><div class="item-note">תפוחים, אגוזים, יין, תמרים — זכר לטיט. רצוי להכין מראש</div></div><span class="item-tag tag-prep">הכנה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">כרפס — בצל ירוק / סלרי / תפו"א</div><div class="item-note">לטבול במי מלח — זכר לדמעות</div></div><span class="item-tag tag-prep">הכנה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">מי מלח</div><div class="item-note">להכנה מראש לטבילת הכרפס</div></div><span class="item-tag tag-prep">הכנה</span></div>
+    </div>
+  </div>
+
+  <div class="category" id="cat-seder-1">
+    <div class="category-header" onclick="toggleCat(this)">
+      <span class="cat-emoji">🍞</span>
+      <h3>מצות ויין</h3>
+      <span class="cat-progress"></span>
+      <span class="cat-chevron">▲</span>
+    </div>
+    <div class="items-list" data-section="seder">
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">שלוש מצות לקערה (מכוסות)</div><div class="item-note">מכוסות במפית — כהן לוי ישראל</div></div><span class="item-tag tag-prep">הכנה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">מצות לכלל המסובים</div><div class="item-note">כמות מספקת — כזית לכל אחד, 4 פעמים</div></div><span class="item-tag tag-prep">הכנה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">יין / מיץ ענבים</div><div class="item-note">4 כוסות לכל אחד — לפחות 86 מ"ל לכל כוס</div></div><span class="item-tag tag-prep">הכנה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">כוסות בגודל מתאים — כ-100 מ"ל</div><div class="item-note">כוסות קטנות (כוסות אספרסו וכדומה) נוחות יותר לשתיית ארבע כוסות — קל יותר לשתות רביעית</div></div><span class="item-tag tag-prep">הכנה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">כוס אליהו הנביא</div><div class="item-note">כוס גדולה ומיוחדת — ממלאים ביין בתחילת הסדר ופותחים את הדלת בשפך</div></div><span class="item-tag tag-prep">הכנה</span></div>
+    </div>
+  </div>
+
+  <div class="category" id="cat-seder-2">
+    <div class="category-header" onclick="toggleCat(this)">
+      <span class="cat-emoji">🪑</span>
+      <h3>שולחן ומקום הסדר</h3>
+      <span class="cat-progress"></span>
+      <span class="cat-chevron">▲</span>
+    </div>
+    <div class="items-list" data-section="seder">
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">ערוך שולחן חגיגי</div><div class="item-note">מפה, כלי פסח, קישוטים</div></div><span class="item-tag tag-prep">הכנה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">כריות / ספוגים להסיבה</div><div class="item-note">לכל מסיב — לשכב על השמאל בעת שתיית יין ואכילת מצה</div></div><span class="item-tag tag-prep">הכנה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">הגדות לכל המסובים</div><div class="item-note">מספיק עותקים — ניתן להוריד ולהדפיס מראש</div></div><span class="item-tag tag-prep">הכנה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">ציוד נטילת ידיים</div><div class="item-note">כוס נטילה, קערה ומגבת — ליד השולחן לנטילה הראשונה (ורחץ)</div></div><span class="item-tag tag-prep">הכנה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">נרות יום טוב וגפרורים / מצית</div><div class="item-note">לברכת הדלקת נרות לפני הסדר</div></div><span class="item-tag tag-prep">הכנה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">נר נשמה</div><div class="item-note">מדליקים לזכר נשמות. גם משמש כאש קיימת להדלקת נרות יום טוב, לבישול ולהצתת גחלים בחג</div></div><span class="item-tag tag-prep">הכנה</span></div>
+    </div>
+  </div>
+
+  <div class="category" id="cat-seder-3">
+    <div class="category-header" onclick="toggleCat(this)">
+      <span class="cat-emoji">🍽️</span>
+      <h3>סעודה — רעיונות תפריט</h3>
+      <span class="cat-progress"></span>
+      <span class="cat-chevron">▲</span>
+    </div>
+    <div class="items-list" data-section="seder">
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">🍜 מרק עוף עם קניידלך (כופתאות מצה)</div><div class="item-note">הקלאסיקה האשכנזית — מרק עוף צלול עם כדורי קמח מצה</div></div><span class="item-tag tag-option">אפשרות</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">🥘 מרק ירקות כשר לפסח</div><div class="item-note">גזר, בצל, סלרי, קישוא — ללא קטניות (לאשכנזים)</div></div><span class="item-tag tag-option">אפשרות</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">🐔 עוף בתנור עם תפוחי אדמה</div><div class="item-note">עוף שלם / ירכיים — פשוט, טעים, כשר לפסח לכולם</div></div><span class="item-tag tag-option">אפשרות</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">🥩 צלי בשר / בריסקט</div><div class="item-note">מסורתי לסדר — בישול ארוך ביין או ציר. לא כבש שלם (זכר לקרבן פסח)</div></div><span class="item-tag tag-option">אפשרות</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">🐟 דג ממולא / גפילטע פיש</div><div class="item-note">מנה ראשונה מסורתית — ניתן לקנות מוכן עם הכשר פסח</div></div><span class="item-tag tag-option">אפשרות</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">🥗 סלט ירקות כשר לפסח</div><div class="item-note">עגבנייה, מלפפון, פלפל — ללא חומץ; שמן זית ולימון</div></div><span class="item-tag tag-option">אפשרות</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">🍠 תוספות: תפוחי אדמה, בטטה, גזר</div><div class="item-note">בטטה בתנור, פירה, תפו"א צלוי — כולם כשרים לפסח</div></div><span class="item-tag tag-option">אפשרות</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">🍰 קינוח: עוגת שוקולד ושקדים</div><div class="item-note">ללא קמח — שקדים טחונים, קקאו, ביצים, שמן. קלאסיקה לפסח</div></div><span class="item-tag tag-option">אפשרות</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">🍮 קינוח: מוס שוקולד / פרווה</div><div class="item-note">שמנת קוקוס / שוקולד + ביצים — פרווה וקל להכנה</div></div><span class="item-tag tag-option">אפשרות</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">🍊 קינוח: סלט פירות טרי</div><div class="item-note">פשוט, קל, פרווה — מתאים לאחרי סעודה כבדה</div></div><span class="item-tag tag-option">אפשרות</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">⚠️ אפיקומן — חייב להיאכל אחרון</div><div class="item-note">את האפיקומן אוכלים לאחר כל הקינוחים — ולא אוכלים דבר אחריו. לכן חשוב לתכנן שהקינוחים יסתיימו לפני אמירת ברכת המזון</div></div><span class="item-tag tag-check">לזכור</span></div>
+    </div>
+  </div>
+
+  <div class="category" id="cat-seder-4">
+    <div class="category-header" onclick="toggleCat(this)">
+      <span class="cat-emoji">👶</span>
+      <h3>הכנות לילדים לסדר</h3>
+      <span class="cat-progress"></span>
+      <span class="cat-chevron">▲</span>
+    </div>
+    <div class="items-list" data-section="seder">
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">מה נשתנה — תרגול עם הילדים</div><div class="item-note">ללמד את ארבע הקושיות מראש</div></div><span class="item-tag tag-prep">הכנה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">פרסים לאפיקומן</div><div class="item-note">הכנת מתנות קטנות לילדים שמצאו / ישיבו אפיקומן</div></div><span class="item-tag tag-prep">הכנה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">כיסוי לאפיקומן</div><div class="item-note">שקית בד / מפית מיוחדת לעטיפת האפיקומן שנגנב — חלק מהמשחק עם הילדים</div></div><span class="item-tag tag-prep">הכנה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">ממתקים / צ'ופרים כשרים לפסח לילדים</div><div class="item-note">לעודד ילדים להישאר ערים. לוודא שיש עליהם הכשר פסח</div></div><span class="item-tag tag-prep">הכנה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">הגדה ידידותית לילדים</div><div class="item-note">הגדה עם ציורים / פאזלים לגיל הרך</div></div><span class="item-tag tag-prep">הכנה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">שירי פסח — תרגול</div><div class="item-note">דיינו, חד גדיא, אחד מי יודע</div></div><span class="item-tag tag-prep">הכנה</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION: קניות ===== -->
+<div class="section" id="section-shopping">
+  <div class="progress-card">
+    <div class="progress-text">
+      <h3>קניות לפסח</h3>
+      <p id="prog-shopping-txt">0 מתוך 0 קנינו</p>
+      <div class="progress-bar-wrap"><div class="progress-bar-fill" id="bar-shopping" style="width:0%"></div></div>
+    </div>
+    <div class="progress-ring">
+      <svg width="56" height="56" viewBox="0 0 56 56">
+        <circle cx="28" cy="28" r="23" fill="none" stroke="#f0e0c0" stroke-width="4"/>
+        <circle id="ring-shopping" cx="28" cy="28" r="23" fill="none" stroke="#c9922a" stroke-width="4"
+          stroke-dasharray="144.5" stroke-dashoffset="144.5" stroke-linecap="round"/>
+      </svg>
+      <div class="progress-num" id="pct-shopping">0%</div>
+    </div>
+  </div>
+  <div class="section-actions">
+    <button class="btn-reset" onclick="resetSection('shopping')">🔄 אפס הכל</button>
+  </div>
+
+  <div class="category" id="cat-shopping-0">
+    <div class="category-header" onclick="toggleCat(this)">
+      <span class="cat-emoji">📦</span>
+      <h3>מוצרי יסוד לפסח</h3>
+      <span class="cat-progress"></span>
+      <span class="cat-chevron">▲</span>
+    </div>
+    <div class="items-list" data-section="shopping">
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">מצות — כמות מספקת לכל החג</div><div class="item-note">כמות לסדר + לכל ימי החג</div></div><span class="item-tag tag-buy">קנייה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">יין כשר לפסח</div><div class="item-note">לפחות 4 בקבוקים ל-4 כוסות × מספר הסועדים</div></div><span class="item-tag tag-buy">קנייה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">קמח מצה (מצה שרויה)</div><div class="item-note">לבישול ואפייה — רק אם משתמשים</div></div><span class="item-tag tag-buy">קנייה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">שמן כשר לפסח</div><div class="item-note">קנולה / זית עם הכשר פסח</div></div><span class="item-tag tag-buy">קנייה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">סוכר כשר לפסח</div></div><span class="item-tag tag-buy">קנייה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">מלח כשר לפסח</div></div><span class="item-tag tag-buy">קנייה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">ביצים — כמות גדולה</div><div class="item-note">לאפייה, לאוכל, ולקערת הסדר (ביצה קשה / קלויה)</div></div><span class="item-tag tag-buy">קנייה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">חרוסת — מוכנה או רכיבים</div><div class="item-note">תפוחים, אגוזים, יין, דבש, קינמון</div></div><span class="item-tag tag-buy">קנייה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">תבלינים כשרים לפסח</div><div class="item-note">מלח, פלפל, כורכום, פפריקה וכו' — לוודא שיש עליהם הכשר פסח. רבים מהתבלינים הרגילים אינם מוכשרים לפסח</div></div><span class="item-tag tag-buy">קנייה</span></div>
+    </div>
+  </div>
+
+  <div class="category" id="cat-shopping-1">
+    <div class="category-header" onclick="toggleCat(this)">
+      <span class="cat-emoji">🧴</span>
+      <h3>ניקוי ואביזרים</h3>
+      <span class="cat-progress"></span>
+      <span class="cat-chevron">▲</span>
+    </div>
+    <div class="items-list" data-section="shopping">
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">נייר אלומיניום — גלילים גדולים</div><div class="item-note">לכיסוי שיש, תנור ועוד</div></div><span class="item-tag tag-buy">קנייה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">כפפות גומי לניקוי</div></div><span class="item-tag tag-buy">קנייה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">ספוגים / מטליות חדשות לפסח</div></div><span class="item-tag tag-buy">קנייה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">שקיות ניילון / זבל גדולות</div><div class="item-note">לאריזת חמץ ולניקוי</div></div><span class="item-tag tag-buy">קנייה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">חומרי ניקוי כשרים לפסח</div><div class="item-note">ספריי, סבון כלים ללא חמץ</div></div><span class="item-tag tag-buy">קנייה</span></div>
+    </div>
+  </div>
+
+  <div class="category" id="cat-shopping-2">
+    <div class="category-header" onclick="toggleCat(this)">
+      <span class="cat-emoji">📜</span>
+      <h3>מסמכים ופריטים הלכתיים</h3>
+      <span class="cat-progress"></span>
+      <span class="cat-chevron">▲</span>
+    </div>
+    <div class="items-list" data-section="shopping">
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">הגדות לכל המסובים</div></div><span class="item-tag tag-buy">קנייה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">נרות יום טוב</div><div class="item-note">לשתי לילות — נר ארוך / שבת</div></div><span class="item-tag tag-buy">קנייה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">שטר מכירת חמץ לרב</div><div class="item-note">לבצע לפני ערב פסח — גם אונליין</div></div><span class="item-tag tag-buy">מסמך</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION: ערב פסח ===== -->
+<div class="section" id="section-erev">
+  <div class="note-card">
+    <strong>📋 סדר פעולות ביום י"ד בניסן (ערב פסח):</strong> בוקר — שריפת חמץ. עד שעת ביטול — ביטול חמץ שני. אחר הצהרים — הכנת אוכל. עם חשיכה — הסדר מתחיל!
+  </div>
+
+  <div class="progress-card">
+    <div class="progress-text">
+      <h3>ערב פסח — יום י"ד ניסן</h3>
+      <p id="prog-erev-txt">0 מתוך 0 פעולות</p>
+      <div class="progress-bar-wrap"><div class="progress-bar-fill" id="bar-erev" style="width:0%"></div></div>
+    </div>
+    <div class="progress-ring">
+      <svg width="56" height="56" viewBox="0 0 56 56">
+        <circle cx="28" cy="28" r="23" fill="none" stroke="#f0e0c0" stroke-width="4"/>
+        <circle id="ring-erev" cx="28" cy="28" r="23" fill="none" stroke="#c9922a" stroke-width="4"
+          stroke-dasharray="144.5" stroke-dashoffset="144.5" stroke-linecap="round"/>
+      </svg>
+      <div class="progress-num" id="pct-erev">0%</div>
+    </div>
+  </div>
+
+  <div class="section-actions">
+    <button class="btn-reset" onclick="resetSection('erev')">🔄 אפס הכל</button>
+  </div>
+
+  <div class="category" id="cat-erev-0">
+    <div class="category-header" onclick="toggleCat(this)">
+      <span class="cat-emoji">🌅</span>
+      <h3>בוקר — עד שעת איסור אכילת חמץ</h3>
+      <span class="cat-progress"></span>
+      <span class="cat-chevron">▲</span>
+    </div>
+    <div class="items-list" data-section="erev">
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">בדיקת זמן שריפת חמץ (שעה חמישית)</div><div class="item-note">בדוק לוח זמנים לפסח — שעת איסור אכילה ושריפה</div></div><span class="item-tag tag-prep">זמן</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">אכילת חמץ אחרון — לפני שעה רביעית</div><div class="item-note">אחרי כן — אסור לאכול חמץ</div></div><span class="item-tag tag-prep">אכילה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">שריפת חמץ — ביעור חמץ</div><div class="item-note">שריפת כל החמץ שנאסף + 10 חתיכות הבדיקה</div></div><span class="item-tag tag-prep">מצווה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">ביטול חמץ שני ("כל חמירא...")</div><div class="item-note">לאחר שריפה — ביטול בפה ובלב, לכלול כל חמץ שאינו ידוע</div></div><span class="item-tag tag-prep">מצווה</span></div>
+    </div>
+  </div>
+
+  <div class="category" id="cat-erev-1">
+    <div class="category-header" onclick="toggleCat(this)">
+      <span class="cat-emoji">☀️</span>
+      <h3>אחר הצהרים — הכנות אחרונות</h3>
+      <span class="cat-progress"></span>
+      <span class="cat-chevron">▲</span>
+    </div>
+    <div class="items-list" data-section="erev">
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">גמר בישול אוכל לסדר</div><div class="item-note">מרק, בשר, תוספות — מוכן מראש</div></div><span class="item-tag tag-prep">בישול</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">בכורות — השתתפות בסיום מסכת</div><div class="item-note">תענית בכורות חלה על בכורי אב. הנהוג להשתחרר ממנה על ידי השתתפות בסיום מסכת (בבית כנסת / בזום)</div></div><span class="item-tag tag-prep">מצווה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">טבילה במקווה</div><div class="item-note">נהוג לטבול במקווה בערב פסח לפני הסדר — לקדושה ולטהרה</div></div><span class="item-tag tag-prep">מנהג</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">עריכת שולחן הסדר</div><div class="item-note">מפה, כלים, כוסות, הגדות, כריות</div></div><span class="item-tag tag-prep">הכנה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">הכנת קערת הסדר</div><div class="item-note">כל 6 מרכיבים + מצות מכוסות</div></div><span class="item-tag tag-prep">הכנה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">מילוי יין לכוסות / בקבוקים מוכנים</div><div class="item-note">כולל כוס אליהו הנביא</div></div><span class="item-tag tag-prep">הכנה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">טבילת כלים חדשים (אם נקנו)</div><div class="item-note">כלי זכוכית / מתכת — טבילה במקווה / בריכה כשרה</div></div><span class="item-tag tag-prep">מצווה</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">רחיצה והכנה אישית</div><div class="item-note">ללבוש בגדי יום טוב — כיפה, לבנים</div></div><span class="item-tag tag-prep">הכנה</span></div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<script src="../js/pesach-checklist.js"></script>
+</body>
+</html>
+

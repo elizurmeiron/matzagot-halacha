@@ -1,0 +1,300 @@
+/* ========================================
+   CSS Variables - Theme & Color System
+   ערכת ברירת מחדל: "warm" — טרקוטה, זהב חם וזית (תחושת מטבח חם ומסורת)
+   ======================================== */
+
+.rtl-mode {
+    --nav-prev-side: right;
+    --nav-next-side: left;
+    --arrow-prev: '►';
+    --arrow-next: '◄';
+    --text-direction: rtl;
+}
+
+/* ========================================
+   Color Themes
+   ======================================== */
+
+/* Warm theme (Default) — טרקוטה, זהב חם וזית */
+:root,
+[data-theme="warm"] {
+    --theme-primary: #B65929;       /* טרקוטה */
+    --theme-primary-dark: #8E4520;
+    --theme-secondary: #D89B2F;     /* זהב חם */
+    --theme-tertiary: #6B7B3D;      /* זית — לדגשים, עומק */
+}
+
+/* Blue theme — כחול-אבן עמום, בגוון חם */
+[data-theme="blue"] {
+    --theme-primary: #4E6572;
+    --theme-primary-dark: #3C5059;
+    --theme-secondary: #7892A0;
+    --theme-tertiary: #5C6E56;
+}
+
+/* Gray theme — אבן חמה ופarchment */
+[data-theme="gray"] {
+    --theme-primary: #6E655C;
+    --theme-primary-dark: #564F48;
+    --theme-secondary: #958D84;
+    --theme-tertiary: #5A5348;
+}
+
+/* Cyan theme — ים עדין ומרווה */
+[data-theme="cyan"] {
+    --theme-primary: #4D756E;
+    --theme-primary-dark: #3B5C56;
+    --theme-secondary: #6E9990;
+    --theme-tertiary: #587048;
+}
+
+/* Green theme — זית ועשבים */
+[data-theme="green"] {
+    --theme-primary: #567040;
+    --theme-primary-dark: #435830;
+    --theme-secondary: #889858;
+    --theme-tertiary: #6B7B3D;
+}
+
+/* Red theme — לבנה ונחושת */
+[data-theme="red"] {
+    --theme-primary: #994939;
+    --theme-primary-dark: #78382C;
+    --theme-secondary: #BD7054;
+    --theme-tertiary: #7A6533;
+}
+
+/* ========================================
+   ערכות צבעים לפי נושא
+   כל מצגת מצהירה על נושאה בתגית <html data-theme="...">,
+   וממנה נגזרת ערכת הצבעים כולה.
+   ======================================== */
+
+/* כשרות — טרקוטה, זהב חם וזית (זהה לברירת המחדל) */
+[data-theme="kashrut"] {
+    --theme-primary: #B65929;
+    --theme-primary-dark: #8E4520;
+    --theme-secondary: #D89B2F;
+    --theme-tertiary: #6B7B3D;
+}
+
+/* שבת — כחול ליל שבת וזהב נרות */
+[data-theme="shabbat"] {
+    --theme-primary: #44618C;
+    --theme-primary-dark: #32496B;
+    --theme-secondary: #C29A3A;
+    --theme-tertiary: #4A7280;
+}
+
+/* תפילה וברכות — מרווה ירוקה ופליז עמום */
+[data-theme="tefila"] {
+    --theme-primary: #3F6E64;
+    --theme-primary-dark: #2F544C;
+    --theme-secondary: #9C8F4E;
+    --theme-tertiary: #5D7F52;
+}
+
+/* חגים — רימון, דבש ויין */
+[data-theme="chagim"] {
+    --theme-primary: #9A3B45;
+    --theme-primary-dark: #762C34;
+    --theme-secondary: #C9873F;
+    --theme-tertiary: #7A5570;
+}
+
+/* Light mode */
+:root,
+[data-mode="light"] {
+    --mode-bg-gradient-start: var(--theme-primary);
+    --mode-bg-gradient-end: var(--theme-secondary);
+    --mode-bg-white: #ffffff;
+    --mode-bg-light: #FAF6EC;        /* קרם חם, נעים יותר מאפור */
+    --mode-bg-lighter: #FBF8F1;
+    --mode-bg-lightest: #F5EFE0;
+    --mode-text-primary: #2D1F14;    /* חום עמוק, חמים יותר משחור */
+    --mode-text-secondary: #3D2C1D;
+    --mode-text-tertiary: #5C4632;
+    --mode-text-muted: #8B7355;
+    --mode-text-white: #ffffff;
+    --mode-border-light: #E8DCC6;
+    --mode-border-medium: #C9B596;
+
+    /* תיבות צבעוניות — Light mode */
+    --mode-box-info-bg: #FDF6E8;       /* קרם בז'-מתוק לידע ועובדות */
+    --mode-box-info-border: var(--theme-tertiary);  /* זית */
+    --mode-box-info-text: #3D2C1D;
+
+    --mode-box-warning-bg: #FCEEE3;    /* טרקוטה בהיר לאזהרה */
+    --mode-box-warning-border: var(--theme-primary);
+    --mode-box-warning-text: #6B2C0F;
+
+    --mode-box-success-bg: #EFF3DC;    /* זית-לימוני להצלחה/חיוב */
+    --mode-box-success-border: var(--theme-tertiary);
+    --mode-box-success-text: #2E3A14;
+
+    /* תשובות נכון/לא נכון בחידון */
+    --mode-option-correct-bg: #DCE8C7;
+    --mode-option-correct-border: var(--theme-tertiary);
+    --mode-option-correct-text: #2E3A14;
+    --mode-option-incorrect-bg: #F6D2BC;
+    --mode-option-incorrect-border: var(--theme-primary);
+    --mode-option-incorrect-text: #6B2C0F;
+
+    /* תרשימי זרימה */
+    --mode-step-success-bg: #DCE8C7;
+    --mode-step-success-border: var(--theme-tertiary);
+    --mode-step-success-text: #2E3A14;
+    --mode-step-error-bg: #F6D2BC;
+    --mode-step-error-border: var(--theme-primary);
+    --mode-step-error-text: #6B2C0F;
+
+    --mode-source-border: var(--theme-secondary);
+    --mode-arrow-opacity: 0.6;
+}
+
+/* Dark mode */
+[data-mode="dark"] {
+    --mode-bg-gradient-start: #1F1610;
+    --mode-bg-gradient-end: #2A1F17;
+    --mode-bg-white: #2A1F17;
+    --mode-bg-light: #3D2C1D;
+    --mode-bg-lighter: #2A1F17;
+    --mode-bg-lightest: #1F1610;
+    --mode-text-primary: #FAF6EC;
+    --mode-text-secondary: #F0E6D2;
+    --mode-text-tertiary: #D8C8AC;
+    --mode-text-muted: #B89B7C;
+    --mode-text-white: #ffffff;
+    --mode-border-light: #5C4632;
+    --mode-border-medium: #8B7355;
+
+    --mode-box-info-bg: #2F2410;
+    --mode-box-info-border: var(--theme-tertiary);
+    --mode-box-info-text: #D8E2B0;
+
+    --mode-box-warning-bg: #3D2418;
+    --mode-box-warning-border: var(--theme-secondary);
+    --mode-box-warning-text: #F4C8A8;
+
+    --mode-box-success-bg: #2A3318;
+    --mode-box-success-border: var(--theme-tertiary);
+    --mode-box-success-text: #D8E2B0;
+
+    --mode-option-correct-bg: #2A3318;
+    --mode-option-correct-border: var(--theme-tertiary);
+    --mode-option-correct-text: #D8E2B0;
+    --mode-option-incorrect-bg: #3D2418;
+    --mode-option-incorrect-border: var(--theme-secondary);
+    --mode-option-incorrect-text: #F4C8A8;
+
+    --mode-step-success-bg: #2A3318;
+    --mode-step-success-border: var(--theme-tertiary);
+    --mode-step-success-text: #D8E2B0;
+    --mode-step-error-bg: #3D2418;
+    --mode-step-error-border: var(--theme-secondary);
+    --mode-step-error-text: #F4C8A8;
+
+    --mode-source-border: var(--theme-secondary);
+    --mode-arrow-opacity: 0.8;
+}
+
+/* ========================================
+   Final exposed variables
+   ======================================== */
+
+:root {
+    /* Theme colors */
+    --primary-color: var(--theme-primary);
+    --primary-dark: var(--theme-primary-dark);
+    --secondary-color: var(--theme-secondary);
+    --tertiary-color: var(--theme-tertiary, var(--theme-primary));
+
+    /* Backgrounds */
+    --bg-gradient-start: var(--mode-bg-gradient-start);
+    --bg-gradient-end: var(--mode-bg-gradient-end);
+    --bg-white: var(--mode-bg-white);
+    --bg-light-gray: var(--mode-bg-light);
+    --bg-lighter-gray: var(--mode-bg-lighter);
+    --bg-lightest-gray: var(--mode-bg-lightest);
+
+    /* Text */
+    --text-primary: var(--mode-text-primary);
+    --text-secondary: var(--mode-text-secondary);
+    --text-tertiary: var(--mode-text-tertiary);
+    --text-muted: var(--mode-text-muted);
+    --text-white: var(--mode-text-white);
+
+    /* Borders */
+    --border-light: var(--mode-border-light);
+    --border-medium: var(--mode-border-medium);
+
+    /* Boxes */
+    --box-info-bg: var(--mode-box-info-bg);
+    --box-info-border: var(--mode-box-info-border);
+    --box-warning-bg: var(--mode-box-warning-bg);
+    --box-warning-border: var(--mode-box-warning-border);
+    --box-success-bg: var(--mode-box-success-bg);
+    --box-success-border: var(--mode-box-success-border);
+    --box-success-text: var(--mode-box-success-text);
+    --box-bg: var(--bg-white);
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(58, 40, 24, 0.08);
+    --shadow-md: 0 4px 12px rgba(58, 40, 24, 0.15);
+    --shadow-lg: 0 6px 24px rgba(58, 40, 24, 0.12);
+    --shadow-primary: 0 2px 10px color-mix(in srgb, var(--theme-primary) 25%, transparent);
+    --shadow-primary-hover: 0 4px 15px color-mix(in srgb, var(--theme-primary) 35%, transparent);
+
+    /* Buttons */
+    --button-primary-bg: var(--primary-color);
+    --button-primary-hover: var(--primary-dark);
+    --button-disabled-bg: #C9B596;
+
+    /* Questions / quiz */
+    --question-bg: var(--bg-light-gray);
+    --question-border: var(--border-light);
+    --question-hover-border: var(--primary-color);
+    --option-bg: var(--bg-white);
+    --option-border: var(--border-medium);
+    --option-hover-bg: var(--bg-lightest-gray);
+    --option-hover-border: var(--primary-color);
+    --option-correct-bg: var(--mode-option-correct-bg);
+    --option-correct-border: var(--mode-option-correct-border);
+    --option-incorrect-bg: var(--mode-option-incorrect-bg);
+    --option-incorrect-border: var(--mode-option-incorrect-border);
+    --answer-box-bg: var(--box-info-bg);
+    --answer-box-border: var(--box-info-border);
+
+    /* Flowchart steps */
+    --step-question-bg: #FBF1D6;
+    --step-question-border: var(--theme-secondary);
+    --step-question-text: #6B4A0F;
+    --step-success-bg: var(--mode-step-success-bg);
+    --step-success-border: var(--mode-step-success-border);
+    --step-success-text: var(--mode-step-success-text);
+    --step-retrospect-bg: #FBF1D6;
+    --step-retrospect-border: var(--theme-secondary);
+    --step-retrospect-text: #6B4A0F;
+    --step-error-bg: var(--mode-step-error-bg);
+    --step-error-border: var(--mode-step-error-border);
+    --step-error-text: var(--mode-step-error-text);
+
+    /* Links */
+    --link-color: var(--theme-tertiary, var(--primary-color));
+    --link-hover-shadow: 0 2px 10px color-mix(in srgb, var(--theme-tertiary) 30%, transparent);
+
+    /* Categories — להבחנות צבעוניות */
+    --category-gradient-start: var(--theme-tertiary);
+    --category-gradient-end: var(--theme-primary-dark);
+    --category-error-start: var(--theme-primary);
+    --category-error-end: var(--theme-primary-dark);
+    --category-orange-start: var(--theme-secondary);
+    --category-orange-end: var(--theme-primary-dark);
+    --category-deep-red-start: var(--theme-primary-dark);
+    --category-deep-red-end: var(--theme-primary);
+    --category-orange-alt-start: var(--theme-secondary);
+    --category-orange-alt-end: var(--theme-secondary);
+
+    /* Source border (זהב) */
+    --source-border: var(--mode-source-border);
+}

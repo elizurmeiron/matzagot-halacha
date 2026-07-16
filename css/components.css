@@ -1,0 +1,792 @@
+/* ========================================
+   Component Styles
+   ======================================== */
+
+/* Theme and Mode Selectors */
+.theme-selector {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 15px;
+}
+
+.theme-selector-label {
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.theme-select {
+    padding: 8px 12px;
+    border: 2px solid var(--border-medium);
+    border-radius: 8px;
+    background: var(--bg-white);
+    color: var(--text-primary);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    outline: none;
+}
+
+.theme-select:hover {
+    border-color: var(--primary-color);
+}
+
+.theme-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--theme-primary) 15%, transparent);
+}
+
+/* Color indicators for theme options */
+.theme-select option {
+    padding-right: 30px;
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 16px 16px;
+}
+
+.theme-select option[value="warm"] {
+    color: #B65929;
+}
+
+.theme-select option[value="blue"] {
+    color: #4E6572;
+}
+
+.theme-select option[value="gray"] {
+    color: #6E655C;
+}
+
+.theme-select option[value="cyan"] {
+    color: #4D756E;
+}
+
+.theme-select option[value="green"] {
+    color: #567040;
+}
+
+.theme-select option[value="red"] {
+    color: #994939;
+}
+
+.mode-selector {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin: 0 15px;
+}
+
+.mode-toggle {
+    display: flex;
+    gap: 5px;
+    background: var(--bg-lightest-gray);
+    padding: 4px;
+    border-radius: 8px;
+}
+
+.mode-btn {
+    padding: 8px 16px;
+    border: none;
+    background: transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-muted);
+    transition: all 0.3s;
+}
+
+.mode-btn:hover {
+    color: var(--text-secondary);
+}
+
+.mode-btn.active {
+    background: var(--bg-white);
+    color: var(--primary-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Buttons */
+.nav-btn {
+    background: var(--button-primary-bg);
+    color: var(--text-white);
+    border: none;
+    padding: 12px 25px;
+    margin: 0 10px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.nav-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.nav-btn:disabled {
+    background: var(--button-disabled-bg);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Content Boxes */
+.definition-box,
+.example-box,
+.warning-box,
+.positive-box {
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: var(--shadow-sm);
+}
+
+.definition-box p,
+.example-box p,
+.warning-box p,
+.positive-box p,
+.definition-box ul,
+.example-box ul,
+.warning-box ul,
+.positive-box ul {
+    line-height: 1.8;
+    margin: 10px 0;
+}
+
+.definition-box {
+    background: var(--question-bg);
+    border: 2px solid var(--primary-color);
+}
+
+.example-box {
+    background: var(--box-info-bg);
+    border: 2px solid var(--box-info-border);
+    color: var(--mode-box-info-text);
+}
+
+.warning-box {
+    background: var(--box-warning-bg);
+    border: 2px solid var(--box-warning-border);
+    color: var(--mode-box-warning-text);
+}
+
+.positive-box {
+    background: var(--box-success-bg);
+    border: 2px solid var(--box-success-border);
+    color: var(--mode-box-success-text);
+}
+
+.source-box {
+    background: var(--bg-lightest-gray);
+    border-right: 4px solid var(--mode-source-border);
+    padding: 12px;
+    margin: 10px 0;
+    font-size: 0.95em;
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+/* Condition Numbers */
+.condition-number {
+    background: var(--button-primary-bg);
+    color: var(--text-white);
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-left: 10px;
+    font-size: 0.9em;
+}
+
+/* List Items */
+.list-item {
+    margin: 10px 0;
+    padding-right: 20px;
+}
+
+.list-item::before {
+    content: "▪";
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+/* Title Slide — inherits body gradient; no second gradient layer */
+.title-slide {
+    background: transparent;
+    color: var(--text-white);
+    text-align: center;
+}
+
+[data-mode="dark"] .title-slide {
+    color: var(--text-primary);
+}
+
+.title-slide h1 {
+    color: inherit;
+    font-size: 3.5em;
+    border: none;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+[data-mode="dark"] .title-slide h1 {
+    text-shadow: none;
+}
+
+.subtitle {
+    font-size: 1.3em;
+    margin-top: 30px;
+    opacity: 0.92;
+    color: inherit;
+}
+
+/* Section Divider Slides — chapter covers */
+.section-slide {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--text-white);
+    text-align: center;
+}
+
+.section-slide.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-slide-inner {
+    max-width: 640px;
+}
+
+.section-kicker {
+    display: inline-block;
+    font-size: 1.05em;
+    font-weight: bold;
+    letter-spacing: 0.18em;
+    opacity: 0.85;
+    margin-bottom: 18px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.section-slide h2 {
+    color: var(--text-white);
+    font-size: 3em;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.section-sub {
+    font-size: 1.3em;
+    line-height: 1.6;
+    opacity: 0.92;
+    margin-top: 18px;
+}
+
+/* Section Title */
+.section-title {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--text-white);
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin: 30px 0 20px 0;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+/* Flowchart Components */
+.flowchart {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.step {
+    background: var(--question-bg);
+    border: 2px solid var(--primary-color);
+    border-radius: 15px;
+    padding: 15px 20px;
+    text-align: center;
+    min-width: 300px;
+    font-weight: bold;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.start-step {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--text-white);
+    font-size: 1.2em;
+}
+
+.question-step {
+    background: var(--step-question-bg);
+    border-color: var(--step-question-border);
+    color: var(--step-question-text);
+    font-size: 1.1em;
+}
+
+.success-step {
+    background: var(--step-success-bg);
+    border-color: var(--step-success-border);
+    color: var(--step-success-text);
+}
+
+.step-retrospect {
+    background: var(--step-retrospect-bg);
+    border-color: var(--step-retrospect-border);
+    color: var(--step-retrospect-text);
+}
+
+.error-step {
+    background: var(--step-error-bg);
+    border-color: var(--step-error-border);
+    color: var(--step-error-text);
+}
+
+.vertical-arrow {
+    width: 4px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--link-color), var(--primary-color));
+    position: relative;
+    margin: -10px 0;
+}
+
+.vertical-arrow::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 12px solid var(--primary-color);
+}
+
+.branch-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 800px;
+    gap: 100px;
+    margin: 20px 0;
+}
+
+.branch-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    position: relative;
+}
+
+.yes-label {
+    background: linear-gradient(135deg, var(--category-gradient-start), var(--option-correct-border));
+}
+
+.no-label {
+    background: linear-gradient(135deg, var(--category-error-start), var(--option-incorrect-border));
+}
+
+.connection-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.branch-label {
+    background: var(--link-color);
+    color: var(--text-white);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    box-shadow: var(--link-hover-shadow);
+    z-index: 15;
+    position: relative;
+}
+
+/* Quiz Components */
+.question {
+    background: var(--question-bg);
+    border: 2px solid var(--border-light);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px 0;
+    transition: all 0.3s;
+}
+
+.question:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-primary-hover);
+}
+
+.question-text {
+    font-weight: bold;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.options {
+    display: grid;
+    gap: 10px;
+}
+
+.option {
+    background: var(--bg-white);
+    border: 2px solid var(--border-medium);
+    border-radius: 8px;
+    padding: 12px 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.option:hover {
+    background: var(--bg-lightest-gray);
+    border-color: var(--primary-color);
+}
+
+.option.correct {
+    background: var(--option-correct-bg);
+    border-color: var(--option-correct-border);
+    color: var(--mode-option-correct-text);
+    font-weight: bold;
+}
+
+.option.correct .option-letter {
+    background: var(--option-correct-border);
+    color: var(--text-white);
+}
+
+.option.incorrect,
+.option.wrong {
+    background: var(--option-incorrect-bg);
+    border-color: var(--option-incorrect-border);
+    color: var(--mode-option-incorrect-text);
+    font-weight: bold;
+}
+
+.option.incorrect .option-letter,
+.option.wrong .option-letter {
+    background: var(--option-incorrect-border);
+    color: var(--text-white);
+}
+
+.question.answered .option {
+    cursor: default;
+}
+
+.question.answered .option:not(.correct):not(.incorrect):not(.wrong) {
+    opacity: 0.75;
+}
+
+.option-letter {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--button-primary-bg);
+    color: var(--text-white);
+    text-align: center;
+    line-height: 28px;
+    margin-left: 12px;
+    font-weight: bold;
+}
+
+.answer-box {
+    background: var(--box-info-bg);
+    border-right: 4px solid var(--box-info-border);
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    display: none;
+}
+
+.answer-box.show {
+    display: block;
+}
+
+.show-answer-btn {
+    background: var(--button-primary-bg);
+    color: var(--text-white);
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 0.95em;
+    transition: all 0.3s;
+}
+
+.show-answer-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.source {
+    font-size: 0.9em;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 8px;
+}
+
+/* Navigation Links */
+.slide-link-span {
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-block;
+    padding: 2px 4px;
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    border-radius: 3px;
+}
+
+.slide-link-span:hover {
+    background-color: color-mix(in srgb, var(--link-color) 12%, var(--bg-white));
+    color: var(--primary-dark);
+    text-decoration-style: solid;
+    transform: translateX(-2px);
+}
+
+/* ========================================
+   Comparison tables, compact flow & proportion bars
+   (added for richer visual explanation across decks)
+   ======================================== */
+
+.table-wrap { overflow-x: auto; margin: 20px 0; }
+
+.halacha-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.97em;
+    background: var(--bg-white);
+    box-shadow: var(--shadow-sm);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.halacha-table caption {
+    caption-side: top;
+    text-align: right;
+    font-weight: bold;
+    color: var(--primary-dark);
+    padding: 4px 4px 12px;
+    font-size: 1.05em;
+}
+.halacha-table th,
+.halacha-table td {
+    border: 1px solid var(--border-light);
+    padding: 10px 12px;
+    text-align: right;
+    vertical-align: top;
+    line-height: 1.65;
+}
+.halacha-table thead th {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--text-white);
+    font-weight: bold;
+}
+.halacha-table tbody tr:nth-child(even) { background: var(--bg-lightest-gray); }
+.halacha-table tbody th {
+    background: var(--bg-light-gray);
+    color: var(--text-primary);
+    font-weight: bold;
+}
+.halacha-table .ht-yes { background: var(--box-success-bg); color: var(--mode-box-success-text); font-weight: bold; }
+.halacha-table .ht-no  { background: var(--box-warning-bg); color: var(--mode-box-warning-text); font-weight: bold; }
+.halacha-table .ht-mid { background: var(--step-question-bg); color: var(--step-question-text); font-weight: bold; }
+
+/* Compact horizontal flow: chip ← chip ← chip */
+.mini-flow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+    gap: 0;
+    margin: 18px 0;
+}
+.mini-flow .mf-step {
+    background: var(--question-bg);
+    border: 2px solid var(--primary-color);
+    border-radius: 12px;
+    padding: 10px 14px;
+    text-align: center;
+    font-weight: bold;
+    color: var(--text-primary);
+    min-width: 84px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-sm);
+}
+.mini-flow .mf-arrow {
+    align-self: center;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.4em;
+    padding: 0 8px;
+}
+.mini-flow .mf-step.mf-yes { background: var(--step-success-bg); border-color: var(--step-success-border); color: var(--step-success-text); }
+.mini-flow .mf-step.mf-no  { background: var(--step-error-bg);   border-color: var(--step-error-border);   color: var(--step-error-text); }
+.mini-flow .mf-step.mf-q   { background: var(--step-question-bg); border-color: var(--step-question-border); color: var(--step-question-text); }
+
+/* Proportion bar: quantitative split */
+.proportion-bar {
+    display: flex;
+    width: 100%;
+    height: 46px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 16px 0 8px;
+    box-shadow: var(--shadow-sm);
+    font-weight: bold;
+}
+.proportion-bar .pb-seg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-white);
+    font-size: 0.88em;
+    text-align: center;
+    padding: 0 6px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.proportion-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    font-size: 0.9em;
+    margin-bottom: 12px;
+    color: var(--text-secondary);
+}
+.proportion-legend span { display: inline-flex; align-items: center; }
+.proportion-legend span::before {
+    content: '';
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    border-radius: 3px;
+    margin-left: 6px;
+    background: var(--swatch, var(--primary-color));
+}
+
+/* ============================================================
+   תרשים זרימה גנרי (Flow Diagram) — חיצים על שכבת קנבס
+   נשלט על ידי js/flowcharts.js
+   ============================================================ */
+.flow-diagram {
+    position: relative;
+    max-width: 680px;
+    margin: 0.9em auto 0.2em;
+}
+
+/* שכבת הקנבס שעליה מצוירים החיצים — מעל הרקע, מתחת לתיבות */
+.flow-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* עמודת הצמתים — מעל הקנבס */
+.flow-stack {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+/* רווח אנכי בין הרמות, כדי שיהיה מקום לחיצים */
+.flow-stack > * {
+    margin-bottom: 2.2em;
+}
+.flow-stack > *:last-child {
+    margin-bottom: 0;
+}
+
+/* צומת בסיסי */
+.flow-node {
+    border-radius: 0.55em;
+    padding: 0.6em 0.85em;
+    line-height: 1.5;
+}
+
+/* צמתי פתיחה/סיום — מודגשים וממורכזים */
+.flow-terminal {
+    align-self: center;
+    max-width: 32em;
+    text-align: center;
+    font-weight: bold;
+    color: var(--text-white, #fff);
+    background: var(--primary-color);
+    box-shadow: var(--shadow-sm);
+}
+
+/* תיבת שאלה/החלטה */
+.flow-question {
+    background: var(--bg-white);
+    border: 2px solid var(--border-medium);
+    box-shadow: var(--shadow-sm);
+}
+.flow-q-title {
+    font-weight: bold;
+    margin-bottom: 0.55em;
+}
+
+/* שורת אפשרויות (הסתעפות) */
+.flow-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.6em;
+    margin-inline: auto;
+    width: 100%;
+}
+
+/* תיבת אפשרות בודדת */
+.flow-opt {
+    border-radius: 0.45em;
+    padding: 0.5em 0.7em;
+    font-size: 0.9em;
+    background: var(--bg-lightest-gray);
+    border: 1px solid var(--border-medium);
+}
+/* אפשרות שמסתיימת בהיתר/פטור */
+.flow-opt.is-done {
+    background: var(--box-success-bg);
+    border-color: var(--box-success-border);
+    color: var(--box-success-text);
+    font-weight: 600;
+}
+/* אפשרות שממשיכה בזרימה */
+.flow-opt.is-cont {
+    background: var(--bg-white);
+    border-color: var(--primary-color);
+}

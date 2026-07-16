@@ -1,0 +1,1661 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he" class="rtl-mode" data-theme="shabbat">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>הלכות בורר בשבת</title>
+
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+
+    <style>
+        .source-ref-box {
+            display: block;
+            margin-top: 12px;
+            padding: 10px 14px;
+            font-size: 0.88em;
+            background: linear-gradient(135deg, rgba(var(--primary-rgb, 59, 130, 246), 0.08), rgba(var(--primary-rgb, 59, 130, 246), 0.03));
+            border-right: 3px solid var(--primary, #3b82f6);
+            border-radius: 6px;
+            color: var(--text-secondary, #4b5563);
+        }
+
+        .source-ref-box strong {
+            color: var(--primary, #3b82f6);
+        }
+
+        /* Keep old class for backward compatibility */
+        .source-ref {
+            display: block;
+            margin-top: 8px;
+            font-size: 0.85em;
+            color: var(--text-muted);
+            opacity: 0.85;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- כפתור פתיחת סיידבר במובייל -->
+    <button class="sidebar-toggle" id="sidebar-toggle" aria-label="פתיחת רשימת שקפים">☰</button>
+
+    <!-- סיידבר ימני: רשימת שקפים -->
+    <aside class="slides-sidebar" id="slides-sidebar" aria-label="ניווט בין שקפים">
+        <div class="sidebar-header">
+            <h3>תוכן המצגת</h3>
+        </div>
+        <ul class="sidebar-list" id="sidebar-list">
+            <!-- מיוצר אוטומטית על ידי navigation.js -->
+        </ul>
+        <div class="sidebar-footer">
+            <div class="mode-selector" role="radiogroup" aria-label="בחירת מצב תצוגה">
+                <div class="mode-toggle">
+                    <button class="mode-btn active" data-mode="light" onclick="changeMode('light')" role="radio"
+                        aria-checked="true">☀️ בהיר</button>
+                    <button class="mode-btn" data-mode="dark" onclick="changeMode('dark')" role="radio"
+                        aria-checked="false">🌙 כהה</button>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <div class="slideshow-container" id="slideshow-container">
+        <!-- Slide 1 - כותרת -->
+        <div class="slide active title-slide">
+            <h1>🕯️ הלכות בורר בשבת 🕯️</h1>
+            <div class="subtitle">
+                <p>מלאכת בורר - עקרונות ופרטי דינים</p>
+                <p>על פי פניני הלכה וילקוט יוסף</p>
+            </div>
+        </div>
+
+        <!-- Slide 2: תוכן עניינים -->
+        <div class="slide">
+            <h2>תוכן עניינים</h2>
+            <div class="content">
+                <div class="definition-box">
+                    <h3 style="border: none; margin-top: 0;">📑 נושאי המצגת</h3>
+                    <p style="text-align: center; color: var(--text-muted); font-size: 0.95em;">
+                        לחץ על מספר השקף או על שם הנושא כדי לעבור ישירות
+                    </p>
+                </div>
+
+                <div style="display: grid; gap: 12px; margin-top: 20px;">
+                    <!-- חלק א -->
+                    <div class="example-box" style="margin: 10px 0;">
+                        <strong style="font-size: 1.2em;">חלק א': יסודות מלאכת בורר</strong>
+                    </div>
+
+                    <div class="list-item" style="font-size: 1.05em;">
+                        <span class="slide-link-span" onclick="showSlide(2)">
+                            <strong>3.</strong> מבוא - מה זה בורר?
+                        </span>
+                    </div>
+
+                    <div class="list-item" style="font-size: 1.05em;">
+                        <span class="slide-link-span" onclick="showSlide(3)">
+                            <strong>4.</strong> שלושת התנאים להיתר
+                        </span>
+                    </div>
+
+                    <div class="list-item" style="font-size: 1.05em;">
+                        <span class="slide-link-span" onclick="showSlide(4)">
+                            <strong>5.</strong> בורר בדברים שאינם מאכלים
+                        </span>
+                    </div>
+
+                    <!-- חלק ב -->
+                    <div class="example-box" style="margin: 10px 0;">
+                        <strong style="font-size: 1.2em;">חלק ב': פירוט התנאים</strong>
+                    </div>
+
+                    <div class="list-item" style="font-size: 1.05em;">
+                        <span class="slide-link-span" onclick="showSlide(5)">
+                            <strong>6.</strong> תנאי ראשון - אוכל מתוך פסולת
+                        </span>
+                    </div>
+
+                    <div class="list-item" style="font-size: 1.05em;">
+                        <span class="slide-link-span" onclick="showSlide(6)">
+                            <strong>7.</strong> תנאי שני - ביד ולא בכלי מיוחד
+                        </span>
+                    </div>
+
+                    <div class="list-item" style="font-size: 1.05em;">
+                        <span class="slide-link-span" onclick="showSlide(7)">
+                            <strong>8.</strong> תנאי שלישי - מיד (לאלתר)
+                        </span>
+                    </div>
+
+                    <div class="list-item" style="font-size: 1.05em;">
+                        <span class="slide-link-span" onclick="showSlide(8)">
+                            <strong>9.</strong> מתי יש איסור בורר? (תערובת)
+                        </span>
+                    </div>
+
+                    <!-- חלק ג -->
+                    <div class="example-box" style="margin: 10px 0;">
+                        <strong style="font-size: 1.2em;">חלק ג': דינים מעשיים</strong>
+                    </div>
+
+                    <div class="list-item" style="font-size: 1.05em;">
+                        <span class="slide-link-span" onclick="showSlide(9)">
+                            <strong>10.</strong> דינים מיוחדים
+                        </span>
+                    </div>
+
+                    <div class="list-item" style="font-size: 1.05em;">
+                        <span class="slide-link-span" onclick="showSlide(10)">
+                            <strong>11.</strong> דוגמאות מעשיות נוספות
+                        </span>
+                    </div>
+
+                    <!-- חלק ד -->
+                    <div class="example-box" style="margin: 10px 0;">
+                        <strong style="font-size: 1.2em;">חלק ד': שאלות חזרה וסיכום</strong>
+                    </div>
+
+                    <div class="list-item" style="font-size: 1.05em;">
+                        <span class="slide-link-span" onclick="showSlide(11)">
+                            <strong>12.</strong> שאלות חזרה
+                        </span>
+                    </div>
+
+                    <div class="list-item" style="font-size: 1.05em;">
+                        <span class="slide-link-span" onclick="showSlide(12)">
+                            <strong>13.</strong> סיכום
+                        </span>
+                    </div>
+                </div>
+
+                <div class="positive-box" style="margin-top: 25px;">
+                    <strong>💡 טיפ:</strong> השתמש במקשי החצים (← →) או בלחיצה על צדי המסך כדי לנווט בין השקפים
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: מבוא - מה זה בורר -->
+        <div class="slide">
+            <h2>מה זה בורר?</h2>
+            <div class="content">
+                <div class="source-box">
+                    <strong>בורר</strong> היא אחת מ-39 המלאכות האסורות בשבת. המלאכה עוסקת בהפרדת אוכל מפסולת או בהפרדה
+                    בין מינים שונים.
+                    <div class="source-ref-box"><strong>מקור:</strong> פניני הלכה שבת פרק יא הלכה א | שו"ע או"ח סימן שיט
+                    </div>
+                </div>
+
+                <div class="two-columns" style="margin-top: 20px;">
+                    <div class="definition-box">
+                        <h3>מקור המלאכה</h3>
+                        <p>ארבע מלאכות עוסקות בהפרדת אוכל מפסולת במשכן:</p>
+                        <ul>
+                            <li><strong>דש:</strong> הפרדת גרגירי התבואה מהשיבולים</li>
+                            <li><strong>זורה:</strong> הפרדת התבואה מהמוץ ברוח</li>
+                            <li><strong>בורר:</strong> הוצאת גושי עפר ואבנים ביד</li>
+                            <li><strong>מרקד:</strong> הפרדת קמח מסובין בנפה</li>
+                        </ul>
+                        <div class="source-ref-box"><strong>מקור:</strong> פניני הלכה שבת יא, א | משנה שבת עג, א</div>
+                    </div>
+
+                    <div class="definition-box">
+                        <h3>ההבדל בין המלאכות</h3>
+                        <p>ארבע המלאכות נבדלות באמצעי ההפרדה:</p>
+                        <ul>
+                            <li><strong>דש:</strong> הוצאת תוכן או גרעין <strong>מתוך קליפתו</strong> הטבעית</li>
+                            <li><strong>זורה:</strong> הפרדה <strong>ברוח</strong> (רכיב קל עף, רכיב כבד נופל)</li>
+                            <li><strong>בורר:</strong> הפרדה <strong>ביד</strong> או בכלי רגיל</li>
+                            <li><strong>מרקד:</strong> הפרדה <strong>בנפה</strong> (רכיב קטן עובר, רכיב גדול נשאר)</li>
+                        </ul>
+                        <div class="source-ref-box"><strong>מקור:</strong> גמרא שבת עג, א | מ"ב שיט, א</div>
+                    </div>
+                </div>
+
+                <div class="example-box" style="margin-top: 20px;">
+                    <h3>עיקרון כללי</h3>
+                    <p>האיסור הוא על הפרדת דברים מעורבים <strong>כדרך מלאכה</strong> - לא כדרך אכילה רגילה.</p>
+                    <p><strong>למעשה:</strong> כיום רוב ההפרדות נעשות ביד או בכלי, ולכן עיקר הדיון הוא במלאכת בורר.</p>
+                    <div class="source-ref-box"><strong>מקור:</strong> פניני הלכה שבת יא, א-ב | ילקו"י שבת ג' סי' שיט
+                        סעיף ד</div>
+                </div>
+
+                <div class="positive-box" style="margin-top: 20px;">
+                    <strong>➡️ בשקף הבא:</strong><br>
+                    שלושת התנאים להיתר - הכלל המרכזי "אוכל ביד ומיד"
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: שלושת התנאים להיתר -->
+        <div class="slide">
+            <h2>שלושת התנאים להיתר</h2>
+            <div class="content">
+                <div class="source-box">
+                    כדי שיהיה מותר לברור בשבת, <strong>חייבים</strong> לקיים את כל שלושת התנאים הבאים:
+                    <div class="source-ref-box"><strong>מקור:</strong> שו"ע או"ח שיט, א-ד | מ"ב הקדמה לסי' שיט | ילקו"י
+                        שבת ג' סי' שיט סעיף ד</div>
+                </div>
+
+                <div class="positive-box" style="margin-top: 20px;">
+                    <h3 style="border: none; margin-top: 0;">💡 כלל זהב: "אוכל ביד ומיד"</h3>
+                    <p>זכרו את הכלל הפשוט: <strong>אוכל</strong> (לא פסולת), <strong>ביד</strong> (לא בכלי מיוחד),
+                        <strong>ומיד</strong> (לאלתר)!
+                    </p>
+                    <div class="source-ref-box"><strong>מקור:</strong> פניני הלכה שבת יא, ב | גמרא שבת עד, א</div>
+                </div>
+
+                <div class="numbered-list" style="margin-top: 20px;">
+                    <div class="list-item">
+                        <span class="number">1</span>
+                        <strong>אוכל מתוך פסולת</strong> - רק להוציא את החלק הטוב, לא את הפסולת
+                        <div class="source-ref-box" style="margin-top: 8px;"><strong>מקור:</strong> פניני הלכה יא, ה
+                        </div>
+                    </div>
+                    <div class="list-item">
+                        <span class="number">2</span>
+                        <strong>ביד</strong> - בכלי רגיל כמו כף או מזלג, לא בכלי המיועד לברירה
+                        <div class="source-ref-box" style="margin-top: 8px;"><strong>מקור:</strong> פניני הלכה יא, ז
+                        </div>
+                    </div>
+                    <div class="list-item">
+                        <span class="number">3</span>
+                        <strong>מיד (לאלתר)</strong> - כדי לאכול מיד או סמוך לסעודה, לא לאחר זמן
+                        <div class="source-ref-box" style="margin-top: 8px;"><strong>מקור:</strong> פניני הלכה יא, ו
+                        </div>
+                    </div>
+                </div>
+
+                <div class="warning-box" style="margin-top: 20px;">
+                    <strong>⚠️ חשוב לזכור:</strong><br>
+                    אם חסר <strong>אפילו תנאי אחד</strong> מהשלושה - האיסור הוא <strong>מהתורה</strong>!
+                    <div class="source-ref-box"><strong>מקור:</strong> פניני הלכה שבת יא, ב | ילקו"י שבת ג' סי' שיט סעיף
+                        ד</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: בורר בדברים שאינם מאכלים -->
+        <div class="slide">
+            <h2>בורר בדברים שאינם מאכלים</h2>
+            <div class="content">
+                <div class="source-box">
+                    איסור בורר <strong>אינו מוגבל למאכלים בלבד</strong>. הוא חל על כל הפרדה של דברים מעורבים - בין אם
+                    מדובר בבגדים, כלים, ספרים או כל חפצים אחרים.
+                    <div class="source-ref-box"><strong>מקור:</strong> פניני הלכה שבת יא, טז | שש"כ ג, עה-עח | מ"ב שיט,
+                        טו</div>
+                </div>
+
+                <div class="definition-box" style="margin-top: 20px;">
+                    <h3>מהו "אוכל" ומהי "פסולת"?</h3>
+                    <p>המונחים "אוכל" ו"פסולת" <strong>אינם מתייחסים דווקא למאכלים</strong>, אלא מבטאים את יחס האדם
+                        לדברים שבתערובת:</p>
+                    <ul>
+                        <li><strong>"אוכל"</strong> = מה שהאדם <strong>מעוניין בו עכשיו</strong> מתוך התערובת</li>
+                        <li><strong>"פסולת"</strong> = מה שהאדם <strong>אינו מעוניין בו עכשיו</strong>, גם אם יהיה
+                            מעוניין בו בהמשך</li>
+                    </ul>
+                    <p><strong>לכן:</strong> אותו חפץ יכול להיחשב "אוכל" לאדם אחד ו"פסולת" לאדם אחר, או "אוכל" ברגע
+                        מסוים ו"פסולת" ברגע אחר - הכל תלוי ברצון האדם באותו רגע.</p>
+                    <div class="source-ref-box"><strong>מקור:</strong> פנה"ל יא, ה | מ"ב שיט, טו | ילקו"י שיט</div>
+                </div>
+
+                <div class="two-columns" style="margin-top: 20px;">
+                    <div class="definition-box">
+                        <h3>למה האיסור חל על כל חפץ?</h3>
+                        <p>מלאכת בורר אינה תלויה בסוג החומר אלא <strong>בפעולת ההפרדה והמיון</strong>. במשכן בררו סממנים
+                            לצביעת היריעות - שאינם מאכל כלל.</p>
+                        <p>לכן, כל פעולה של הפרדת דברים מעורבים לקבוצות נפרדות היא בורר.</p>
+                        <div class="source-ref-box"><strong>מקור:</strong> מ"ב שיט, טו | פנה"ל יא, טז</div>
+                    </div>
+
+                    <div class="example-box">
+                        <h3>ההבדל המכריע</h3>
+                        <p><strong>לקיחה לצורך מיידי:</strong> כשאדם לוקח חפץ מסוים ("אוכל") כדי להשתמש בו עכשיו - זו
+                            דרך שימוש רגילה ומותר.</p>
+                        <p><strong>מיון וארגון:</strong> כשאדם מוציא חפצים שאינו רוצה עכשיו ("פסולת") או מפריד לקבוצות
+                            לצורך סדר - זו מלאכת בורר ואסור.</p>
+                        <div class="source-ref-box"><strong>מקור:</strong> פניני הלכה שבת יא, טז | שש"כ ג, עז</div>
+                    </div>
+                </div>
+
+                <div class="warning-box" style="margin-top: 15px;">
+                    <h3 style="border: none; margin-top: 0;">⚠️ דוגמאות לאיסור</h3>
+                    <p>מיון סכו"ם לתאים, הפרדת גרביים לזוגות, סידור ספרים לפי נושא, מיון צעצועים לקופסאות - כל אלה
+                        <strong>אסורים</strong> כי זו הוצאת "פסולת" (מה שלא רוצים עכשיו) לצורך סידור.
+                    </p>
+                    <div class="source-ref-box"><strong>מקור:</strong> שש"כ ג, עז-עח</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: תנאי ראשון - אוכל מתוך פסולת -->
+        <div class="slide">
+            <h2>תנאי ראשון: אוכל מתוך פסולת</h2>
+            <div class="content">
+                <div class="two-columns">
+                    <div class="positive-box">
+                        <h3 style="border: none; margin-top: 0;">מותר ✅</h3>
+                        <ul>
+                            <li>להוציא אגוזים מתוך תערובת של אגוזים וקליפות</li>
+                            <li>להוציא בשר טוב מתוך מרק שיש בו חתיכות שרופות</li>
+                            <li>לברור פירות יפים מבין פירות רקובים</li>
+                        </ul>
+                        <div class="source-ref-box"><strong>מקור:</strong> פניני הלכה שבת יא, ב | ילקו"י שבת ג' סי' שיט
+                        </div>
+                    </div>
+
+                    <div class="warning-box">
+                        <h3 style="border: none; margin-top: 0;">אסור ❌</h3>
+                        <ul>
+                            <li>להוציא קליפות מתוך האגוזים</li>
+                            <li>להסיר חתיכות בצל מסלט (למי שלא אוהב בצל)</li>
+                            <li>להוציא חתיכות שרופות מהמרק</li>
+                        </ul>
+                        <div class="source-ref-box"><strong>מקור:</strong> פניני הלכה שבת יא, ה | שו"ע שיט, ד</div>
+                    </div>
+                </div>
+
+                <div class="example-box" style="margin-top: 20px;">
+                    <h3>דוגמה מעשית - סלט עם בצל</h3>
+                    <p>יש לך סלט עם חתיכות בצל ואתה לא אוהב בצל:</p>
+                    <ul>
+                        <li><strong>מותר:</strong> לאכול את הסלט ולהשאיר את הבצל בצלחת</li>
+                        <li><strong>מותר:</strong> להוציא את הבצל אם מישהו אחר רוצה לאכול אותו <strong>עכשיו</strong>
+                        </li>
+                        <li><strong>אסור:</strong> להוציא את חתיכות הבצל מהסלט לפני האכילה</li>
+                    </ul>
+                    <div class="source-ref-box"><strong>מקור:</strong> פניני הלכה שבת יא, ה</div>
+                </div>
+
+                <div class="definition-box" style="margin-top: 15px;">
+                    <h3>ברירה בטעות</h3>
+                    <p>מי שמשך ידו לקחת אוכל ובטעות עלתה בידו פסולת - לא עבר איסור בורר, כיוון שלא התכוון לברור הפסולת.
+                    </p>
+                    <div class="source-ref-box"><strong>מקור:</strong> ילקוט יוסף שבת ג' סי' שיט</div>
+                </div>
+
+                <div class="definition-box" style="margin-top: 15px;">
+                    <h3>ברירה לבהמות</h3>
+                    <p>מותר לברור פסולת מתוך אוכל כדי להאכיל בהמה או עוף לאלתר
+                        — מפני שהפסולת נחשבת אצלו כאוכל הראוי לבהמה, ונמצא שבורר אוכל מתוך פסולת.</p>
+                    <div class="source-ref-box"><strong>מקור:</strong> ילקוט יוסף שבת ג' סי' שיט</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: תנאי שני - ביד ולא בכלי מיוחד -->
+        <div class="slide">
+            <h2>תנאי שני: ביד ולא בכלי מיוחד</h2>
+            <div class="content">
+                <div class="two-columns">
+                    <div class="positive-box">
+                        <h3 style="border: none; margin-top: 0;">כלים מותרים ✅</h3>
+                        <ul>
+                            <li>יד</li>
+                            <li>כף רגילה</li>
+                            <li>מזלג</li>
+                            <li>מצקת רגילה</li>
+                        </ul>
+                        <div class="source-ref-box"><strong>מקור:</strong> פניני הלכה שבת יא, ז | שו"ע שיט, א</div>
+                    </div>
+
+                    <div class="warning-box">
+                        <h3 style="border: none; margin-top: 0;">כלים אסורים ❌</h3>
+                        <ul>
+                            <li>כף מחוררת (לחתיכות קטנות המעורבות במרק)</li>
+                            <li>מסננת</li>
+                            <li>נפה</li>
+                            <li>כל כלי שמיועד לברירה</li>
+                        </ul>
+                        <div class="source-ref-box"><strong>מקור:</strong> פניני הלכה שבת יא, ז-ח | שו"ע שיט, א</div>
+                    </div>
+                </div>
+
+                <div class="example-box" style="margin-top: 20px;">
+                    <h3>כף מחוררת ומצקת עם חורים - מתי מותר?</h3>
+                    <p><strong>מותר:</strong></p>
+                    <ul>
+                        <li>לחתיכות <strong>גדולות</strong> שאינן נחשבות מעורבות במרק (כמו חתיכות בשר גדולות)</li>
+                        <li>למצקת מהחמין כדי לאכול לאלתר - יש מתירים כיוון שאינה מיועדת רק לברירה</li>
+                        <li>במקרה חירום כשאין כלי אחר - <strong>בתנאי</strong> שלא מתכוון להפריד את המרק ולא משהה את הכף
+                            מעל הסיר</li>
+                    </ul>
+                    <p><strong>אסור:</strong> לחתיכות קטנות המעורבות במרק או לכלי המיועד רק לברירה.</p>
+                    <div class="source-ref-box"><strong>מקור:</strong> פניני הלכה שבת יא, יג | ילקו"י שבת ג' סי' שיט
+                    </div>
+                </div>
+
+                <div class="definition-box" style="margin-top: 15px;">
+                    <h3>קולפן</h3>
+                    <p>פירות או ירקות שקליפתם ראויה לאכילה (כגון תפוח או מלפפון), מותר לקלפם מכיוון שביחד עם הקליפה
+                        מורידים גם מעט מהפרי. אבל מחלוקת האם מותר להשתמש בקולפן.</p>
+                    <div class="source-ref-box"><strong>מקור:</strong> פניני הלכה שבת יא, ח</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: תנאי שלישי - מיד (לאלתר) -->
+        <div class="slide">
+            <h2>תנאי שלישי: מיד (לאלתר)</h2>
+            <div class="content">
+                <div class="definition-box">
+                    <h3>מה זה "לאלתר"?</h3>
+                    <p>כדי לאכול <strong>מיד</strong> או סמוך לתחילת הסעודה. אישה המכינה לסעודה יכולה לברור סמוך לתחילת
+                        הסעודה עבור כל בני הבית.</p>
+                    <div class="source-ref-box"><strong>מקור:</strong> פניני הלכה שבת יא, ו | רמ"א שיט, א | מ"ב ד-ו
+                    </div>
+                </div>
+
+                <div class="two-columns" style="margin-top: 20px;">
+                    <div class="positive-box">
+                        <h3 style="border: none; margin-top: 0;">מותר ✅</h3>
+                        <ul>
+                            <li>לפצח אגוזים כדי להגישם מיד</li>
+                            <li>לברור שקדים מתערובת לפני הסעודה (כדי להגיש בסוף הסעודה)</li>
+                            <li>להוציא זיתים טובים מהצנצנת לפני הסעודה</li>
+                        </ul>
+                        <div class="source-ref-box"><strong>מקור:</strong> פניני הלכה שבת יא, ו</div>
+                    </div>
+
+                    <div class="warning-box">
+                        <h3 style="border: none; margin-top: 0;">אסור ❌</h3>
+                        <ul>
+                            <li>לפצח אגוזים עבור מחר</li>
+                            <li>לברור לצורך סעודה שתתקיים בעוד כמה שעות</li>
+                            <li>להכין תערובת נקייה "לפעם הבאה"</li>
+                        </ul>
+                        <div class="source-ref-box"><strong>מקור:</strong> פניני הלכה שבת יא, ו</div>
+                    </div>
+                </div>
+
+                <div class="example-box" style="margin-top: 20px;">
+                    <h3>הגדרת זמן לסעודה</h3>
+                    <p>האישה יכולה להקדים בברירה אם אינה יודעת מתי בדיוק יחזרו בני הבית מבית הכנסת, כדי שלא יצטרכו
+                        להמתין.</p>
+                    <div class="source-ref-box"><strong>מקור:</strong> ילקוט יוסף שבת ג' סי' שיט</div>
+                </div>
+
+                <div class="definition-box" style="margin-top: 15px;">
+                    <h3>ברירה לאחרים</h3>
+                    <ul>
+                        <li><strong>לבני הבית:</strong> מותר לברור עבור כל בני הבית הצפויים לאכול בסעודה הקרובה</li>
+                        <li><strong>לאורחים:</strong> אם האורחים צפויים להגיע בקרוב - מותר לברור עבורם סמוך לסעודה</li>
+                        <li><strong>לסעודה שלישית:</strong> מותר לברור לסעודה שלישית רק סמוך לתחילתה, לא בבוקר</li>
+                    </ul>
+                    <div class="source-ref-box"><strong>מקור:</strong> מ"ב שיט, ד | ילקו"י שבת ג' סי' שיט סעיף יז |
+                        פנה"ל יא, ו</div>
+                </div>
+
+                <div class="warning-box" style="margin-top: 15px;">
+                    <strong>⚠️ זהירות בכוונה:</strong><br>
+                    הבורר "לאלתר" חייב שהכוונה תהיה לצורך אכילה מידית. יש להיזהר שלא לחזור בו ולהחליט לאכול רק אחר זמן -
+                    שאז יעבור באיסור תורה.
+                    <div class="source-ref-box"><strong>מקור:</strong> ילקוט יוסף שבת ג' סי' שיט</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: מתי יש איסור בורר? (תערובת) -->
+        <div class="slide">
+            <h2>מתי חל איסור בורר?</h2>
+            <div class="content">
+                <div class="definition-box">
+                    <h3>תנאי הכרחי: תערובת</h3>
+                    <p>איסור בורר קיים רק כאשר שני המינים <strong>מעורבים</strong> זה בזה. אם הם מונחים זה לצד זה - אין
+                        איסור.</p>
+                    <div class="source-ref-box"><strong>מקור:</strong> פניני הלכה שבת יא, ד | שו"ע שיט, ג</div>
+                </div>
+
+                <div class="two-columns" style="margin-top: 20px;">
+                    <div class="positive-box">
+                        <h3 style="border: none; margin-top: 0;">אין איסור ✅</h3>
+                        <ul>
+                            <li>פירות מונחים זה לצד זה</li>
+                            <li>חתיכות בשר גדולות במרק</li>
+                            <li>ספרים מסודרים במדף</li>
+                            <li>בקבוקים מעטים בארגז</li>
+                        </ul>
+                        <div class="source-ref-box"><strong>מקור:</strong> פניני הלכה שבת יא, ד</div>
+                    </div>
+
+                    <div class="warning-box">
+                        <h3 style="border: none; margin-top: 0;">יש איסור ❌</h3>
+                        <ul>
+                            <li>אגוזים ובוטנים מעורבים</li>
+                            <li>אפונה וחתיכות גזר קטנות במרק</li>
+                            <li>חומשים מעורבים בערימה</li>
+                            <li>בקבוקים רבים מעורבים</li>
+                        </ul>
+                        <div class="source-ref-box"><strong>מקור:</strong> פניני הלכה שבת יא, ד</div>
+                    </div>
+                </div>
+
+                <div class="example-box" style="margin-top: 20px;">
+                    <h3>עיקרון המיון</h3>
+                    <p>הכל תלוי בכמות ובגודל. חפצים מעטים וגדולים - לא נחשבים מעורבים. חפצים רבים וקטנים - נחשבים
+                        מעורבים.</p>
+                    <div class="source-ref-box"><strong>מקור:</strong> פניני הלכה שבת יא, ד</div>
+                </div>
+
+                <div class="definition-box" style="margin-top: 15px;">
+                    <h3>ברירה חלקית</h3>
+                    <p>אם לא בירר את כל הפסולת אלא רק חלק ממנה - עדיין עבר איסור תורה, גם אם השאיר חלק מהפסולת בתוך
+                        התערובת.</p>
+                    <div class="source-ref-box"><strong>מקור:</strong> ילקוט יוסף שבת ג' סי' שיט</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: דינים מיוחדים -->
+        <div class="slide">
+            <h2>דינים מיוחדים</h2>
+            <div class="content">
+                <div class="two-columns">
+                    <div class="definition-box">
+                        <h3>הוצאת חרקים ודם</h3>
+                        <p><strong>חרק או זבוב במשקה:</strong> מותר להוציאו יחד עם מעט מן המשקה. מעיקר הדין מותר גם
+                            לבדו, אבל נכון להחמיר.</p>
+                        <p><strong>דם בביצה:</strong> מותר להוציא את הדם בכף או ביד, ונכון להחמיר ולהוציאו יחד עם מעט
+                            מהביצה.</p>
+                        <p><strong>עיקרון:</strong> אסור להשתמש בכלי מיוחד לברירה.</p>
+                        <div class="source-ref-box"><strong>מקור:</strong> פניני הלכה שבת יא, טו | ילקו"י שבת ג' סי' שיט
+                        </div>
+                    </div>
+
+                    <div class="definition-box">
+                        <h3>שימורים וקופסאות</h3>
+                        <p><strong>אסור לשפוך מים:</strong> מקופסת אפונה, תירס, או זיתים (חלקים קטנים מעורבים).</p>
+                        <p><strong>מותר לשפוך מים:</strong> מקופסת מלפפונים חמוצים (גדולים ולא מעורבים).</p>
+                        <p><strong>טונה בשמן:</strong> מותר להוציא את הטונה עם מעט שמן, אסור לשפוך את השמן לבדו.</p>
+                        <div class="source-ref-box"><strong>מקור:</strong> פניני הלכה שבת יא, יג</div>
+                    </div>
+                </div>
+
+                <div class="two-columns" style="margin-top: 15px;">
+                    <div class="definition-box">
+                        <h3>תה ועלי תה</h3>
+                        <p><strong>שקית תה:</strong> מותר להוציא מכוס מים חמים (כלי שלישי) <strong>אין כאן
+                                תערובת</strong>.</p>
+                        <p><strong>עלי תה פזורים:</strong> יש מחלוקת - יש מקילים כיוון שאינם מפריעים כל כך ורוב האנשים
+                            יכולים לשתות בלא סינון ויש מחמירים שהרי מדובר בתערובת פסולת ואוכל.</p>
+                        <div class="source-ref-box"><strong>מקור:</strong> פניני הלכה שבת יא, יד</div>
+                    </div>
+
+                    <div class="definition-box">
+                        <h3>כלים וסכו"ם</h3>
+                        <p><strong>סכו"ם מעורב במייבש:</strong> מותר ליטול כלי אחד, לנגב אותו, ולהחזירו למקומו. אסור
+                            ליטול כלים רבים ולמיינם.</p>
+                        <p><strong>ספרים וחומשים:</strong> דיני בורר חלים גם על ספרים ועל צעצועים מעורבים.</p>
+                        <div class="source-ref-box"><strong>מקור:</strong> פניני הלכה שבת יא, טז</div>
+                    </div>
+                </div>
+
+                <div class="two-columns" style="margin-top: 15px;">
+                    <div class="definition-box">
+                        <h3>שני מיני מאכלים</h3>
+                        <p>גם הפרדה בין שני מיני מאכלים טובים אסורה - כל מין נחשב פסולת לגבי השני.</p>
+                        <p><strong>דוגמה:</strong> תערובת אגוזים ושקדים - אסור להפריד ביניהם למרות ששניהם טובים.</p>
+                        <div class="source-ref-box"><strong>מקור:</strong> פניני הלכה שבת יא, ג</div>
+                    </div>
+
+                    <div class="definition-box">
+                        <h3>כלים מיוחדים במטבח</h3>
+                        <p><strong>מלחייה עם גרגירי אורז:</strong> (המלחייה מאפשרת רק למלח לצאת ומסננת את האורז) מותר -
+                            הגרגירים מונעים גושים ואינם פסולת.</p>
+                        <p><strong>מסננת קבועה בברז:</strong> מותר להשתמש בה, מפני שהיא חלק קבוע מהברז ואין דרך להשתמש
+                            בו
+                            בלעדיה, ואינה נחשבת ככלי ברירה.</p>
+                        <p><strong>מסננת בניקוז של הכיור:</strong> מותר לשפוך לתוכו שיירי מאכל ומים, מפני שכוונתו לסלק
+                            את
+                            השיירים לאשפה ולא לברור אוכל מתוך פסולת.</p>
+                        <div class="source-ref-box"><strong>מקור:</strong> ילקו"י שבת ג' סי' שיט</div>
+                    </div>
+                </div>
+
+                <div class="example-box" style="margin-top: 15px;">
+                    <h3>שאלות נפוצות נוספות</h3>
+                    <ul>
+                        <li><strong>דפים נפרדים שנדבקו:</strong> דפים נפרדים שנדבקו זה לזה (מלחות וכד') - מותר להפריד
+                            בעדינות, בתנאי שלא תיגרם קריעה או מחיקה של אותיות. אין בזה בורר כיוון שאין כאן שני מינים
+                            מעורבים.</li>
+                        <li><strong>דף שלא נחתך בדפוס:</strong> דפים שמעולם לא הופרדו (כגון בספר חדש שהדפים מחוברים
+                            בקצה) - <strong>אסור</strong> להפריד, משום מלאכת קורע או מכה בפטיש.</li>
+                        <li><strong>פתיחת מכתבים:</strong> הוצאת מכתב ממעטפה אינה בורר - המכתב והמעטפה אינם "מעורבים"
+                            אלא אחד בתוך השני.</li>
+                    </ul>
+                    <div class="source-ref-box"><strong>מקור:</strong> שש"כ ג, פ | פנה"ל יא, ד | שו"ע שמ, יד</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 11: דוגמאות מעשיות נוספות -->
+        <div class="slide">
+            <h2>דוגמאות מעשיות נוספות</h2>
+            <div class="content">
+                <div class="two-columns">
+                    <div class="positive-box">
+                        <h3 style="border: none; margin-top: 0;">מותר בשבת ✅</h3>
+                        <ul>
+                            <li><strong>קליפת פרי פגום:</strong> מותר לחתוך בסכין בשעת אכילה את החלק הפגום</li>
+                            <li><strong>פירות בקערה:</strong> מותר לקחת מכל הבא ליד, ואם ימצא פרי רקוב יניחו בצד</li>
+                            <li><strong>עצמות וקליפות בצלחת:</strong> מותר להסיר הכל לפני שטיפה</li>
+                            <li><strong>פתיתי דגנים בחלב:</strong> מותר לשתות את החלב גם אם חלק מהפתיתים שוקעים — אין זו
+                                ברירה אלא אכילה כדרכה, שאינם תערובת אחת.</li>
+                        </ul>
+                        <div class="source-ref-box"><strong>מקור:</strong> פניני הלכה שבת יא, ה | ילקו"י שבת ג' סי' שיט
+                        </div>
+                    </div>
+
+                    <div class="warning-box">
+                        <h3 style="border: none; margin-top: 0;">דרושה זהירות❗</h3>
+                        <ul>
+                            <li><strong>מרק עם ירקות:</strong> מותר לערות את המרק בעדינות, אבל לא לסנן</li>
+                            <li><strong>חמין בשבת:</strong> להזיז חתיכות עליונות כדי להגיע לתחתונות - מותר</li>
+                            <li><strong>משקים עכורים:</strong> אסור לסנן, מותר לשתות כמו שהם</li>
+                        </ul>
+                        <div class="source-ref-box"><strong>מקור:</strong> פניני הלכה שבת יא, יב-יג | שו"ע שיט, י</div>
+                    </div>
+                </div>
+
+                <div class="example-box" style="margin-top: 20px;">
+                    <h3>מקרים גבוליים - קרום על חלב מבושל</h3>
+                    <p><strong>המחלוקת:</strong> יש אומרים שהקרום נחשב "פסולת" ואסור להסירו. ויש מקילים משום שהקרום אינו
+                        דבר נפרד אלא חלק מהחלב שנקרש.</p>
+                    <ul>
+                        <li><strong>דעת המחמירים:</strong> אסור להסיר את הקרום על ידי הטיית הכוס או בכף - זו ברירת פסולת
+                            מאוכל</li>
+                        <li><strong>דעת המקילים:</strong> הקרום הוא חלק מהחלב ואינו "מין אחר", ולכן מותר להסירו</li>
+                        <li><strong>עצה מעשית:</strong> לשתות יחד עם מעט מהקרום, או להסיר עם מעט חלב</li>
+                    </ul>
+                    <div class="source-ref-box"><strong>מקור:</strong> ילקוט יוסף שבת ג' סי' שיט | שש"כ ג, לג</div>
+                </div>
+
+                <div class="definition-box" style="margin-top: 15px;">
+                    <h3>שאלות נפוצות בפירות וירקות</h3>
+                    <ul>
+                        <li><strong>קילוף ביצה קשה:</strong> אין בזה בורר - הקליפה אינה "מעורבת" עם הביצה אלא עוטפת
+                            אותה. מותר לקלף.</li>
+                        <li><strong>הסרת גבעול מתות שדה:</strong> אין בזה בורר - הגבעול הוא חלק מהפרי ולא דבר מעורב בו.
+                            מותר להסיר בשעת אכילה.</li>
+                        <li><strong>הוצאת גרעין מאבוקדו:</strong> מותר - הגרעין אינו "מעורב" אלא מונח במקומו בפרי.</li>
+                        <li><strong>הסרת עלים חיצוניים מחסה:</strong> מותר להסיר עלים חיצוניים כמושים או פגומים בשעת
+                            הכנה לאכילה מיידית.</li>
+                    </ul>
+                    <div class="source-ref-box"><strong>מקור:</strong> פנה"ל יא, ד-ה | שש"כ ג, יג | ילקו"י שיט</div>
+                </div>
+
+                <div class="definition-box" style="margin-top: 15px;">
+                    <h3>כלל חשוב לזכירה</h3>
+                    <p><strong>במקרה של ספק:</strong> תמיד שאלו את עצמכם - האם זה באמת דומה לברירה שעושים במפעל, או שזה דרך
+                        אכילה רגילה? אם זה דרך אכילה רגילה - על פי רוב מותר.</p>
+                    <div class="source-ref-box"><strong>מקור:</strong> פניני הלכה שבת יא, ב</div>
+                </div>
+
+                <div class="positive-box" style="margin-top: 15px;">
+                    <h3 style="border: none; margin-top: 0;">עיקרון מנחה</h3>
+                    <p>הבורר לצורך בהמות - פסולת נחשבת אוכל! זה מלמד שהכל תלוי בכוונה ובמטרה, לא רק בפעולה עצמה.</p>
+                    <div class="source-ref-box"><strong>מקור:</strong> ילקוט יוסף שבת ג' סי' שיט</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 12: שאלות חזרה -->
+        <div class="slide">
+            <div class="container">
+                <h1>🕯️ שאלות חזרה מקיפות - הלכות בורר 🕯️</h1>
+                <p style="text-align: center; color: var(--text-muted); margin-top: -15px; font-size: 1.1em;">30 שאלות
+                    אמריקאיות לפי סדר השקפים</p>
+
+                <!-- חלק א - מבוא ויסודות -->
+                <div class="section-title">חלק א': מבוא ויסודות (שקפים 3-4)</div>
+
+                <div class="question" data-correct="ג">
+                    <div class="question-text">1. מה ההבדל העיקרי בין מלאכת בורר למלאכת זורה?</div>
+                    <div class="options">
+                        <div class="option">
+                            <span class="option-letter">א</span>
+                            <span>בורר נעשה בנפה, זורה נעשה ביד</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ב</span>
+                            <span>בורר נעשה ברוח, זורה נעשה ביד</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ג</span>
+                            <span>בורר נעשה ביד, זורה נעשה ברוח</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ד</span>
+                            <span>אין הבדל ביניהם</span>
+                        </div>
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: ג</strong><br>
+                        בורר = הפרדה ביד או בכלי רגיל. זורה = הפרדה ברוח (קל עף, כבד נופל).
+                        <div class="source">מקור: שקף 3</div>
+                    </div>
+                </div>
+
+                <div class="question" data-correct="ד">
+                    <div class="question-text">2. כמה מלאכות עוסקות בהפרדת אוכל מפסולת?</div>
+                    <div class="options">
+                        <div class="option">
+                            <span class="option-letter">א</span>
+                            <span>אחת - בורר</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ב</span>
+                            <span>שתיים - בורר וזורה</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ג</span>
+                            <span>שלוש - בורר, זורה ומרקד</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ד</span>
+                            <span>ארבע - דש, זורה, בורר ומרקד</span>
+                        </div>
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: ד</strong><br>
+                        ארבע מלאכות: דש (הוצאה מקליפה), זורה (ברוח), בורר (ביד), מרקד (בנפה).
+                        <div class="source">מקור: שקף 3</div>
+                    </div>
+                </div>
+
+                <div class="question" data-correct="ג">
+                    <div class="question-text">3. מהו הכלל המרכזי להיתר ברירה בשבת?</div>
+                    <div class="options">
+                        <div class="option">
+                            <span class="option-letter">א</span>
+                            <span>פסולת ביד ומיד</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ב</span>
+                            <span>אוכל בכלי ולאחר זמן</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ג</span>
+                            <span>אוכל ביד ומיד</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ד</span>
+                            <span>פסולת בכלי ומיד</span>
+                        </div>
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: ג</strong><br>
+                        הכלל הזהב "אוכל ביד ומיד" - אוכל (לא פסולת), ביד (לא בכלי מיוחד), ומיד (לאלתר).
+                        <div class="source">מקור: שקף 4</div>
+                    </div>
+                </div>
+
+                <div class="question" data-correct="א">
+                    <div class="question-text">4. מה דינו של מי שחסר לו תנאי אחד מתנאי ההיתר?</div>
+                    <div class="options">
+                        <div class="option">
+                            <span class="option-letter">א</span>
+                            <span>עובר על איסור תורה</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ב</span>
+                            <span>עובר על איסור דרבנן</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ג</span>
+                            <span>מותר בדיעבד</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ד</span>
+                            <span>אין בכך איסור</span>
+                        </div>
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: א</strong><br>
+                        אם חסר אפילו תנאי אחד מהשלושה - האיסור הוא מהתורה!
+                        <div class="source">מקור: שקף 4</div>
+                    </div>
+                </div>
+
+                <!-- חלק ב - בורר בדברים שאינם מאכלים -->
+                <div class="section-title">חלק ב': בורר בדברים שאינם מאכלים (שקף 5)</div>
+
+                <div class="question" data-correct="ב">
+                    <div class="question-text">5. מה פירוש המונח "אוכל" בהלכות בורר?</div>
+                    <div class="options">
+                        <div class="option">
+                            <span class="option-letter">א</span>
+                            <span>דווקא מאכלים</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ב</span>
+                            <span>מה שהאדם מעוניין בו עכשיו</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ג</span>
+                            <span>החלק הטוב באופן אובייקטיבי</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ד</span>
+                            <span>רק דברים ראויים לאכילה</span>
+                        </div>
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: ב</strong><br>
+                        "אוכל" = מה שהאדם מעוניין בו עכשיו. "פסולת" = מה שאינו מעוניין בו עכשיו, גם אם יהיה מעוניין בו
+                        בהמשך.
+                        <div class="source">מקור: שקף 5</div>
+                    </div>
+                </div>
+
+                <div class="question" data-correct="ב">
+                    <div class="question-text">6. האם מותר למיין גרביים לזוגות בשבת?</div>
+                    <div class="options">
+                        <div class="option">
+                            <span class="option-letter">א</span>
+                            <span>מותר - אין בזה בורר</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ב</span>
+                            <span>אסור - זו ברירה גמורה</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ג</span>
+                            <span>מותר אם עושה ביד</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ד</span>
+                            <span>מותר לצורך לבישה מיידית</span>
+                        </div>
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: ב</strong><br>
+                        מיון גרביים לזוגות, מיון סכו"ם, סידור ספרים לפי נושא - כולם אסורים כי זו מלאכת מיון וארגון.
+                        <div class="source">מקור: שקף 5</div>
+                    </div>
+                </div>
+
+                <div class="question" data-correct="א">
+                    <div class="question-text">7. האם מותר להוציא חולצה מסוימת מארון בגדים מלא?</div>
+                    <div class="options">
+                        <div class="option">
+                            <span class="option-letter">א</span>
+                            <span>מותר - אם זה לצורך לבישה מיידית</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ב</span>
+                            <span>אסור - זו ברירה</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ג</span>
+                            <span>מותר רק אם הארון מסודר</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ד</span>
+                            <span>אסור אלא אם מוציא הכל</span>
+                        </div>
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: א</strong><br>
+                        לקיחה לצורך מיידי (בגד, כלי, ספר) - זו דרך שימוש רגילה ומותרת. האיסור הוא על מיון וארגון.
+                        <div class="source">מקור: שקף 5</div>
+                    </div>
+                </div>
+
+                <!-- חלק ג - תנאי אוכל מתוך פסולת -->
+                <div class="section-title">חלק ג': תנאי ראשון - אוכל מתוך פסולת (שקף 6)</div>
+
+                <div class="question" data-correct="ב">
+                    <div class="question-text">8. יש לפניך סלט ירקות עם עגבניות רקובות. מה מותר לעשות?</div>
+                    <div class="options">
+                        <div class="option">
+                            <span class="option-letter">א</span>
+                            <span>להוציא את העגבניות הרקובות</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ב</span>
+                            <span>לקחת את הירקות הטובים כדי לאכול עכשיו</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ג</span>
+                            <span>לקחת את הירקות הטובים לצורך הערב</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ד</span>
+                            <span>להשתמש במסננת להפריד</span>
+                        </div>
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: ב</strong><br>
+                        יש להוציא אוכל (הטוב) מתוך פסולת (הרקוב), ביד, ומיד - לאכילה מיידית.
+                        <div class="source">מקור: שקף 6</div>
+                    </div>
+                </div>
+
+                <div class="question" data-correct="ב">
+                    <div class="question-text">9. מי שהושיט את ידו לקחת אוכל ובטעות עלתה בידו פסולת - מה דינו?</div>
+                    <div class="options">
+                        <div class="option">
+                            <span class="option-letter">א</span>
+                            <span>עבר איסור בורר</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ב</span>
+                            <span>לא עבר איסור כי לא התכוון</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ג</span>
+                            <span>עבר איסור דרבנן</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ד</span>
+                            <span>צריך להחזיר את הפסולת</span>
+                        </div>
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: ב</strong><br>
+                        לא עבר איסור בורר, כיוון שלא התכוון לברור הפסולת.
+                        <div class="source">מקור: שקף 6</div>
+                    </div>
+                </div>
+
+                <!-- חלק ד - תנאי ביד -->
+                <div class="section-title">חלק ד': תנאי שני - ביד (שקף 7)</div>
+
+                <div class="question" data-correct="ב">
+                    <div class="question-text">10. איזה מהכלים הבאים מותר להשתמש בו לברירה?</div>
+                    <div class="options">
+                        <div class="option">
+                            <span class="option-letter">א</span>
+                            <span>מסננת</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ב</span>
+                            <span>כף רגילה</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ג</span>
+                            <span>נפה</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ד</span>
+                            <span>כלי ייעודי לברירה</span>
+                        </div>
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: ב</strong><br>
+                        כף רגילה, מזלג, מצקת רגילה - מותרים. מסננת, נפה, כלי ייעודי לברירה - אסורים.
+                        <div class="source">מקור: שקף 7</div>
+                    </div>
+                </div>
+
+                <div class="question" data-correct="א">
+                    <div class="question-text">11. מתי מותר להשתמש בכף מחוררת?</div>
+                    <div class="options">
+                        <div class="option">
+                            <span class="option-letter">א</span>
+                            <span>לחתיכות גדולות שאינן נחשבות מעורבות</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ב</span>
+                            <span>לחתיכות קטנות במרק</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ג</span>
+                            <span>תמיד מותר</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ד</span>
+                            <span>תמיד אסור</span>
+                        </div>
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: א</strong><br>
+                        לחתיכות גדולות שאינן נחשבות מעורבות במרק (כמו חתיכות בשר גדולות) - מותר.
+                        <div class="source">מקור: שקף 7</div>
+                    </div>
+                </div>
+
+                <div class="question" data-correct="ג">
+                    <div class="question-text">12. האם מותר להשתמש בקולפן בשבת?</div>
+                    <div class="options">
+                        <div class="option">
+                            <span class="option-letter">א</span>
+                            <span>תמיד מותר</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ב</span>
+                            <span>תמיד אסור</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ג</span>
+                            <span>יש מחלוקת בעניין</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ד</span>
+                            <span>מותר רק לפירות</span>
+                        </div>
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: ג</strong><br>
+                        יש מחלוקת האם מותר להשתמש בקולפן. פירות שקליפתם ראויה לאכילה מותר לקלפם כי מורידים גם מעט מהפרי.
+                        <div class="source">מקור: שקף 7</div>
+                    </div>
+                </div>
+
+                <!-- חלק ה - תנאי מיד -->
+                <div class="section-title">חלק ה': תנאי שלישי - מיד (שקף 8)</div>
+
+                <div class="question" data-correct="א">
+                    <div class="question-text">13. מה ההגדרה של "לאלתר" בהלכות בורר?</div>
+                    <div class="options">
+                        <div class="option">
+                            <span class="option-letter">א</span>
+                            <span>לאכול מיד או סמוך לתחילת הסעודה</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ב</span>
+                            <span>תוך שעה</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ג</span>
+                            <span>תוך יום</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ד</span>
+                            <span>לפני השבת הבאה</span>
+                        </div>
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: א</strong><br>
+                        "לאלתר" = כדי לאכול מיד או סמוך לתחילת הסעודה.
+                        <div class="source">מקור: שקף 8</div>
+                    </div>
+                </div>
+
+                <div class="question" data-correct="א">
+                    <div class="question-text">14. האם מותר לברור עבור אורחים שצפויים להגיע?</div>
+                    <div class="options">
+                        <div class="option">
+                            <span class="option-letter">א</span>
+                            <span>מותר אם הם צפויים להגיע בקרוב</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ב</span>
+                            <span>אסור - רק לעצמו מותר</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ג</span>
+                            <span>מותר רק לבני הבית</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ד</span>
+                            <span>מותר רק אם כבר הגיעו</span>
+                        </div>
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: א</strong><br>
+                        מותר לברור לבני הבית ולאורחים הצפויים להגיע בקרוב - סמוך לסעודה.
+                        <div class="source">מקור: שקף 8</div>
+                    </div>
+                </div>
+
+                <div class="question" data-correct="ב">
+                    <div class="question-text">15. מה הדין אם אדם ברר "לאלתר" ואז החליט לאכול רק אחר זמן?</div>
+                    <div class="options">
+                        <div class="option">
+                            <span class="option-letter">א</span>
+                            <span>מותר בדיעבד</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ב</span>
+                            <span>מסתבר שעבר באיסור תורה</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ג</span>
+                            <span>מסתבר שעבר באיסור דרבנן</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ד</span>
+                            <span>אין כל איסור</span>
+                        </div>
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: ב</strong><br>
+                        יש ליזהר שלא לחזור בו ולהחליט לאכול רק אחר זמן - שאז יעבור באיסור תורה.
+                        <div class="source">מקור: שקף 8</div>
+                    </div>
+                </div>
+
+                <!-- חלק ו - תערובת -->
+                <div class="section-title">חלק ו': מתי יש איסור בורר - תערובת (שקף 9)</div>
+
+                <div class="question" data-correct="ב">
+                    <div class="question-text">16. מתי קיים איסור בורר?</div>
+                    <div class="options">
+                        <div class="option">
+                            <span class="option-letter">א</span>
+                            <span>תמיד כשיש שני מינים</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ב</span>
+                            <span>רק כששני המינים מעורבים זה בזה</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ג</span>
+                            <span>רק כשיש יותר משני מינים</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ד</span>
+                            <span>רק במאכלים</span>
+                        </div>
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: ב</strong><br>
+                        איסור בורר קיים רק כאשר שני המינים מעורבים זה בזה. אם הם מונחים זה לצד זה - אין איסור.
+                        <div class="source">מקור: שקף 9</div>
+                    </div>
+                </div>
+
+                <div class="question" data-correct="ג">
+                    <div class="question-text">17. מה הדין אם ברר רק חלק מהפסולת?</div>
+                    <div class="options">
+                        <div class="option">
+                            <span class="option-letter">א</span>
+                            <span>מותר כי לא גמר את המלאכה</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ב</span>
+                            <span>איסור דרבנן בלבד</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ג</span>
+                            <span>עדיין עבר איסור תורה</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ד</span>
+                            <span>תלוי בכמות שבירר</span>
+                        </div>
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: ג</strong><br>
+                        אם לא בירר את כל הפסולת אלא רק חלק ממנה - עדיין עבר איסור תורה.
+                        <div class="source">מקור: שקף 9</div>
+                    </div>
+                </div>
+
+                <!-- חלק ז - דינים מיוחדים -->
+                <div class="section-title">חלק ז': דינים מיוחדים (שקף 10)</div>
+
+                <div class="question" data-correct="ב">
+                    <div class="question-text">18. נפל זבוב לכוס משקה. איך הכי נכון להוציאו?</div>
+                    <div class="options">
+                        <div class="option">
+                            <span class="option-letter">א</span>
+                            <span>בכף מחוררת</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ב</span>
+                            <span>עם מעט משקה בכף רגילה</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ג</span>
+                            <span>לשפוך את כל המשקה</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ד</span>
+                            <span>להוציאו לבדו ביד</span>
+                        </div>
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: ב</strong><br>
+                        מותר להוציאו יחד עם מעט מן המשקה. מעיקר הדין מותר גם לבדו, אבל נכון להחמיר.
+                        <div class="source">מקור: שקף 10</div>
+                    </div>
+                </div>
+
+                <div class="question" data-correct="ב">
+                    <div class="question-text">19. טונה בשמן - מה מותר לעשות?</div>
+                    <div class="options">
+                        <div class="option">
+                            <span class="option-letter">א</span>
+                            <span>לשפוך את השמן ולהשאיר את הטונה</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ב</span>
+                            <span>להוציא את הטונה עם מעט שמן בכף</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ג</span>
+                            <span>להשתמש במסננת דקה</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ד</span>
+                            <span>כל הדרכים מותרות</span>
+                        </div>
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: ב</strong><br>
+                        מותר להוציא הטונה עם מעט שמן, אסור לשפוך השמן לבדו.
+                        <div class="source">מקור: שקף 10</div>
+                    </div>
+                </div>
+
+                <div class="question" data-correct="ב">
+                    <div class="question-text">20. האם מותר לשפוך מים מקופסת אפונה?</div>
+                    <div class="options">
+                        <div class="option">
+                            <span class="option-letter">א</span>
+                            <span>מותר</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ב</span>
+                            <span>אסור</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ג</span>
+                            <span>מותר רק בכף</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ד</span>
+                            <span>מותר רק לצורך אכילה מיידית</span>
+                        </div>
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: ב</strong><br>
+                        אסור לשפוך מים מקופסת אפונה, תירס, או זיתים (חלקים קטנים מעורבים). מותר מקופסת מלפפונים
+                        (גדולים).
+                        <div class="source">מקור: שקף 10</div>
+                    </div>
+                </div>
+
+                <div class="question" data-correct="ג">
+                    <div class="question-text">21. תערובת אגוזים ושקדים - מה הדין?</div>
+                    <div class="options">
+                        <div class="option">
+                            <span class="option-letter">א</span>
+                            <span>מותר להפריד כי שניהם טובים</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ב</span>
+                            <span>מותר רק לאכילה מיידית</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ג</span>
+                            <span>אסור להפריד - כל מין נחשב פסולת לשני</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ד</span>
+                            <span>מותר בכלי רגיל</span>
+                        </div>
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: ג</strong><br>
+                        גם הפרדה בין שני מיני מאכלים טובים אסורה - כל מין נחשב פסולת לגבי השני. מותר רק לקחת מה שרוצה
+                        לאכול עכשיו.
+                        <div class="source">מקור: שקף 10</div>
+                    </div>
+                </div>
+
+                <div class="question" data-correct="א">
+                    <div class="question-text">22. דפים נפרדים שנדבקו זה לזה - מה הדין?</div>
+                    <div class="options">
+                        <div class="option">
+                            <span class="option-letter">א</span>
+                            <span>מותר להפריד בעדינות אם לא תיגרם קריעה</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ב</span>
+                            <span>אסור - זו ברירה</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ג</span>
+                            <span>מותר רק בספרי קודש</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ד</span>
+                            <span>אסור משום קורע</span>
+                        </div>
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: א</strong><br>
+                        דפים נפרדים שנדבקו - מותר להפריד בעדינות. אבל דף שלא נחתך מעולם בדפוס - אסור להפריד משום קורע.
+                        <div class="source">מקור: שקף 10</div>
+                    </div>
+                </div>
+
+                <!-- חלק ח - דוגמאות מעשיות -->
+                <div class="section-title">חלק ח': דוגמאות מעשיות (שקף 11)</div>
+
+                <div class="question" data-correct="ג">
+                    <div class="question-text">23. קרום על חלב מבושל - מה הדין?</div>
+                    <div class="options">
+                        <div class="option">
+                            <span class="option-letter">א</span>
+                            <span>מותר להסיר</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ב</span>
+                            <span>אסור להסיר</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ג</span>
+                            <span>יש מחלוקת - עצה: להסיר עם מעט חלב</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ד</span>
+                            <span>מותר רק ביד</span>
+                        </div>
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: ג</strong><br>
+                        יש מחלוקת: יש אומרים אסור, ויש מקילים. עצה: לשתות עם מעט קרום או להסיר עם מעט חלב.
+                        <div class="source">מקור: שקף 11</div>
+                    </div>
+                </div>
+
+                <div class="question" data-correct="א">
+                    <div class="question-text">24. קילוף ביצה קשה - האם יש בזה בורר?</div>
+                    <div class="options">
+                        <div class="option">
+                            <span class="option-letter">א</span>
+                            <span>אין בזה בורר - הקליפה עוטפת ולא מעורבת</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ב</span>
+                            <span>יש בזה בורר - אסור</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ג</span>
+                            <span>מותר רק סמוך לאכילה</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ד</span>
+                            <span>מותר רק ביד</span>
+                        </div>
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: א</strong><br>
+                        אין בזה בורר - הקליפה אינה "מעורבת" עם הביצה אלא עוטפת אותה. מותר לקלף.
+                        <div class="source">מקור: שקף 11</div>
+                    </div>
+                </div>
+
+                <div class="question" data-correct="א">
+                    <div class="question-text">25. הסרת גבעול מתות שדה - מה הדין?</div>
+                    <div class="options">
+                        <div class="option">
+                            <span class="option-letter">א</span>
+                            <span>מותר - הגבעול חלק מהפרי ולא דבר מעורב</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ב</span>
+                            <span>אסור - זו ברירה</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ג</span>
+                            <span>מותר רק בשעת אכילה</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ד</span>
+                            <span>אסור משום קוצר</span>
+                        </div>
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: א</strong><br>
+                        אין בזה בורר - הגבעול הוא חלק מהפרי ולא דבר מעורב בו. מותר להסיר.
+                        <div class="source">מקור: שקף 11</div>
+                    </div>
+                </div>
+
+                <div class="question" data-correct="א">
+                    <div class="question-text">26. חמין בשבת - האם מותר להזיז חתיכות עליונות כדי להגיע לתחתונות?</div>
+                    <div class="options">
+                        <div class="option">
+                            <span class="option-letter">א</span>
+                            <span>מותר</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ב</span>
+                            <span>אסור</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ג</span>
+                            <span>מותר רק ביד</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ד</span>
+                            <span>מותר רק לאכילה מיידית</span>
+                        </div>
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: א</strong><br>
+                        להזיז חתיכות עליונות כדי להגיע לתחתונות - מותר. זו לא ברירה אלא לקיחה.
+                        <div class="source">מקור: שקף 11</div>
+                    </div>
+                </div>
+
+                <!-- חלק ט - שאלות כלליות -->
+                <div class="section-title">חלק ט': שאלות כלליות וסיכום</div>
+
+                <div class="question" data-correct="א">
+                    <div class="question-text">27. שקית תה בכוס מים חמים בשבת - מה הדין?</div>
+                    <div class="options">
+                        <div class="option">
+                            <span class="option-letter">א</span>
+                            <span>מותר להוציא את השקית מכלי שלישי</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ב</span>
+                            <span>אסור להוציא כיוון שזו ברירה</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ג</span>
+                            <span>מותר רק עם מעט מהמשקה</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ד</span>
+                            <span>מותר רק מכלי ראשון</span>
+                        </div>
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: א</strong><br>
+                        מותר להוציא שקית תה מכוס מים חמים (כלי שלישי) שהרי אין כאן תערובת.
+                        <div class="source">מקור: שקף 10</div>
+                    </div>
+                </div>
+
+                <div class="question" data-correct="א">
+                    <div class="question-text">28. מה העיקרון המנחה לגבי הבורר לצורך בהמות?</div>
+                    <div class="options">
+                        <div class="option">
+                            <span class="option-letter">א</span>
+                            <span>פסולת נחשבת אוכל - הכל תלוי בכוונה ובמטרה</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ב</span>
+                            <span>אסור לברור לבהמות</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ג</span>
+                            <span>מותר רק ביד</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ד</span>
+                            <span>מותר רק מיד</span>
+                        </div>
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: א</strong><br>
+                        הבורר לצורך בהמות - פסולת נחשבת אוכל! זה מלמד שהכל תלוי בכוונה ובמטרה.
+                        <div class="source">מקור: שקף 6</div>
+                    </div>
+                </div>
+
+                <div class="question" data-correct="ב">
+                    <div class="question-text">29. מה מטרת איסור בורר?</div>
+                    <div class="options">
+                        <div class="option">
+                            <span class="option-letter">א</span>
+                            <span>למנוע אכילה בשבת</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ב</span>
+                            <span>למנוע עבודה של מיון וארגון בשבת</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ג</span>
+                            <span>למנוע שימוש בכלים</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ד</span>
+                            <span>למנוע הכנת אוכל</span>
+                        </div>
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: ב</strong><br>
+                        מטרת איסור בורר היא למנוע עבודה של מיון וארגון בשבת. כדרך אכילה רגילה - תמיד מותר!
+                        <div class="source">מקור: שקף 13</div>
+                    </div>
+                </div>
+
+                <div class="question" data-correct="א">
+                    <div class="question-text">30. מה הכלל כשיש ספק בדיני בורר?</div>
+                    <div class="options">
+                        <div class="option">
+                            <span class="option-letter">א</span>
+                            <span>להחמיר - כי זה ספק איסור תורה</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ב</span>
+                            <span>להקל - כי ספק דרבנן לקולא</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ג</span>
+                            <span>לעשות כרגיל</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-letter">ד</span>
+                            <span>תלוי במקרה</span>
+                        </div>
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: א</strong><br>
+                        בספק איסור תורה - להחמיר! במקרה של ספק, עדיף להימנע או לשאול שאלת הלכה.
+                        <div class="source">מקור: שקף 13</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 13: סיכום -->
+        <div class="slide">
+            <h2>סיכום והנחיות מעשיות</h2>
+            <div class="content">
+                <div class="warning-box">
+                    <h3 style="border: none; margin-top: 0;">⚠️ זכרו תמיד</h3>
+                    <p>בספק איסור תורה - להחמיר! במקרה של ספק, עדיף להימנע או לשאול רב.</p>
+                </div>
+
+                <div class="definition-box" style="margin-top: 20px;">
+                    <h3>רשימת בדיקה מהירה:</h3>
+                    <div class="numbered-list">
+                        <div class="list-item">
+                            <span class="number">1</span>
+                            האם המינים באמת מעורבים? (אם לא - מותר)
+                            <div class="source-ref-box" style="margin-top: 8px;"><strong>מקור:</strong> פנה"ל יא, ד
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <span class="number">2</span>
+                            האם אני מוציא את החלק הטוב? (אם לא - אסור)
+                            <div class="source-ref-box" style="margin-top: 8px;"><strong>מקור:</strong> פנה"ל יא, ה
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <span class="number">3</span>
+                            האם אני משתמש בכלי רגיל? (אם לא - אסור)
+                            <div class="source-ref-box" style="margin-top: 8px;"><strong>מקור:</strong> פנה"ל יא, ז
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <span class="number">4</span>
+                            האם אני רוצה לאכול מיד? (אם לא - אסור)
+                            <div class="source-ref-box" style="margin-top: 8px;"><strong>מקור:</strong> פנה"ל יא, ו
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="positive-box" style="margin-top: 20px;">
+                    <h3 style="border: none; margin-top: 0;">💡 בואו נזכור</h3>
+                    <p>מטרת איסור בורר היא למנוע עבודה של מיון וארגון בשבת. כדרך אכילה רגילה - תמיד מותר!</p>
+                    <div class="source-ref-box"><strong>מקור:</strong> פניני הלכה שבת יא, ב | ילקו"י שבת ג' סי' שיט סעיף
+                        ד</div>
+                </div>
+
+                <div class="source-box" style="margin-top: 20px;">
+                    <strong>📚 מקורות עיקריים:</strong><br><br>
+                    <strong>• פניני הלכה שבת</strong> - פרק יא "בורר" (הלכות א-יח) - הרב אליעזר מלמד שליט"א<br>
+                    <strong>• קיצור שולחן ערוך ילקוט יוסף</strong> - שבת כרך ג', סימן שי"ט "הלכות בורר" - הרב יצחק יוסף
+                    שליט"א<br>
+                    <strong>• שולחן ערוך אורח חיים</strong> - סימן שי"ט<br>
+                    <strong>• משנה ברורה</strong> - סימן שי"ט<br>
+                    <strong>• שמירת שבת כהלכתה</strong> - פרק ג
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- סוף slideshow-container -->
+
+    <!-- פס ניווט תחתון קבוע -->
+    <nav class="navigation-controls" aria-label="ניווט בין שקפים">
+        <button class="nav-btn" onclick="previousSlide()" id="prev-btn" aria-label="שקף קודם">▶ קודם</button>
+        <div class="slide-counter">
+            <span id="current-slide" aria-live="polite" aria-atomic="true">1</span>
+            /
+            <span id="total-slides">1</span>
+        </div>
+        <button class="nav-btn" onclick="nextSlide()" id="next-btn" aria-label="שקף הבא">הבא ◀</button>
+    </nav>
+
+    <!-- קבצי JS — סדר טעינה חשוב -->
+    <script src="../js/navigation.js"></script>
+    <script src="../js/theme.js"></script>
+    <script src="../js/quiz.js"></script>
+</body>
+
+</html>                                                                                                                                                     
