@@ -6,6 +6,7 @@
 <title>רשימות פסח</title>
 <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700;900&family=Heebo:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/pesach-checklist.css">
+    <link rel="stylesheet" href="../css/utilities-extracted.css">
 </head>
 <body>
 
@@ -64,7 +65,7 @@
 
       <div class="glossary-entry" id="gentry-hagshalah">
         <div class="glossary-entry-title">
-          <span class="item-tag tag-hagshalah" style="font-size:0.78rem">הגעלה</span>
+          <span class="item-tag tag-hagshalah fs-078rem">הגעלה</span>
           <h3>הגעלה — טבילת כלי במים רותחים</h3>
         </div>
         <p>
@@ -76,7 +77,7 @@
 
       <div class="glossary-entry" id="gentry-iruy">
         <div class="glossary-entry-title">
-          <span class="item-tag tag-iruy" style="font-size:0.78rem">עירוי רותחים</span>
+          <span class="item-tag tag-iruy fs-078rem">עירוי רותחים</span>
           <h3>עירוי רותחים — שפיכה ישירה על משטח</h3>
         </div>
         <p>
@@ -88,7 +89,7 @@
 
       <div class="glossary-entry" id="gentry-shriya">
         <div class="glossary-entry-title">
-          <span class="item-tag tag-hagshalah" style="font-size:0.78rem">שרייה 72 שעות</span>
+          <span class="item-tag tag-hagshalah fs-078rem">שרייה 72 שעות</span>
           <h3>שרייה 72 שעות — לכוסות זכוכית (ספרדים)</h3>
         </div>
         <p>
@@ -100,7 +101,7 @@
 
       <div class="glossary-entry" id="gentry-soap">
         <div class="glossary-entry-title">
-          <span class="item-tag tag-nikui" style="font-size:0.78rem">ניקוי עם סבון</span>
+          <span class="item-tag tag-nikui fs-078rem">ניקוי עם סבון</span>
           <h3>ניקוי עם סבון — חומר הפוגם את הטעם</h3>
         </div>
         <p>
@@ -122,7 +123,7 @@
     <strong>🔑 מדריך סימנים</strong> — לחץ על תגית לפירוט מלא:<br>
     <span class="item-tag tag-hagshalah tag-link" onclick="openGlossary('hagshalah')">הגעלה</span> = טבילת כלי במים רותחים ·
     <span class="item-tag tag-iruy tag-link" onclick="openGlossary('iruy')">עירוי רותחים</span> = שפיכת מים רותחים על משטח ·
-    <span class="item-tag tag-hagshalah tag-link" onclick="openGlossary('shriya')" style="background:#e3f2fd;color:#1565c0">שרייה 72 שעות</span> = לכוסות זכוכית קרות (ספרדים) ·
+    <span class="item-tag tag-hagshalah tag-link bg-e3f2fd c-1565c0" onclick="openGlossary('shriya')">שרייה 72 שעות</span> = לכוסות זכוכית קרות (ספרדים) ·
     <span class="item-tag tag-nikui tag-link" onclick="openGlossary('soap')">ניקוי עם סבון</span> = חומר הפוגם את הטעם הבלוע ·
     <span class="item-tag tag-libun">ליבון</span> = חימום עד לוהט ·
     <span class="item-tag tag-kisuy">כיסוי</span> = כיסוי בנייר אלומיניום / ניילון
@@ -132,7 +133,7 @@
     <div class="progress-text">
       <h3>ניקוי והכשרה</h3>
       <p id="prog-nikui-txt">0 מתוך 0 פריטים הושלמו</p>
-      <div class="progress-bar-wrap"><div class="progress-bar-fill" id="bar-nikui" style="width:0%"></div></div>
+      <div class="progress-bar-wrap"><div class="progress-bar-fill w-0" id="bar-nikui"></div></div>
     </div>
     <div class="progress-ring">
       <svg width="56" height="56" viewBox="0 0 56 56">
@@ -171,7 +172,7 @@
       <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">סכינים, מזלגות, כפות — ידית מתכת</div><div class="item-note">ניקוי יסודי כולל הצומת בין להב לידית; 24 שעות ללא שימוש; הגעלה במים רותחים</div></div><span class="item-tag tag-hagshalah">הגעלה</span></div>
       <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">סכינים, מזלגות, כפות — ידית פלסטיק / עץ</div><div class="item-note">הגעלה עלולה לפגוע בידית או להרפות אותה. עדיף להשתמש בסכו"ם ייעודי לפסח.</div></div><span class="item-tag tag-kinyan">קנייה</span></div>
       <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">כוסות זכוכית — לשתייה חמה</div><div class="item-note">הגעלה במים רותחים — לאשכנזים ולספרדים כאחד (שימוש חם = ספיגה חמה)</div></div><span class="item-tag tag-hagshalah">הגעלה</span></div>
-      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">כוסות זכוכית — לשתייה קרה / כוסות יין</div><div class="item-note">לספרדים — שרייה במים 72 שעות (3 יממות) מספיקה. הגעלה עלולה לפגום בכוסות עדינות</div></div><span class="item-tag tag-hagshalah" style="background:#e3f2fd;color:#1565c0">שרייה 72 שעות</span></div>
+      <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">כוסות זכוכית — לשתייה קרה / כוסות יין</div><div class="item-note">לספרדים — שרייה במים 72 שעות (3 יממות) מספיקה. הגעלה עלולה לפגום בכוסות עדינות</div></div><span class="item-tag tag-hagshalah bg-e3f2fd c-1565c0">שרייה 72 שעות</span></div>
       <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">כלי אבן / חרס / קרמיקה</div><div class="item-note">אינם ניתנים להכשרה — מניחים בצד ופשוט לא משתמשים בהם בפסח. אין צורך למכור.</div></div><span class="item-tag tag-kinyan">קנייה</span></div>
       <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">ספוגים, מברשות כלים, סמרטוטים</div><div class="item-note">החלפה חדשה לפסח — לא ניתן להכשיר</div></div><span class="item-tag tag-kinyan">קנייה</span></div>
     </div>
@@ -329,7 +330,7 @@
   <div class="note-card">
     <strong>🕯️ סדר בדיקת חמץ:</strong> בדיקת חמץ נעשית בליל י"ד בניסן (ערב פסח), לאחר צאת הכוכבים. מדליקים נר, אומרים ברכה, ובודקים בסדר שיטתי מחדר לחדר — מהמקומות הפחות נקיים לנקיים.
   </div>
-  <div class="note-card" style="border-right-color: var(--red);">
+  <div class="note-card bdrc-v-red">
     <strong>⚠️ מקומות שכדאי לבדוק לפני ליל הבדיקה:</strong> מקומות שאין אפשרות לבדוק בלילה — כגון <strong>משרד</strong>, <strong>מחסן שאינו ליד הבית</strong>, מגרש חניה מקורה וכדומה — כדאי לבדוק מספר ימים לפני, ביום. הבדיקה הלילית מתמקדת במקומות הנגישים בבית.
   </div>
 
@@ -337,7 +338,7 @@
     <div class="progress-text">
       <h3>בדיקת חמץ</h3>
       <p id="prog-bedika-txt">0 מתוך 0 אזורים נבדקו</p>
-      <div class="progress-bar-wrap"><div class="progress-bar-fill" id="bar-bedika" style="width:0%"></div></div>
+      <div class="progress-bar-wrap"><div class="progress-bar-fill w-0" id="bar-bedika"></div></div>
     </div>
     <div class="progress-ring">
       <svg width="56" height="56" viewBox="0 0 56 56">
@@ -470,7 +471,7 @@
     <div class="progress-text">
       <h3>הכנות לסדר</h3>
       <p id="prog-seder-txt">0 מתוך 0 פריטים הוכנו</p>
-      <div class="progress-bar-wrap"><div class="progress-bar-fill" id="bar-seder" style="width:0%"></div></div>
+      <div class="progress-bar-wrap"><div class="progress-bar-fill w-0" id="bar-seder"></div></div>
     </div>
     <div class="progress-ring">
       <svg width="56" height="56" viewBox="0 0 56 56">
@@ -583,7 +584,7 @@
     <div class="progress-text">
       <h3>קניות לפסח</h3>
       <p id="prog-shopping-txt">0 מתוך 0 קנינו</p>
-      <div class="progress-bar-wrap"><div class="progress-bar-fill" id="bar-shopping" style="width:0%"></div></div>
+      <div class="progress-bar-wrap"><div class="progress-bar-fill w-0" id="bar-shopping"></div></div>
     </div>
     <div class="progress-ring">
       <svg width="56" height="56" viewBox="0 0 56 56">
@@ -659,7 +660,7 @@
     <div class="progress-text">
       <h3>ערב פסח — יום י"ד ניסן</h3>
       <p id="prog-erev-txt">0 מתוך 0 פעולות</p>
-      <div class="progress-bar-wrap"><div class="progress-bar-fill" id="bar-erev" style="width:0%"></div></div>
+      <div class="progress-bar-wrap"><div class="progress-bar-fill w-0" id="bar-erev"></div></div>
     </div>
     <div class="progress-ring">
       <svg width="56" height="56" viewBox="0 0 56 56">

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/variables.css">
     <link rel="stylesheet" href="../css/layout.css">
     <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/utilities-extracted.css">
 </head>
 
 <body>
@@ -52,15 +53,15 @@
             <div class="content">
                 <div class="definition-box">
                     <strong>חלק א': יסודות ועקרונות (שקף 3)</strong><br>
-                    <div style="padding-right: 20px;">
+                    <div class="pr-20px">
                         <div class="list-item">הגדרות:
-                            <div style="padding-right: 30px;">
+                            <div class="pr-30px">
                                 <div class="list-item">אסור לבשל - מותר לחמם (שקף 4)</div>
                                 <div class="list-item">איסור בישול בשבת - מקור והגדרה (שקף 5)</div>
                             </div>
                         </div>
                         <div class="list-item">מושגי יסוד:
-                            <div style="padding-right: 30px;">
+                            <div class="pr-30px">
                                 <div class="list-item">מאכל יבש ולח (שקף 6)</div>
                                 <div class="list-item">בישול במאכל יבש - מוצק (שקף 7)</div>
                                 <div class="list-item">בישול במאכל לח - נוזלים (שקף 8)</div>
@@ -73,7 +74,7 @@
                     </div>
                 </div>
 
-                <div class="definition-box" style="margin-top: 15px;">
+                <div class="definition-box mt-15px">
                     <strong>חלק ב': הפעולות בשבת (שקף 13)</strong><br>
                     <div class="list-item">הפעולות בשבת - סקירה כללית (שקף 14)</div>
                     <div class="list-item">דיני השהיה (שקף 15)</div>
@@ -88,9 +89,9 @@
                     <div class="list-item">תרשים זרימה - תנאי מגיס (שקף 24)</div>
                 </div>
 
-                <div class="definition-box" style="margin-top: 15px;">
+                <div class="definition-box mt-15px">
                     <strong>חלק ג': נושאים מיוחדים וסיכום (שקף 25)</strong><br>
-                    <div style="padding-right: 20px;">
+                    <div class="pr-20px">
                         <div class="list-item">דוד שמש - מחלוקת הפוסקים (שקף 26)</div>
                         <div class="list-item">רחיצה בשבת (שקף 27)</div>
                         <div class="list-item">דוגמאות מעשיות נפוצות (שקף 28)</div>
@@ -99,7 +100,7 @@
                     </div>
                 </div>
 
-                <div class="source-box" style="margin-top: 20px;">
+                <div class="source-box mt-20px">
                     המצגת כוללת תרשימי זרימה אינטראקטיביים המסייעים בהבנת התנאים ההלכתיים המורכבים
                 </div>
             </div>
@@ -321,8 +322,8 @@
                             <strong>מאכל לח (נוזלי)</strong><br>
                             <strong>יש בישול אחר בישול</strong> - החימום מחזיר לו את מרקמו ויוצר שינוי משמעותי<br>
                             • מרק, משקה חם, שמן או רוטב שהתקרר - אסור לחמם<br>
-                            <small style="color: var(--option-incorrect-border);">* גם אם מבושל כל צרכו</small><br>
-                            <small style="color: var(--option-correct-border);">** בתנאי שהתקרר מתחת לחום שהיד סולדת
+                            <small class="c-v-option-incorrect-border">* גם אם מבושל כל צרכו</small><br>
+                            <small class="c-v-option-correct-border">** בתנאי שהתקרר מתחת לחום שהיד סולדת
                                 בו</small>
                         </div>
                     </div>
@@ -331,8 +332,8 @@
                             <strong>מאכל יבש (מוצק)</strong><br>
                             <strong>אין בישול אחר בישול</strong> - החימום רק מחמם אותו, אין שינוי במהות המאכל<br>
                             • בשר מבושל, ירקות מבושלים, אורז מבושל - מותר לחמם<br>
-                            <small style="color: var(--option-incorrect-border);">* רק אם מבושל כל צרכו</small><br>
-                            <small style="color: var(--option-correct-border);">** אפילו קפוא</small>
+                            <small class="c-v-option-incorrect-border">* רק אם מבושל כל צרכו</small><br>
+                            <small class="c-v-option-correct-border">** אפילו קפוא</small>
                         </div>
                     </div>
                 </div>
@@ -414,7 +415,7 @@
                     <strong>דיני אש מכוסה:</strong><br>
                     • <strong>מותר לחמם</strong> מה שמבושל כל צרכו<br>
                     • <strong>מותר להשהות</strong> מה שמבושל כבן דרוסאי<br>
-                    • <span style="color: var(--option-incorrect-border); font-weight: bold;">⚠️ בלבד שיכסה את המתגים
+                    • <span class="c-v-option-incorrect-border fw-bold">⚠️ בלבד שיכסה את המתגים
                         המגבירים או מנמיכים את
                         החום</span>
                 </div>
@@ -540,12 +541,12 @@
                     • התבשיל מבושל בישול מינימאלי*<br>
                     • האש מכוסה (פלטה או בלעך)<br>
                     • המאכל הונח על מקור החום לפני כניסת השבת<br>
-                    • <span style="color: var(--option-incorrect-border); font-weight: bold;">אסור לערבב (לבחוש) את
+                    • <span class="c-v-option-incorrect-border fw-bold">אסור לערבב (לבחוש) את
                         התבשיל</span><br>
-                    • <span style="color: var(--option-incorrect-border); font-weight: bold;">אסור להוסיף מוצקים או
+                    • <span class="c-v-option-incorrect-border fw-bold">אסור להוסיף מוצקים או
                         נוזלים שאינם
                         מבושלים</span><br>
-                    • <span style="color: var(--option-incorrect-border); font-weight: bold;">כיסוי במכסה או הטמנה לפני
+                    • <span class="c-v-option-incorrect-border fw-bold">כיסוי במכסה או הטמנה לפני
                         כניסת השבת</span><br>
                     <small>* מאכל יבש: מבושל כבן דרוסאי, מאכל לח: חום שהיד סולדת בו</small>
                 </div>
@@ -569,16 +570,16 @@
                 <div class="definition-box">
                     <strong>השהיה מערב שבת על פלטה כבויה שתידלק בשבת:</strong><br>
                     <br>
-                    <strong style="color: var(--text-secondary);">המצב:</strong><br>
+                    <strong class="c-v-text-secondary">המצב:</strong><br>
                     מניחים תבשיל על פלטה כבויה מערב שבת, והפלטה תידלק אוטומטית בשבת על ידי שעון שבת.<br>
                     <br>
-                    <strong style="color: var(--text-secondary);">הדין:</strong><br>
+                    <strong class="c-v-text-secondary">הדין:</strong><br>
                     נחלקו הפוסקים אם יש בזה איסור או גרמא. <strong>בדיעבד - התבשיל מותר לכל הדעות.</strong><br>
                     <br>
-                    <strong style="color: var(--primary-color);">למנהג אשכנזים:</strong><br>
+                    <strong class="c-v-primary-color">למנהג אשכנזים:</strong><br>
                     <strong>אסור</strong> - לדעת רוב הפוסקים (חזון איש, גרש"ז אויערבך, ארחות שבת)<br>
                     <br>
-                    <strong style="color: var(--primary-color);">למנהג ספרדים:</strong><br>
+                    <strong class="c-v-primary-color">למנהג ספרדים:</strong><br>
                     • תבשיל יבש או לח שמבושל כל צרכו - <strong>מותר אפילו בשבת</strong><br>
                     • תבשיל יבש או לח שאינו מבושל כל צרכו - <strong>מותר לפני שבת</strong> ולדעת הרב עובדיה יוסף מותר
                     אפילו בשבת<br>
@@ -624,7 +625,7 @@
                         <div class="step error-step" id="error1">
                             אסור!<br>
                             זה נחשב הנחה חדשה בשבת<br>
-                            <small style="color: var(--link-color);">*ראה פירוט בשקף "דיני הנחה"</small>
+                            <small class="c-v-link-color">*ראה פירוט בשקף "דיני הנחה"</small>
                         </div>
                     </div>
                 </div>
@@ -726,7 +727,7 @@
 
                 <div class="definition-box">
                     <strong>דרכים מותרות לחימום בשבת:</strong><br>
-                    <strong style="color: var(--option-incorrect-border);">תנאי: המאכל חייב להיות מבושל כל צרכו לפני
+                    <strong class="c-v-option-incorrect-border">תנאי: המאכל חייב להיות מבושל כל צרכו לפני
                         שבת!</strong><br>
                     <br>
                     <span class="condition-number">א</span> <strong>הנחה על סיר אחר:</strong> מותר להניח קדירה (גם עם
@@ -794,20 +795,18 @@
                 <!-- branching 2 -->
                 <div class="branch-container">
                     <div class="branch-item">
-                        <div class="branch-label" id="q2b-lach"
-                            style="background: linear-gradient(135deg, var(--link-color), var(--primary-color));">לח
+                        <div class="branch-label bg-linear-gradient-135deg-v-lin-f41bba" id="q2b-lach">לח
                         </div>
                         <div class="step step-retrospect" id="lach-mutarot">
                             מותר בדרכים אלה:<br>
                             • על סיר אחר ✓<br>
                             • סמוך לאש (&lt;45°) ✓<br>
-                            <small style="color: var(--text-secondary);">אסור להניח ישירות על פלטה!</small>
+                            <small class="c-v-text-secondary">אסור להניח ישירות על פלטה!</small>
                         </div>
                     </div>
 
                     <div class="branch-item">
-                        <div class="branch-label" id="q2b-yavesh"
-                            style="background: linear-gradient(135deg, var(--category-orange-start), var(--category-orange-end));">
+                        <div class="branch-label bg-linear-gradient-135deg-v-cat-b3079b" id="q2b-yavesh">
                             יבש</div>
                         <div class="step question-step" id="question3b" data-flow-to="q3b-yashir,q3b-mutarot" data-flow-color="var(--category-error-start),var(--category-gradient-start)">
                             איך מניחים?
@@ -856,40 +855,40 @@
                     <p><strong>החזרה:</strong> החזרת מאכל שהיה על גבי מקור החום והוסר משם לצורך כלשהו בחזרה למקור החום.
                     </p>
                 </div>
-                <div class="definition-box" style="background: #fff9e6; border-color: var(--step-question-border);">
+                <div class="definition-box bg-fff9e6 bdc-v-step-question-border">
                     <p>מבחינה הלכתית, <strong>החזרה</strong> היא מצב ביניים - קלה יותר <strong>מהנחה</strong>, אך חמורה
                         <strong>מהשהיה</strong>.</p>
                     <p>לכן: מה שמותר להניח בשבת (מאכל יבש שמבושל כל צרכו) - מותר גם להחזיר. ומה שאסור להשהות בשבת (מאכל
                         נא) - אסור גם להחזיר.</p>
                     <p>כל התנאים המפורטים להלן חלים על <strong>מאכל לח שמבושל כל צורכו.</strong></p>
 
-                    <div style="margin-top: 15px;">
+                    <div class="mt-15px">
                         <strong>📌 מאכל שאינו מבושל כל צורכו:</strong><br>
-                        <span style="color: #c53030; font-weight: bold;">❌ אסור להחזיר - בכל מקרה!</span>
+                        <span class="c-c53030 fw-bold">❌ אסור להחזיר - בכל מקרה!</span>
                     </div>
 
-                    <div style="margin-top: 15px;">
+                    <div class="mt-15px">
                         <strong>📌 מאכל יבש שמבושל כל צורכו:</strong><br>
-                        <span style="color: #2f855a; font-weight: bold;">✅ מותר להחזיר - ללא תנאים!</span>
+                        <span class="c-2f855a fw-bold">✅ מותר להחזיר - ללא תנאים!</span>
                     </div>
                 </div>
 
                 <h3>החשש</h3>
-                <div class="definition-box" style="background: #ffe6e6; border-color: var(--option-incorrect-border);">
+                <div class="definition-box bg-ffe6e6 bdc-v-option-incorrect-border">
 
-                    <div style="margin-top: 12px;">
+                    <div class="mt-12px">
                         <strong>1. איסור בישול:</strong><br>
                         אם המאכל הלח התקרר מתחת לחום שהיד סולדת בו (70 מעלות לחומרא) - החזרתו למקור החום תגרום לבישולו
                         מחדש. שהרי יש בישול אחר בישול בלח.
                     </div>
 
-                    <div style="margin-top: 12px;">
+                    <div class="mt-12px">
                         <strong>2. איסור מכבה ומבעיר:</strong><br>
                         בכדי שהמאכל ישאר חם ולא ישרף, אדם עלול להגביר או להנמיך את האש בעת ההחזרה - ולעבור על איסור מכבה
                         ומבעיר.
                     </div>
 
-                    <div style="margin-top: 12px;">
+                    <div class="mt-12px">
                         <strong>3. מראית עין (מחזי כמבשל):</strong><br>
                         גם אם מבחינה טכנית אין איסור, הרואה את המעשה עלול לחשוב שמבשלים בשבת, ולכן צריך להיזהר במיוחד
                         שברור שזו החזרה ולא בישול חדש.
@@ -1052,7 +1051,7 @@
                         <div class="branch-label yes-label" id="q5c-yes">כן ✓</div>
                         <div class="step question-step" id="question6c" data-flow-to="q6c-yes,q6c-maybe" data-flow-color="var(--category-gradient-start),#ed8936">
                             האם החזקת ביד ולא הנחת על הקרקע?<br>
-                            <small style="font-weight: normal;">(לכתחילה)</small>
+                            <small class="fw-normal">(לכתחילה)</small>
                         </div>
                     </div>
 
@@ -1077,11 +1076,9 @@
                     </div>
 
                     <div class="branch-item">
-                        <div class="branch-label" id="q6c-maybe"
-                            style="background: linear-gradient(135deg, var(--category-orange-start), var(--category-orange-end));">
+                        <div class="branch-label bg-linear-gradient-135deg-v-cat-b3079b" id="q6c-maybe">
                             בדיעבד</div>
-                        <div class="step step-retrospect" id="bediavad1c"
-                            style="background: var(--step-retrospect-bg); border-color: var(--step-retrospect-border); color: var(--step-retrospect-text);">
+                        <div class="step step-retrospect bg-v-step-retrospect-bg bdc-v-step-retrospect-border c-v-step-retrospect-text" id="bediavad1c">
                             מותר בדיעבד<br>
                             <small>אם הניח רק לרגע<br>
                                 ועדיין דעתו להחזיר</small>
@@ -1091,7 +1088,7 @@
 
             </div>
 
-            <div class="warning-box" style="margin-top: 20px;">
+            <div class="warning-box mt-20px">
                 <strong>זכור:</strong> למאכל לח - כל התנאים חייבים להתקיים יחד! אם חסר אפילו תנאי אחד - אסור להחזיר!
             </div>
 
@@ -1124,8 +1121,8 @@
 
                 <h3>הפתרון ההלכתי - הגבלות חז"ל:</h3>
 
-                <div class="definition-box" style="background: #fff8e1; border-color: #ffa726;">
-                    <h4 style="color: #e65100; margin-top: 0;">א. הטמנה מלפני שבת</h4>
+                <div class="definition-box bg-fff8e1 bdc-ffa726">
+                    <h4 class="c-e65100 mt-0">א. הטמנה מלפני שבת</h4>
                     <div class="positive-box">
                         <span class="condition-number">1</span> <strong>במשמר חום - מותר:</strong><br>
                         כגון שמיכות, בגדים, נייר עיתון, קליפות של דבר שאינו מוסיף חום.<br>
@@ -1138,9 +1135,9 @@
                     </div>
                 </div>
 
-                <div class="definition-box" style="background: #ffebee; border-color: #ef5350;">
-                    <h4 style="color: #c62828; margin-top: 0;">ב. הטמנה בשבת עצמה</h4>
-                    <div class="warning-box" style="background: #ffcdd2;">
+                <div class="definition-box bg-ffebee bdc-ef5350">
+                    <h4 class="c-c62828 mt-0">ב. הטמנה בשבת עצמה</h4>
+                    <div class="warning-box bg-ffcdd2">
                         <strong>אסורה לחלוטין!</strong><br>
                         אפילו במשמר חום בלבד - אסור לכסות בשבת מאכל חם מכל צדדיו.<br>
                         <small>הטעם: חשש שכחת שבת - כשרואים טמון בשבת עלול לבוא לידי בישול.</small>
@@ -1154,22 +1151,22 @@
                 <div class="example-box">
                     <strong>דוגמאות מעשיות:</strong><br>
 
-                    <strong style="color: #2d5016;">✓ מותר מלפני שבת:</strong><br>
+                    <strong class="c-2d5016">✓ מותר מלפני שבת:</strong><br>
                     • לכסות סיר בשמיכה מערב שבת (משמר חום)<br><br>
 
-                    <strong style="color: #8b0000;">✗ אסור מלפני שבת:</strong><br>
+                    <strong class="c-8b0000">✗ אסור מלפני שבת:</strong><br>
                     • לכסות סיר מכל צדדיו בחול חם או מלח חם (מוסיף חום)<br><br>
 
-                    <strong style="color: #8b0000;">✗ אסור בשבת:</strong><br>
+                    <strong class="c-8b0000">✗ אסור בשבת:</strong><br>
                     • לכסות בשמיכה סיר שלא היה מכוסה מערב שבת (הטמנה בשבת)<br>
                     • להכניס סיר לתנור כבוי שעדיין חם (הטמנה במוסיף חום)<br><br>
 
-                    <strong style="color: #2d5016;">✓ מותר בשבת:</strong><br>
+                    <strong class="c-2d5016">✓ מותר בשבת:</strong><br>
                     • להניח סיר על פלטה לפי תנאי ההנחה (אין זה הטמנה) אפילו אם הפלטה בארון פח ייעודי<br>
                     • אם צוואר הסיר (חלק מצידי הסיר) גלוי - לכסות את גוף הסיר בלבד
                 </div>
 
-                <div class="definition-box" style="background: #e8f5e9; border-color: #4caf50;">
+                <div class="definition-box bg-e8f5e9 bdc-4caf50">
                     <strong>⚠️ הבחנה חשובה - פלטה מול תנור:</strong><br>
                     <span class="condition-number">1</span> <strong>פלטה:</strong> הנחה על גבי מקור חום - מותרת לפי תנאי
                     ההנחה<br>
@@ -1229,7 +1226,7 @@
 
             </div>
 
-            <div class="definition-box" style="margin-top: 20px; background: #fff8e1; border-color: #ffa726;">
+            <div class="definition-box mt-20px bg-fff8e1 bdc-ffa726">
                 <strong>העיקרון:</strong><br>
                 מערב שבת - מותר להטמין במשמר חום בלבד. אסור במוסיף חום גזירת חז"ל שמא יבוא לערבב (יגיס) את המאכל בשבת.
             </div>
@@ -1258,7 +1255,7 @@
                 <!-- question 1 -->
                 <div class="step question-step" id="question1e" data-flow-to="q1e-galuy,q1e-mechus" data-flow-color="var(--category-gradient-start),var(--category-error-start)">
                     האם הכלי גלוי בחלקו?<br>
-                    <small style="font-weight: normal;">(למשל: חלק מצדי בכלי חשופים)</small>
+                    <small class="fw-normal">(למשל: חלק מצדי בכלי חשופים)</small>
                 </div>
 
                 <!-- branching 1 -->
@@ -1285,7 +1282,7 @@
 
             </div>
 
-            <div class="definition-box" style="margin-top: 20px; background: #ffebee; border-color: #ef5350;">
+            <div class="definition-box mt-20px bg-ffebee bdc-ef5350">
                 <strong>העיקרון:</strong><br>
                 בשבת - אסור להטמין מאכל מכל צדדיו, אפילו במשמר חום! הטעם: חשש שכחת שבת - כשרואים טמון בשבת עלול לבוא
                 לידי בישול.<br>
@@ -1315,13 +1312,13 @@
 
                 <h3>רמות האיסור - מדאורייתא ומדרבנן:</h3>
 
-                <div class="warning-box" style="background: #ffebee; border-color: #d32f2f;">
+                <div class="warning-box bg-ffebee bdc-d32f2f">
                     <strong>⚠️ איסור מדאורייתא (איסור תורה - בישול):</strong><br>
                     ערבוב תבשיל <strong>שלא נתבשל די צרכו</strong> - אפילו אם הסיר לא על האש!<br>
                     המגיס מזרז את השלמת הבישול ונחשב "מצרכי הבישול"
                 </div>
 
-                <div class="warning-box" style="background: #fff3e0; border-color: #f57c00;">
+                <div class="warning-box bg-fff3e0 bdc-f57c00">
                     <strong>⚠️ איסור מדרבנן (גזירת חכמים - מחזי כמבשל):</strong><br>
                     <span class="condition-number">1</span> ערבוב תבשיל <strong>מבושל כל צרכו</strong> כשהוא
                     <strong>עדיין על האש</strong><br>
@@ -1340,7 +1337,7 @@
                     <small>(יש מקום להקל בשעת הדחק)</small>
                 </div>
 
-                <div class="definition-box" style="background: #e3f2fd; border-color: #1976d2;">
+                <div class="definition-box bg-e3f2fd bdc-1976d2">
                     <strong>📋 כיצד להסיר את הסיר מהאש/פלטה:</strong><br>
                     • <strong>לכתחילה:</strong> להסיר מהאש/פלטה לחלוטין<br>
                     • <strong>בשעת הצורך:</strong> מספיק הסרה חלקית (הזזה הצידה)<br>
@@ -1371,15 +1368,14 @@
         <div class="slide">
             <h2>תרשים זרימה - מגיס (ערבוב)</h2>
 
-            <h3 style="color: var(--category-gradient-start); margin-top: 20px; margin-bottom: 15px;">מצב א: המאכל מבושל
+            <h3 class="c-v-category-gradient-start mt-20px mb-15px">מצב א: המאכל מבושל
                 כל צורכו</h3>
-            <div class="flowchart" id="flowchart6a" style="margin-bottom: 30px;">
+            <div class="flowchart mb-30px" id="flowchart6a">
                 <!-- Canvas for the lines -->
                 <canvas class="flow-canvas" aria-hidden="true"></canvas>
 
                 <!-- beginning -->
-                <div class="step start-step" id="start-magis-a"
-                    style="background: linear-gradient(135deg, var(--category-gradient-start) 0%, var(--option-correct-border) 100%);">
+                <div class="step start-step bg-linear-gradient-135deg-v-cat-806b24" id="start-magis-a">
                     עירבוב מאכל מבושל כל צורכו
                 </div>
 
@@ -1410,14 +1406,13 @@
                 </div>
             </div>
 
-            <h3 style="color: #d32f2f; margin-top: 30px; margin-bottom: 15px;">מצב ב: המאכל לא מבושל כל צורכו</h3>
-            <div class="flowchart" id="flowchart6b" style="margin-bottom: 20px;">
+            <h3 class="c-d32f2f mt-30px mb-15px">מצב ב: המאכל לא מבושל כל צורכו</h3>
+            <div class="flowchart mb-20px" id="flowchart6b">
                 <!-- Canvas for the lines -->
                 <canvas class="flow-canvas" aria-hidden="true"></canvas>
 
                 <!-- beginning -->
-                <div class="step start-step" id="start-magis-b"
-                    style="background: linear-gradient(135deg, var(--category-error-start) 0%, var(--category-deep-red-start) 100%);">
+                <div class="step start-step bg-linear-gradient-135deg-v-cat-ec0b6f" id="start-magis-b">
                     עירבוב מאכל שאינו מבושל די צורכו
                 </div>
 
@@ -1431,20 +1426,18 @@
                 <!-- branching -->
                 <div class="branch-container">
                     <div class="branch-item">
-                        <div class="branch-label" id="qb-yes"
-                            style="background: linear-gradient(135deg, var(--category-deep-red-start) 0%, var(--category-deep-red-end) 100%);">
+                        <div class="branch-label bg-linear-gradient-135deg-v-cat-d0be1e" id="qb-yes">
                             כן</div>
-                        <div class="step error-step" id="error-b" style="background: #ffebee; border-color: #d32f2f;">
+                        <div class="step error-step bg-ffebee bdc-d32f2f" id="error-b">
                             אסור מדאורייתא!<br>
                             <small>איסור תורה! הורד מהאש</small>
                         </div>
                     </div>
 
                     <div class="branch-item">
-                        <div class="branch-label" id="qb-no"
-                            style="background: linear-gradient(135deg, var(--category-orange-alt-start) 0%, var(--category-orange-alt-end) 100%);">
+                        <div class="branch-label bg-linear-gradient-135deg-v-cat-50774a" id="qb-no">
                             לא</div>
-                        <div class="step error-step" id="warning-b" style="background: #fff3e0; border-color: #f57c00;">
+                        <div class="step error-step bg-fff3e0 bdc-f57c00" id="warning-b">
                             אסור מדרבנן<br>
                             <small>(האיסור נשאר גם מחוץ לאש)</small>
                         </div>
@@ -1452,7 +1445,7 @@
                 </div>
             </div>
 
-            <div class="positive-box" style="margin-top: 25px;">
+            <div class="positive-box mt-25px">
                 <strong>✓ הפתרון המעשי:</strong><br>
                 <span class="condition-number">1</span> <strong>הורד</strong> את הסיר מהאש/פלטה (לגמרי או הזזה
                 הצידה)<br>
@@ -1460,14 +1453,14 @@
                 <span class="condition-number">3</span> <strong>החזר</strong> את הסיר לאש בתנאי החזרה (ראה שקף 19)
             </div>
 
-            <div class="definition-box" style="margin-top: 15px; background: #e3f2fd; border-color: #1976d2;">
+            <div class="definition-box mt-15px bg-e3f2fd bdc-1976d2">
                 <strong>📋 זכור את רמות האיסור:</strong><br>
-                • <strong style="color: #d32f2f;">מדאורייתא (איסור תורה):</strong> ערבוב מאכל שלא מבושל כל צורכו - אפילו
+                • <strong class="c-d32f2f">מדאורייתא (איסור תורה):</strong> ערבוב מאכל שלא מבושל כל צורכו - אפילו
                 לא על האש!<br>
-                • <strong style="color: #f57c00;">מדרבנן (איסור חכמים):</strong> ערבוב מאכל מבושל כשהוא על האש
+                • <strong class="c-f57c00">מדרבנן (איסור חכמים):</strong> ערבוב מאכל מבושל כשהוא על האש
             </div>
 
-            <div class="source-box" style="margin-top: 15px;">
+            <div class="source-box mt-15px">
                 מקור: פניני הלכה שבת פרק י' הלכה י"ב, קיצור שולחן ערוך ילקוט יוסף סימן שי"ח הלכה מ"ו
             </div>
         </div>
@@ -1496,7 +1489,7 @@
 
                 <h3>ב. הקשיים ההלכתיים - האם יש כאן בישול?</h3>
 
-                <div class="definition-box" style="background: #e8f5e9; border-color: #4caf50;">
+                <div class="definition-box bg-e8f5e9 bdc-4caf50">
                     <strong>🔍 שאלה א': חמה או תולדות חמה?</strong><br><br>
                     <span class="condition-number">1</span> <strong>חמה:</strong> חימום ישיר מקרני השמש - <strong>מותר
                         לכתחילה!</strong><br>
@@ -1536,7 +1529,7 @@
 
                 </div>
 
-                <div class="warning-box" style="background: #fff3e0; border-color: #ff9800;">
+                <div class="warning-box bg-fff3e0 bdc-ff9800">
                     <strong>🔍 שאלה ג': בוילר חשמלי בתוך הדוד - מה הדין?</strong><br><br>
 
                     <strong>מציאות מעשית:</strong> ברוב דודי השמש היום יש גם גוף חימום חשמלי (בוילר)<br>
@@ -1549,10 +1542,8 @@
 
                     <span class="condition-number">2</span> <strong>אם הבוילר נדלק במהלך השבת על ידי שעון
                         שבת:</strong><br>
-                    • פתיחת ברז בשעה שהבוילר כבוי <small>תגרום לכניסת מים קרים שיתבשלו כשהבוילר יידלק</small><strong
-                        style="color: var(--category-gradient-start);"> = גרמא</strong><br>
-                    • פתיחת ברז בשעה שהבוילר דלוק <small>תגרום לכניסת מים קרים שיתבשלו מייד</small><strong
-                        style="color: #d32f2f;"> = פסיק רישא</strong><br><br>
+                    • פתיחת ברז בשעה שהבוילר כבוי <small>תגרום לכניסת מים קרים שיתבשלו כשהבוילר יידלק</small><strong class="c-v-category-gradient-start"> = גרמא</strong><br>
+                    • פתיחת ברז בשעה שהבוילר דלוק <small>תגרום לכניסת מים קרים שיתבשלו מייד</small><strong class="c-d32f2f"> = פסיק רישא</strong><br><br>
 
                     <span class="condition-number">3</span> <strong>הפתרון האידיאלי:</strong><br>
                     • לנתק את הבוילר החשמלי מערב שבת<br>
@@ -1613,7 +1604,7 @@
                     • פניני הלכה שבת כרך א' פרק י' הלכה כ"ה
                 </div>
 
-                <div class="warning-box" style="background: #fff3e0; border-color: #f57c00;">
+                <div class="warning-box bg-fff3e0 bdc-f57c00">
                     <strong>⚠️ השיטה המחמירה:</strong><br><br>
 
                     <strong>הפוסקים המחמירים:</strong><br>
@@ -1687,7 +1678,7 @@
 
                 <h3>ב. דיני רחיצה בשבת</h3>
 
-                <div class="warning-box" style="background: #fff3e0; border-color: #f57c00;">
+                <div class="warning-box bg-fff3e0 bdc-f57c00">
                     <strong>🔴 מים חמים (יד סולדת בו - מעל 45°C):</strong><br><br>
 
                     ✗ <strong>אסור מדרבנן:</strong> לרחוץ כל הגוף או רוב הגוף במים חמים<br>
@@ -1713,7 +1704,7 @@
 
                 <h3>ג. מי הוא איסטניס והמנהג בימינו</h3>
 
-                <div class="definition-box" style="background: #f3e5f5; border-color: #9c27b0;">
+                <div class="definition-box bg-f3e5f5 bdc-9c27b0">
                     <strong>איסטניס:</strong> אדם רגיש שסובל <strong>סבל אמיתי</strong> (לא רק אי-נוחות)
                     מאי-נקיון<br><br>
 
@@ -1835,7 +1826,7 @@
         <div class="slide">
             <div class="container">
                 <h1>🕯️ שאלות חזרה מקיפות - דיני בישול בשבת 🕯️</h1>
-                <p style="text-align: center; color: var(--text-muted); margin-top: -15px; font-size: 1.1em;">30 שאלות
+                <p class="ta-center c-v-text-muted mt-15px fs-1.1em">30 שאלות
                     אמריקאיות -
                     המצגת + שאלות נפוצות</p>
 

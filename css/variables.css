@@ -297,4 +297,13 @@
 
     /* Source border (זהב) */
     --source-border: var(--mode-source-border);
+
+    /* Aliases used by older markup / extracted utilities */
+    --border-color: var(--border-medium);
+    --mode-border: var(--mode-border-medium);
+    --primary: var(--primary-color);
+    --accent: var(--primary-color);
+    --accent-color: var(--primary-color);
+    --correct-bg: var(--box-success-bg);
+    --warning-bg: var(--box-warning-bg);
 }

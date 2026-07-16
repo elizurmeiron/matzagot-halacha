@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/variables.css">
     <link rel="stylesheet" href="../css/layout.css">
     <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/utilities-extracted.css">
 </head>
 
 <body>
@@ -140,12 +141,12 @@
                     <p>
                         חז"ל הבחינו בין שני סוגי מצוות, בהתאם לזיקתן לאדמת ארץ ישראל:
                     </p>
-                    <p style="font-style: italic; text-align: center;">
+                    <p class="quote-center">
                         "כל מצוה שהיא תלויה בארץ — אינה נוהגת אלא בארץ;
                         ושאינה תלויה בארץ — נוהגת בין בארץ בין בחוצה לארץ,
                         חוץ מן הערלה וכלאים."
                     </p>
-                    <p style="text-align: left; font-size: 0.9em; color: var(--text-muted);">
+                    <p class="source-line">
                         משנה קידושין א, ט
                     </p>
                     <div class="list-item">
@@ -157,7 +158,7 @@
                         <strong>מצוות שאינן תלויות בארץ</strong> — מצוות חובת הגוף
                         (תפילין, ציצית, שבת, כשרות המאכלים שדנו בה). נוהגות בכל מקום.
                     </div>
-                    <div class="list-item" style="background: var(--bg-lightest-gray); border-radius: 0.4em; padding: 0.5em 0.7em;">
+                    <div class="list-item bg-v-bg-lightest-gray br-0.4em p-0.5em-0.7em">
                         <strong>דוגמה להמחשה</strong> — תפילין מניחים גם בניו־יורק, שהרי
                         הן חובת הגוף. אבל עגבנייה שגדלה בארץ ונקנתה בשוק מחנה יהודה
                         טעונה תרומות ומעשרות — ואותה עגבנייה עצמה, לו גדלה בלוס־אנג'לס,
@@ -198,8 +199,8 @@
                     </div>
                 </div>
 
-                <details class="example-box" style="transition: all 0.2s ease;">
-                    <summary style="cursor: pointer; user-select: none; padding: 0.2em 0; list-style-position: inside;"><strong>הקשר בין הקרקע למצווה</strong></summary>
+                <details class="example-box ease-200">
+                    <summary class="summary-toggle"><strong>הקשר בין הקרקע למצווה</strong></summary>
                     <p>
                         מדוע התורה התנתה את מצוות אלו דווקא בקרקע ישראל? הראשונים
                         הציעו כמה כיוונים:
@@ -258,11 +259,11 @@
                         ובעל השדה היה בעל ההון — העשיר שבחברה. מנגד, שבט לוי
                         (הלויים והכוהנים) לא קיבל נחלה בארץ:
                     </p>
-                    <p style="font-style: italic; text-align: center;">
+                    <p class="quote-center">
                         "לֹא יִהְיֶה לַכֹּהֲנִים הַלְוִיִּם כָּל שֵׁבֶט לֵוִי חֵלֶק וְנַחֲלָה
                         עִם יִשְׂרָאֵל... ה' הוּא נַחֲלָתוֹ."
                     </p>
-                    <p style="text-align: left; font-size: 0.9em; color: var(--text-muted);">
+                    <p class="source-line">
                         דברים יח, א–ב (וכן במדבר יח, כ)
                     </p>
                     <p>
@@ -282,34 +283,34 @@
                     </p>
                 </div>
 
-                <details class="example-box" style="transition: all 0.2s ease;">
-                    <summary style="cursor: pointer; user-select: none; padding: 0.2em 0; list-style-position: inside;"><strong>הפסוקים בתורה</strong></summary>
+                <details class="example-box ease-200">
+                    <summary class="summary-toggle"><strong>הפסוקים בתורה</strong></summary>
                     <p>מצוות ההפרשה מפוזרות בכמה מקומות, וכל פסוק נוגע במתנה אחרת:</p>
-                    <p style="font-style: italic; text-align: center;">
+                    <p class="quote-center">
                         "כֹּל חֵלֶב יִצְהָר וְכָל חֵלֶב תִּירוֹשׁ וְדָגָן,
                         רֵאשִׁיתָם אֲשֶׁר יִתְּנוּ לַה' לְךָ נְתַתִּים."
                     </p>
-                    <p style="text-align: left; font-size: 0.9em; color: var(--text-muted);">
+                    <p class="source-line">
                         במדבר יח, יב — תרומה גדולה לכוהן
                     </p>
-                    <p style="font-style: italic; text-align: center;">
+                    <p class="quote-center">
                         "וְלִבְנֵי לֵוִי הִנֵּה נָתַתִּי כָּל מַעֲשֵׂר בְּיִשְׂרָאֵל לְנַחֲלָה,
                         חֵלֶף עֲבֹדָתָם אֲשֶׁר הֵם עֹבְדִים."
                     </p>
-                    <p style="text-align: left; font-size: 0.9em; color: var(--text-muted);">
+                    <p class="source-line">
                         במדבר יח, כא — מעשר ראשון ללוי
                     </p>
-                    <p style="font-style: italic; text-align: center;">
+                    <p class="quote-center">
                         "עַשֵּׂר תְּעַשֵּׂר אֵת כָּל תְּבוּאַת זַרְעֶךָ, הַיֹּצֵא הַשָּׂדֶה שָׁנָה שָׁנָה."
                     </p>
-                    <p style="text-align: left; font-size: 0.9em; color: var(--text-muted);">
+                    <p class="source-line">
                         דברים יד, כב — מעשר שני
                     </p>
-                    <p style="font-style: italic; text-align: center;">
+                    <p class="quote-center">
                         "מִקְצֵה שָׁלֹשׁ שָׁנִים תּוֹצִיא אֶת כָּל מַעְשַׂר תְּבוּאָתְךָ בַּשָּׁנָה הַהִוא,
                         וְהִנַּחְתָּ בִּשְׁעָרֶיךָ."
                     </p>
-                    <p style="text-align: left; font-size: 0.9em; color: var(--text-muted);">
+                    <p class="source-line">
                         דברים יד, כח — מעשר עני
                     </p>
                 </details>
@@ -332,7 +333,7 @@
                         <strong>מעשר שני או מעשר עני</strong> — אחד מעשרה נוסף, לפי
                         שנת המחזור (ראו במגירה בהמשך).
                     </div>
-                    <p style="font-size: 0.95em;">
+                    <p class="fs-0.95em">
                         לאחר כל ההפרשות נשאר החקלאי עם כ-79% מן היבול כחולין גמור;
                         והמעשר השני (בשנותיו) אף הוא שלו — נאכל בקדושה בירושלים או נפדה.
                     </p>
@@ -345,29 +346,29 @@
                         רק התרומות (לכוהן) והמעשר הראשון (ללוי) יוצאים מרשות הבעלים;
                         המעשר השני נשאר שלו — נאכל בקדושה בירושלים או נפדה על מטבע.
                     </p>
-                    <div style="display:flex; width:100%; height:2.4em; border-radius:0.4em; overflow:hidden; margin:0.7em 0; box-shadow:0 1px 3px rgba(0,0,0,0.25);">
-                        <div style="flex:0 0 2%; background:#b5651d;" title="תרומה גדולה — לכוהן (כ-2%)"></div>
-                        <div style="flex:0 0 9%; background:#6f9460; display:flex; align-items:center; justify-content:center; color:#fff; font-size:0.72em;">לוי</div>
-                        <div style="flex:0 0 1%; background:#d49a3a;" title="תרומת מעשר — לכוהן (כ-1%)"></div>
-                        <div style="flex:0 0 9%; background:#5b88b5; display:flex; align-items:center; justify-content:center; color:#fff; font-size:0.72em;">מ"ש</div>
-                        <div style="flex:1 1 79%; background:#9c8466; display:flex; align-items:center; justify-content:center; color:#fff; font-size:0.85em;">החקלאי — כ-79%</div>
+                    <div class="d-flex w-100% h-2.4em br-0.4em ov-hidden m-0.7em-0 sh-0-1px-3px-rgba-0-0-0-0.25">
+                        <div title="תרומה גדולה — לכוהן (כ-2%)" class="flex-0-0-2% bg-b5651d"></div>
+                        <div class="flex-0-0-9% bg-6f9460 d-flex ai-center jc-center c-fff fs-0.72em">לוי</div>
+                        <div title="תרומת מעשר — לכוהן (כ-1%)" class="flex-0-0-1% bg-d49a3a"></div>
+                        <div class="flex-0-0-9% bg-5b88b5 d-flex ai-center jc-center c-fff fs-0.72em">מ"ש</div>
+                        <div class="flex-1-1-79% bg-9c8466 d-flex ai-center jc-center c-fff fs-0.85em">החקלאי — כ-79%</div>
                     </div>
-                    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:0.55em 1.4em; font-size:0.9em; margin-top:0.8em;">
-                        <div style="display:flex; align-items:center; gap:0.55em;"><span style="flex:0 0 auto; width:0.95em; height:0.95em; background:#b5651d; border-radius:3px;"></span><span>תרומה גדולה — כ-2% (לכוהן)</span></div>
-                        <div style="display:flex; align-items:center; gap:0.55em;"><span style="flex:0 0 auto; width:0.95em; height:0.95em; background:#6f9460; border-radius:3px;"></span><span>מעשר ראשון — כ-9% (ללוי)</span></div>
-                        <div style="display:flex; align-items:center; gap:0.55em;"><span style="flex:0 0 auto; width:0.95em; height:0.95em; background:#d49a3a; border-radius:3px;"></span><span>תרומת מעשר — כ-1% (לכוהן)</span></div>
-                        <div style="display:flex; align-items:center; gap:0.55em;"><span style="flex:0 0 auto; width:0.95em; height:0.95em; background:#5b88b5; border-radius:3px;"></span><span>מעשר שני / עני — כ-9%</span></div>
-                        <div style="display:flex; align-items:center; gap:0.55em;"><span style="flex:0 0 auto; width:0.95em; height:0.95em; background:#9c8466; border-radius:3px;"></span><span>נשאר לחקלאי — כ-79%</span></div>
+                    <div class="d-grid gtc-repeat-auto-fit-minmax-240px-1fr gap-0.55em-1.4em fs-0.9em mt-0.8em">
+                        <div class="row-center"><span class="flex-0-0-auto w-0.95em h-0.95em bg-b5651d br-3px"></span><span>תרומה גדולה — כ-2% (לכוהן)</span></div>
+                        <div class="row-center"><span class="flex-0-0-auto w-0.95em h-0.95em bg-6f9460 br-3px"></span><span>מעשר ראשון — כ-9% (ללוי)</span></div>
+                        <div class="row-center"><span class="flex-0-0-auto w-0.95em h-0.95em bg-d49a3a br-3px"></span><span>תרומת מעשר — כ-1% (לכוהן)</span></div>
+                        <div class="row-center"><span class="flex-0-0-auto w-0.95em h-0.95em bg-5b88b5 br-3px"></span><span>מעשר שני / עני — כ-9%</span></div>
+                        <div class="row-center"><span class="flex-0-0-auto w-0.95em h-0.95em bg-9c8466 br-3px"></span><span>נשאר לחקלאי — כ-79%</span></div>
                     </div>
-                    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:1em; margin-top:1em;">
-                        <div style="background:var(--bg-lightest-gray); padding:0.7em; border-radius:0.4em;">
+                    <div class="d-grid gtc-repeat-auto-fit-minmax-230px-1fr gap-1em mt-1em">
+                        <div class="bg-v-bg-lightest-gray p-0.7em br-0.4em">
                             <strong>בזמן הבית</strong>
                             <div class="list-item">תרומות — לכוהן, נאכלות בטהרה.</div>
                             <div class="list-item">מעשר ראשון — ללוי, כמזון רגיל.</div>
                             <div class="list-item">מעשר שני — עולה ונאכל בקדושה בירושלים.</div>
                             <div class="list-item">מעשר עני — לעניים (שנים ג, ו).</div>
                         </div>
-                        <div style="background:var(--bg-lightest-gray); padding:0.7em; border-radius:0.4em;">
+                        <div class="bg-v-bg-lightest-gray p-0.7em br-0.4em">
                             <strong>בימינו</strong>
                             <div class="list-item">תרומות — מופרשות, נגנזות, אינן ניתנות.</div>
                             <div class="list-item">מעשר ראשון — בקריאת שם, נשאר אצל הבעלים.</div>
@@ -375,7 +376,7 @@
                             <div class="list-item">מעשר עני — לעני או שוויו לצדקה.</div>
                         </div>
                     </div>
-                    <p style="text-align: left; font-size: 0.9em; color: var(--text-muted);">
+                    <p class="source-line">
                         אחוזים מעוגלים לפי פניני הלכה כשרות א, ז, ב; מכון התורה והארץ
                     </p>
                 </div>
@@ -398,8 +399,8 @@
                         <strong>מעשרות הניתנים לאחֵר — מצוות ממון</strong>: אין בהם
                         קדושה אלא העברת בעלות. מבין שלושת המעשרות, שניים ניתנים
                         לאדם אחר, ובהם יש להבחין בימינו:
-                        <div style="margin-right: 1.5em; margin-top: 0.5em;">
-                            <div style="margin-bottom: 0.5em;">
+                        <div class="mr-1.5em mt-0.5em">
+                            <div class="mb-0.5em">
                                 <strong>מעשר ראשון (ללוי)</strong> — תלוי בייחוס שבטי.
                                 מאחר שייחוס הלויים אינו מוחזק בידינו בוודאות, חל
                                 הכלל <strong>"המוציא מחברו עליו הראיה"</strong>: הלוי
@@ -414,7 +415,7 @@
                             </div>
                         </div>
                     </div>
-                    <p style="font-size: 0.95em;">
+                    <p class="fs-0.95em">
                         <strong>מעשר שני</strong>: אף שגם הוא מעשר,
                         אינו ניתן לאחֵר אלא נשאר בבעלות החקלאי — אינו קודש לכוהן
                         ואינו ממון לזולת. נאכל בקדושה בירושלים, וכשאי אפשר — נפדה
@@ -422,8 +423,8 @@
                     </p>
                 </div>
 
-                <details class="example-box" style="transition: all 0.2s ease;">
-                    <summary style="cursor: pointer; user-select: none; padding: 0.2em 0; list-style-position: inside;"><strong>מחזור שבע השנים</strong></summary>
+                <details class="example-box ease-200">
+                    <summary class="summary-toggle"><strong>מחזור שבע השנים</strong></summary>
                     <p>
                         ההפרש בין מעשר שני למעשר עני נקבע לפי מקום השנה בתוך מחזור
                         השמיטה:
@@ -447,9 +448,9 @@
                         הכשרות מפרסמים את הנוסחה העדכנית מדי שנה.
                     </p>
 
-                    <details style="margin-top: 0.8em; background: var(--bg-lightest-gray); border: 1px solid var(--border-light); border-radius: 0.5em; padding: 0.4em 0.8em;">
-                        <summary style="cursor: pointer; user-select: none; font-weight: bold; color: var(--primary-dark);">לפי מה נקבעת השנה? — האפשרויות לפי סוג היבול</summary>
-                        <p style="margin-top: 0.6em;">
+                    <details class="mt-0.8em bg-v-bg-lightest-gray bd-1px-solid-v-border-light br-0.5em p-0.4em-0.8em">
+                        <summary class="cur-pointer us-none fw-bold c-v-primary-dark">לפי מה נקבעת השנה? — האפשרויות לפי סוג היבול</summary>
+                        <p class="mt-0.6em">
                             ההלכה אינה הולכת אחר היום שבו נקטף הפרי או הבשיל לגמרי, אלא
                             אחר השלב הקובע את חיובו. פרי שעבר את השלב הקובע לפני "ראש
                             השנה" המתאים לו — שייך לשנה החולפת, גם אם נגמר ונאסף בפועל
@@ -486,7 +487,7 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <p style="font-size: 0.9em; color: var(--text-muted); margin-top: 0.6em;">
+                        <p class="fs-0.9em c-v-text-muted mt-0.6em">
                             משנה ראש השנה א, א; רמב"ם הלכות מעשר שני ונטע רבעי א, ב–ה.
                         </p>
                     </details>
@@ -509,7 +510,7 @@
                         בתרומות ומעשרות, ולרוב גם לא מדרבנן. החריג: סוריה ואזורים
                         שכנים, ודיני "פירות ארץ ישראל שיצאו לחו"ל" שעדיין מחייבים.
                     </div>
-                    <p style="font-size: 0.95em; margin-top: 1em;">
+                    <p class="fs-0.95em mt-1em">
                         בשקף הבא נראה את <strong>סדר ההפרשה במעשה</strong>: שלביה,
                         הנוסח הנאמר בכל שלב, וההכרעה מתי מפרישים עם ברכה ומתי
                         בלי ברכה (דמאי).
@@ -595,7 +596,7 @@
 
                         </div>
                     </div>
-                    <p style="font-size:0.88em; color:var(--text-muted); margin-top:0.7em;">
+                    <p class="fs-0.88em c-v-text-muted mt-0.7em">
                         השלבים הבאים מרחיבים כל צומת: מתי מברכים, נוסח ההפרשה,
                         ופדיון מעשר שני.
                     </p>
@@ -611,7 +612,7 @@
                         פירות מעץ פרטי שאיש לא הפריש מהם, או תוצרת ישירות מחקלאי
                         שאינו מקפיד על הפרשה. כאן ידוע שלא הופרש, ולכן מברכים:
                     </div>
-                    <p style="font-style: italic; text-align: center; background: var(--bg-lightest-gray); padding: 0.7em; border-radius: 0.4em; margin: 0.6em 0;">
+                    <p class="fst-italic ta-center bg-v-bg-lightest-gray p-0.7em br-0.4em m-0.6em-0">
                         "בָּרוּךְ אַתָּה ה' אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם,
                         אֲשֶׁר קִדְּשָׁנוּ בְּמִצְוֹתָיו וְצִוָּנוּ לְהַפְרִישׁ תְּרוּמוֹת וּמַעַשְׂרוֹת."
                     </p>
@@ -625,8 +626,8 @@
                     </div>
                 </div>
 
-                <details class="example-box" style="transition: all 0.2s ease;">
-                    <summary style="cursor: pointer; user-select: none; padding: 0.2em 0; list-style-position: inside;"><strong>ומדוע לא אומרים בדמאי "ספק דרבנן — להקל"?</strong></summary>
+                <details class="example-box ease-200">
+                    <summary class="summary-toggle"><strong>ומדוע לא אומרים בדמאי "ספק דרבנן — להקל"?</strong></summary>
                     <p>
                         לכאורה, חיוב המעשרות בתוצרת זו אינו אלא מספק; ומאחר
                         שהמצווה בימינו מדרבנן, היה מקום לומר "ספק דרבנן להקל"
@@ -657,19 +658,19 @@
                         בהישג יד את המטבע המיוחד לפדיון. המברך — מברך תחילה, ואז
                         אומר את הנוסח:
                     </p>
-                    <p style="font-size: 0.9em; color: var(--text-muted);">
+                    <p class="fs-0.9em c-v-text-muted">
                         אין צורך לדעת את הנוסח בעל פה: סדר ההפרשה המלא מודפס
                         בסידורים רבים, וכן בלוחות ההפרשה של גופי הכשרות, ואפשר
                         לקראו מתוכם.
                     </p>
 
-                    <div style="border-right: 3px solid var(--accent-color, #b87333); padding: 0.6em 1em 0.6em 0.6em; margin: 0.8em 0; background: var(--bg-lightest-gray);">
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.4em 1.5em; align-items: start;">
-                            <p style="font-style: italic; font-size: 1.05em; margin: 0;">
+                    <div class="bdr-3px-solid-v-accent-color-b87333 p-0.6em-1em-0.6em-0.6em m-0.8em-0 bg-v-bg-lightest-gray">
+                        <div class="d-grid gtc-repeat-auto-fit-minmax-260px-1fr gap-0.4em-1.5em ai-start">
+                            <p class="fst-italic fs-1.05em m-0">
                                 "יוֹתֵר מֵאֶחָד מִמֵּאָה שֶׁיֵּשׁ כָּאן בְּצַד צְפוֹנוֹ —
                                 הֲרֵי הוּא תְּרוּמָה גְּדוֹלָה."
                             </p>
-                            <p style="font-size: 0.9em; color: var(--text-muted); margin: 0;">
+                            <p class="fs-0.9em c-v-text-muted m-0">
                                 <strong>1. תרומה גדולה</strong> — מקצים חלק קטן בקצה
                                 הצפוני של הפרוסה הצדדית, ומייעדים אותו לכוהן. די
                                 בכמות מועטה ביותר; שאר הפרוסה תשמש להמשך.
@@ -677,14 +678,14 @@
                         </div>
                     </div>
 
-                    <div style="border-right: 3px solid var(--accent-color, #b87333); padding: 0.6em 1em 0.6em 0.6em; margin: 0.8em 0; background: var(--bg-lightest-gray);">
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.4em 1.5em; align-items: start;">
-                            <p style="font-style: italic; font-size: 1.05em; margin: 0;">
+                    <div class="bdr-3px-solid-v-accent-color-b87333 p-0.6em-1em-0.6em-0.6em m-0.8em-0 bg-v-bg-lightest-gray">
+                        <div class="d-grid gtc-repeat-auto-fit-minmax-260px-1fr gap-0.4em-1.5em ai-start">
+                            <p class="fst-italic fs-1.05em m-0">
                                 "אוֹתוֹ אֶחָד מִמֵּאָה שֶׁעָשִׂיתִיו תְּרוּמָה גְּדוֹלָה,
                                 וְעוֹד תִּשְׁעָה כָּמוֹהוּ בְּצַד צְפוֹנָם שֶׁל הַפֵּרוֹת —
                                 הֲרֵי הֵם מַעֲשֵׂר רִאשׁוֹן."
                             </p>
-                            <p style="font-size: 0.9em; color: var(--text-muted); margin: 0;">
+                            <p class="fs-0.9em c-v-text-muted m-0">
                                 <strong>2. מעשר ראשון</strong> — מצהירים שעשירית מן
                                 היבול כולו (האחד ממאה שבפרוסה ועוד תשעה כמוהו בצד
                                 צפון הפירות) שייכת ללוי. בפועל נשאר בידי הבעלים
@@ -693,13 +694,13 @@
                         </div>
                     </div>
 
-                    <div style="border-right: 3px solid var(--accent-color, #b87333); padding: 0.6em 1em 0.6em 0.6em; margin: 0.8em 0; background: var(--bg-lightest-gray);">
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.4em 1.5em; align-items: start;">
-                            <p style="font-style: italic; font-size: 1.05em; margin: 0;">
+                    <div class="bdr-3px-solid-v-accent-color-b87333 p-0.6em-1em-0.6em-0.6em m-0.8em-0 bg-v-bg-lightest-gray">
+                        <div class="d-grid gtc-repeat-auto-fit-minmax-260px-1fr gap-0.4em-1.5em ai-start">
+                            <p class="fst-italic fs-1.05em m-0">
                                 "אוֹתוֹ אֶחָד מִמֵּאָה שֶׁעָשִׂיתִיו מַעֲשֵׂר רִאשׁוֹן
                                 עָשׂוּי תְּרוּמַת מַעֲשֵׂר."
                             </p>
-                            <p style="font-size: 0.9em; color: var(--text-muted); margin: 0;">
+                            <p class="fs-0.9em c-v-text-muted m-0">
                                 <strong>3. תרומת מעשר</strong> — מצהירים שעשירית מן
                                 המעשר הראשון (אותו אחד ממאה שבתוך הפרוסה) היא
                                 תרומה נוספת לכוהן. היא תיגנז יחד עם התרומה הגדולה.
@@ -707,16 +708,16 @@
                         </div>
                     </div>
 
-                    <div style="border-right: 3px solid var(--accent-color, #b87333); padding: 0.6em 1em 0.6em 0.6em; margin: 0.8em 0; background: var(--bg-lightest-gray);">
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.4em 1.5em; align-items: start;">
-                            <p style="font-style: italic; font-size: 1.05em; margin: 0;">
+                    <div class="bdr-3px-solid-v-accent-color-b87333 p-0.6em-1em-0.6em-0.6em m-0.8em-0 bg-v-bg-lightest-gray">
+                        <div class="d-grid gtc-repeat-auto-fit-minmax-260px-1fr gap-0.4em-1.5em ai-start">
+                            <p class="fst-italic fs-1.05em m-0">
                                 "וְעוֹד תִּשְׁעָה אֲחוּזִים מִן הַפֵּרוֹת בְּצַד דְּרוֹמָם —
                                 הֲרֵי הֵם מַעֲשֵׂר שֵׁנִי (וּבִשְׁנַת מַעֲשֵׂר עָנִי —
                                 מַעֲשֵׂר עָנִי).
                                 וְאִם הוּא מַעֲשֵׂר שֵׁנִי — הֲרֵי הוּא מְחֻלָּל וְחֻמְשׁוֹ
                                 עַל פְּרוּטָה בְּמַטְבֵּעַ שֶׁיִּחַדְתִּי לְכָךְ."
                             </p>
-                            <p style="font-size: 0.9em; color: var(--text-muted); margin: 0;">
+                            <p class="fs-0.9em c-v-text-muted m-0">
                                 <strong>4. מעשר שני או מעשר עני</strong> — עשירית
                                 נוספת מן הפירות. בשנים א, ב, ד, ה למחזור השמיטה
                                 — מעשר שני, שנפדה על פרוטה במטבע ובכך נעשה חולין.
@@ -726,7 +727,7 @@
                         </div>
                     </div>
 
-                    <p style="font-size: 0.95em; margin-top: 1em;">
+                    <p class="fs-0.95em mt-1em">
                         <strong>תוספת לרבעי</strong>: אם יש בכלל הפירות פירות שנת
                         רבעי (השנה הרביעית לנטיעת העץ — ראו שקף 9), מוסיפים:
                         "אם יש כאן פירות רבעי, הרי הם וחומשם מחוללים על פרוטה
@@ -782,15 +783,15 @@
                         להשליך לים, לגנוז או לטחון — כדי שלא יתערב במטבעות חולין.
                     </div>
 
-                    <div style="background: var(--bg-lightest-gray); padding: 0.9em; border-radius: 0.4em; margin-top: 1em;">
+                    <div class="bg-v-bg-lightest-gray p-0.9em br-0.4em mt-1em">
                         <strong>פתרון מעשי: מינוי למכון התורה והארץ</strong>
-                        <p style="margin: 0.5em 0 0.4em;">
+                        <p class="m-0.5em-0-0.4em">
                             מרבית הצרכנים אינם מעוניינים לעקוב אחר ערך המטבע
                             ולטפל בנוהל ההתמלאות. המכון מציע שירות שנתי: דמי
                             מינוי קטנים, ובתמורה המכון מחזיק מטבעות פדיון לטובת
                             המנויים ומחלל אותם במועד.
                         </p>
-                        <p style="margin: 0.4em 0 0;">
+                        <p class="m-0.4em-0-0">
                             המנוי משנה את הנוסח: במקום
                             "בְּמַטְבֵּעַ שֶׁיִּחַדְתִּי לְכָךְ" אומר
                             "בְּמַטְבֵּעַ שֶׁל מְכוֹן הַתּוֹרָה וְהָאָרֶץ שֶׁאֲנִי
@@ -815,7 +816,7 @@
                         <strong>מעשר עני</strong> — בשנים ג ו-ו, מעבירים את שווי
                         ההפרשה לעני או לארגון צדקה.
                     </div>
-                    <p style="font-size: 0.95em; margin-top: 1em;">
+                    <p class="fs-0.95em mt-1em">
                         נוסחים מודפסים ושקיות גניזה זמינים ברבנויות ובחנויות
                         יהדות. אפליקציות סלולריות (למשל של מכון התורה והארץ)
                         מציעות תהליך הפרשה מודרך, עם הנוסח המתאים לשנה הנוכחית
@@ -840,7 +841,7 @@
                         במקומן, והעני בא ולוקטן בעצמו. בכך נעשה השדה כולו שותפות שבין
                         בעל היבול לבין העני, האלמנה, היתום והגר.
                     </p>
-                    <p style="text-align: left; font-size: 0.9em; color: var(--text-muted);">
+                    <p class="source-line">
                         רמב"ם הלכות מתנות עניים א–ה; פניני הלכה כשרות א, ו
                     </p>
                 </div>
@@ -856,7 +857,7 @@
                         פאה ושכחה נוהגות בכל היבולים החייבים, ובכללם זיתים ושאר אילנות;
                         לקט מיוחד לתבואה ולקטניות, ופרט ועוללות לכרם.
                     </p>
-                    <p style="text-align: left; font-size: 0.9em; color: var(--text-muted);">
+                    <p class="source-line">
                         משנה מסכת פאה; פניני הלכה כשרות א, ו
                     </p>
                 </div>
@@ -874,21 +875,21 @@
 </tbody>
 </table>
 </div>
-<details class="example-box" style="transition: all 0.2s ease;">
-                    <summary style="cursor: pointer; user-select: none; padding: 0.2em 0; list-style-position: inside;"><strong>מקור המצווה בתורה</strong></summary>
-                    <p style="font-style: italic; text-align: center;">
+<details class="example-box ease-200">
+                    <summary class="summary-toggle"><strong>מקור המצווה בתורה</strong></summary>
+                    <p class="quote-center">
                         "וּבְקֻצְרְכֶם אֶת קְצִיר אַרְצְכֶם לֹא תְכַלֶּה פְּאַת שָׂדְךָ לִקְצֹר,
                         וְלֶקֶט קְצִירְךָ לֹא תְלַקֵּט. וְכַרְמְךָ לֹא תְעוֹלֵל, וּפֶרֶט כַּרְמְךָ
                         לֹא תְלַקֵּט — לֶעָנִי וְלַגֵּר תַּעֲזֹב אֹתָם אֲנִי ה' אֱלֹהֵיכֶם."
                     </p>
-                    <p style="text-align: left; font-size: 0.9em; color: var(--text-muted);">
+                    <p class="source-line">
                         ויקרא יט, ט–י (וכן כג, כב)
                     </p>
-                    <p style="font-style: italic; text-align: center;">
+                    <p class="quote-center">
                         "כִּי תִקְצֹר קְצִירְךָ בְשָׂדֶךָ וְשָׁכַחְתָּ עֹמֶר בַּשָּׂדֶה,
                         לֹא תָשׁוּב לְקַחְתּוֹ — לַגֵּר לַיָּתוֹם וְלָאַלְמָנָה יִהְיֶה."
                     </p>
-                    <p style="text-align: left; font-size: 0.9em; color: var(--text-muted);">
+                    <p class="source-line">
                         דברים כד, יט (ובכללו השכחה בזית: "כִּי תַחְבֹּט זֵיתְךָ לֹא תְפַאֵר אַחֲרֶיךָ")
                     </p>
                 </details>
@@ -900,7 +901,7 @@
                         קבעו רצפה: אין פוחתים משישים, כלומר אחד חלקי שישים מן השדה לכל
                         הפחות. למעלה מזה — הכול לפי גודל השדה, ריבוי העניים וברכת היבול.
                     </p>
-                    <p style="text-align: left; font-size: 0.9em; color: var(--text-muted);">
+                    <p class="source-line">
                         משנה פאה א, ב: "אֵין פּוֹחֲתִין לַפֵּאָה מִשִּׁשִּׁים... הַכֹּל לְפִי גֹדֶל הַשָּׂדֶה, וּלְפִי רֹב הָעֲנִיִּים, וּלְפִי רֹב הָעֲנָוָה"
                     </p>
                 </div>
@@ -947,8 +948,8 @@
                     </div>
                 </div>
 
-                <details class="example-box" style="transition: all 0.2s ease;">
-                    <summary style="cursor: pointer; user-select: none; padding: 0.2em 0; list-style-position: inside;"><strong>האם נוהגות בימינו?</strong></summary>
+                <details class="example-box ease-200">
+                    <summary class="summary-toggle"><strong>האם נוהגות בימינו?</strong></summary>
                     <p>
                         עיקר דין מתנות עניים נוהג גם היום ביבולים החייבים הגדלים בארץ,
                         אך למעשה הוא מצוי רק לעיתים רחוקות: רוב הפירות והירקות פטורים
@@ -957,7 +958,7 @@
                         נוהגים להשאיר את המתנות לעניים או להעריך את שוויין ולתתו לצדקה.
                         הפרטים מסורים להוראת חכם.
                     </p>
-                    <p style="text-align: left; font-size: 0.9em; color: var(--text-muted);">
+                    <p class="source-line">
                         פניני הלכה כשרות א, ו (דין המתנות בזמן הזה); רמב"ם הלכות מתנות עניים א, יד
                     </p>
                 </details>
@@ -970,7 +971,7 @@
                         שייכות לאותו חזון מקראי שבו פֵּרות הארץ נחלקים בין כוהן, לוי
                         ועני — ולא היבול כולו של בעליו, אלא של כל ישראל.
                     </p>
-                    <p style="text-align: left; font-size: 0.9em; color: var(--text-muted);">
+                    <p class="source-line">
                         ויקרא יט, ט–י; כג, כב; דברים כד, יט–כא; משנה מסכת פאה; רמב"ם הלכות מתנות עניים א–ה
                     </p>
                 </div>
@@ -989,11 +990,11 @@
                         החלה היא <strong>תרומה</strong> — הפסוק עצמו מגדיר אותה כך,
                         ומדמה אותה לתרומת התבואה:
                     </p>
-                    <p style="font-style: italic; text-align: center;">
+                    <p class="quote-center">
                         "רֵאשִׁית עֲרִסֹתֵכֶם חַלָּה תָּרִימוּ תְרוּמָה,
                         כִּתְרוּמַת גֹּרֶן כֵּן תָּרִימוּ אֹתָהּ."
                     </p>
-                    <p style="text-align: left; font-size: 0.9em; color: var(--text-muted);">
+                    <p class="source-line">
                         במדבר טו, כ
                     </p>
                     <p>
@@ -1017,7 +1018,7 @@
                     </div>
                     <div class="list-item">
                         <strong>שיעור הקמח</strong> — לפי הפסיקה הרווחת:
-                        <div style="margin-right: 1.5em; margin-top: 0.4em; font-size: 0.95em;">
+                        <div class="mr-1.5em mt-0.4em fs-0.95em">
                             <div>פחות מ-1.230 ק"ג קמח — פטור.</div>
                             <div>1.230–1.666 ק"ג — מפרישים בלא ברכה.</div>
                             <div>1.666 ק"ג ומעלה — מפרישים עם ברכה.</div>
@@ -1026,8 +1027,8 @@
                     </div>
                 </div>
 
-                <details class="example-box" style="transition: all 0.2s ease;">
-                    <summary style="cursor: pointer; user-select: none; padding: 0.2em 0; list-style-position: inside;"><strong>בארץ ובחו"ל — שתיהן מדרבנן</strong></summary>
+                <details class="example-box ease-200">
+                    <summary class="summary-toggle"><strong>בארץ ובחו"ל — שתיהן מדרבנן</strong></summary>
                     <p>
                         חיוב חלה מן התורה תלוי בכניסת כל ישראל לארץ. הדבר נלמד
                         מלשון הכתוב "בְּבֹאֲכֶם אֶל הָאָרֶץ" (במדבר טו, יח) —
@@ -1063,11 +1064,11 @@
                     <div class="list-item">
                         <strong>הנוסח</strong> — מפרישים חתיכה קטנה (כזית או יותר)
                         ואומרים:
-                        <p style="font-style: italic; text-align: center; background: var(--bg-lightest-gray); padding: 0.6em; border-radius: 0.4em; margin: 0.5em 0;">
+                        <p class="fst-italic ta-center bg-v-bg-lightest-gray p-0.6em br-0.4em m-0.5em-0">
                             "הֲרֵי זוֹ חַלָּה."
                         </p>
                         בכמות החייבת בברכה — מברכים תחילה:
-                        <p style="font-style: italic; text-align: center; background: var(--bg-lightest-gray); padding: 0.6em; border-radius: 0.4em; margin: 0.5em 0;">
+                        <p class="fst-italic ta-center bg-v-bg-lightest-gray p-0.6em br-0.4em m-0.5em-0">
                             "בָּרוּךְ אַתָּה ה' אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם,
                             אֲשֶׁר קִדְּשָׁנוּ בְּמִצְוֹתָיו וְצִוָּנוּ לְהַפְרִישׁ חַלָּה."
                         </p>
@@ -1107,9 +1108,9 @@
                     </p>
                 </div>
 
-                <details class="example-box" style="transition: all 0.2s ease;">
-                    <summary style="cursor: pointer; user-select: none; padding: 0.2em 0; list-style-position: inside;"><strong>המקור בתורה</strong></summary>
-                    <p style="font-style: italic; text-align: center;">
+                <details class="example-box ease-200">
+                    <summary class="summary-toggle"><strong>המקור בתורה</strong></summary>
+                    <p class="quote-center">
                         "וְכִי תָבֹאוּ אֶל הָאָרֶץ וּנְטַעְתֶּם כָּל עֵץ מַאֲכָל
                         וַעֲרַלְתֶּם עָרְלָתוֹ אֶת פִּרְיוֹ.
                         שָׁלֹשׁ שָׁנִים יִהְיֶה לָכֶם עֲרֵלִים לֹא יֵאָכֵל.
@@ -1117,7 +1118,7 @@
                         וּבַשָּׁנָה הַחֲמִישִׁת תֹּאכְלוּ אֶת פִּרְיוֹ —
                         לְהוֹסִיף לָכֶם תְּבוּאָתוֹ."
                     </p>
-                    <p style="text-align: left; font-size: 0.9em; color: var(--text-muted);">
+                    <p class="source-line">
                         ויקרא יט, כג–כה
                     </p>
                 </details>
@@ -1146,8 +1147,8 @@
 <div class="mf-arrow">←</div>
 <div class="mf-step mf-yes">שנה 5 ואילך<br>חולין<br><small>מותר ללא הגבלה</small></div>
 </div>
-<details class="example-box" style="transition: all 0.2s ease;">
-                    <summary style="cursor: pointer; user-select: none; padding: 0.2em 0; list-style-position: inside;"><strong>חישוב השנים — מתי הן מתחילות ומסתיימות?</strong></summary>
+<details class="example-box ease-200">
+                    <summary class="summary-toggle"><strong>חישוב השנים — מתי הן מתחילות ומסתיימות?</strong></summary>
                     <p>
                         ספירת שנות הערלה אינה לפי שנה מלאה מן הנטיעה, אלא לפי
                         השנה העברית:
@@ -1183,14 +1184,14 @@
                         נחשב לרבעי; פרי שחנט קודם לכן — עדיין ערלה (משנה ראש
                         השנה א, א; שו"ע יו"ד רצד, ד).
                     </div>
-                    <p style="font-size: 0.95em;">
+                    <p class="fs-0.95em">
                         החישוב מורכב, ואתר מכון התורה והארץ מספק מחשבון מותאם
                         לכל מטע על פי תאריך הנטיעה והאזור.
                     </p>
                 </details>
 
-                <details class="example-box" style="transition: all 0.2s ease;">
-                    <summary style="cursor: pointer; user-select: none; padding: 0.2em 0; list-style-position: inside;"><strong>עץ או ירק? — הספק בפסיפלורה (שעונית)</strong></summary>
+                <details class="example-box ease-200">
+                    <summary class="summary-toggle"><strong>עץ או ירק? — הספק בפסיפלורה (שעונית)</strong></summary>
                     <p>
                         איסור ערלה חל על <strong>עץ</strong> בלבד, ולא על ירק. ההבחנה
                         תלויה בסימנים אחדים, ובהם: האם הגזע מתקיים ומוציא פרי משנה
@@ -1220,13 +1221,13 @@
                         האדמה". נמצא שאותה מחלוקת עצמה מכריעה לחומרה בערלה, ואילו
                         בברכה נוטים בעקבותיה להקל.
                     </p>
-                    <p style="font-size: 0.9em; color: var(--text-muted);">
+                    <p class="fs-0.9em c-v-text-muted">
                         מכון התורה והארץ, דיני הפסיפלורה לערלה ולברכה.
                     </p>
                 </details>
 
-                <details class="example-box" style="transition: all 0.2s ease;">
-                    <summary style="cursor: pointer; user-select: none; padding: 0.2em 0; list-style-position: inside;"><strong>ערלה בחו"ל</strong></summary>
+                <details class="example-box ease-200">
+                    <summary class="summary-toggle"><strong>ערלה בחו"ל</strong></summary>
                     <p>
                         ערלה היא אחת המצוות המעטות הנוהגות בחו"ל מן
                         ה<strong>הלכה למשה מסיני</strong>, ולא רק מדרבנן
@@ -1242,7 +1243,7 @@
                         <strong>בארץ — ספק אסור</strong>: בכל ספק נוקטים
                         לחומרא, על פי הכלל "ספיקא דאורייתא לחומרא".
                     </div>
-                    <p style="font-size: 0.95em;">
+                    <p class="fs-0.95em">
                         הטעם: ההלכה למשה מסיני בחו"ל ניתנה רק על ערלה ודאית
                         ולא על ספק.
                     </p>
@@ -1292,23 +1293,23 @@
                     </p>
                 </div>
 
-                <details class="example-box" style="transition: all 0.2s ease;">
-                    <summary style="cursor: pointer; user-select: none; padding: 0.2em 0; list-style-position: inside;"><strong>הפסוקים בתורה</strong></summary>
-                    <p style="font-style: italic; text-align: center;">
+                <details class="example-box ease-200">
+                    <summary class="summary-toggle"><strong>הפסוקים בתורה</strong></summary>
+                    <p class="quote-center">
                         "וְשֵׁשׁ שָׁנִים תִּזְרַע אֶת אַרְצֶךָ וְאָסַפְתָּ אֶת תְּבוּאָתָהּ.
                         וְהַשְּׁבִיעִת תִּשְׁמְטֶנָּה וּנְטַשְׁתָּהּ, וְאָכְלוּ אֶבְיֹנֵי עַמֶּךָ,
                         וְיִתְרָם תֹּאכַל חַיַּת הַשָּׂדֶה."
                     </p>
-                    <p style="text-align: left; font-size: 0.9em; color: var(--text-muted);">
+                    <p class="source-line">
                         שמות כג, י–יא
                     </p>
-                    <p style="font-style: italic; text-align: center;">
+                    <p class="quote-center">
                         "וְשָׁבְתָה הָאָרֶץ שַׁבָּת לַה'. שֵׁשׁ שָׁנִים תִּזְרַע שָׂדֶךָ,
                         וְשֵׁשׁ שָׁנִים תִּזְמֹר כַּרְמֶךָ... וּבַשָּׁנָה הַשְּׁבִיעִת
                         שַׁבַּת שַׁבָּתוֹן יִהְיֶה לָאָרֶץ — שָׂדְךָ לֹא תִזְרָע
                         וְכַרְמְךָ לֹא תִזְמֹר."
                     </p>
-                    <p style="text-align: left; font-size: 0.9em; color: var(--text-muted);">
+                    <p class="source-line">
                         ויקרא כה, ב–ד
                     </p>
                 </details>
@@ -1344,7 +1345,7 @@
                         הצמח (משום "אוקמי אילנא" — להעמיד את הצמח), קציר במידה
                         הדרושה לאכילה אישית, ולקיטת פירות שגדלו ממילא.
                     </p>
-                    <p style="font-size: 0.95em;">
+                    <p class="fs-0.95em">
                         <strong>דאורייתא או דרבנן?</strong> נחלקו הראשונים.
                         <em>הרמב"ם</em> (הלכות שמיטה ויובל י, ח) הצריך שמיטה מן
                         התורה גם בימינו. <em>רוב הראשונים</em> (רא"ש, רמב"ן ועוד)
@@ -1401,8 +1402,8 @@
                     </div>
                 </div>
 
-                <details class="example-box" style="transition: all 0.2s ease;">
-                    <summary style="cursor: pointer; user-select: none; padding: 0.2em 0; list-style-position: inside;"><strong>ביעור פירות שביעית — איך עובד</strong></summary>
+                <details class="example-box ease-200">
+                    <summary class="summary-toggle"><strong>ביעור פירות שביעית — איך עובד</strong></summary>
                     <p>
                         כשבאזור מסוים מין הפרי נגמר מן השדה (במציאות הטבעית, לא
                         בידי החקלאי), מי שאוצר את אותו מין בבית — חייב להפקירו
@@ -1435,7 +1436,7 @@
                         שאחרי הביעור הפירות מותרים באכילה רגילה ללא קדושה;
                         אחרים מחמירים שעדיין יש בהם קדושה.
                     </div>
-                    <div class="table-wrap" style="margin-top: 0.8em;">
+                    <div class="table-wrap mt-0.8em">
                         <table class="halacha-table">
                             <caption>זמני ביעור בסיסיים — אומדן חז"ל</caption>
                             <thead>
@@ -1449,7 +1450,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <p style="font-size: 0.88em; color: var(--text-muted); margin-top: 0.5em;">
+                    <p class="fs-0.88em c-v-text-muted mt-0.5em">
                         אלו אומדני חז"ל לארבעת המינים הקבועים (פסחים נג ע"ב;
                         רמב"ם הלכות שמיטה ויובל ז, יא). שאר המינים — לפי הערכת
                         מומחים, ומתפרסמים בלוחות ביעור מעודכנים מדי שנת שמיטה.
@@ -1514,7 +1515,7 @@
                         גדלו בקרקע של נוכרי, אין בהם קדושת שביעית, והם מותרים
                         לשימוש רגיל.
                     </div>
-                    <p style="font-size: 0.95em;">
+                    <p class="fs-0.95em">
                         <strong>מקור ההיתר</strong>: חודש בשמיטת תרמ"ט (1888–1889)
                         על ידי הרבנים יצחק אלחנן ספקטור (מקובנה), שמואל מוהליבר
                         והנצי"ב מוולוז'ין. הרב א"י קוק הרחיב את היסוד העיוני
@@ -1587,15 +1588,15 @@
                         נוספות: בישולי נכרים, השגחה רצופה מהשדה ועד החנות
                         וכשרות כללית של היבוא.
                     </div>
-                    <p style="font-size: 0.95em;">
+                    <p class="fs-0.95em">
                         ארגוני הכשרות החרדיים (בד"ץ העדה החרדית, חוג חתם סופר,
                         בד"ץ בית יוסף ועוד) מקימים מערכי יבוא מסודרים בכל שנת
                         שמיטה, עם השגחה ייעודית על כל שרשרת הייצור וההפצה.
                     </p>
                 </div>
 
-                <details class="example-box" style="transition: all 0.2s ease;">
-                    <summary style="cursor: pointer; user-select: none; padding: 0.2em 0; list-style-position: inside;"><strong>מצע מנותק וגידולי ערבה</strong></summary>
+                <details class="example-box ease-200">
+                    <summary class="summary-toggle"><strong>מצע מנותק וגידולי ערבה</strong></summary>
                     <p>
                         שתי טכניקות חקלאיות מודרניות הפכו למקור חשוב לתוצרת
                         כשרה בשנת השמיטה, ושתיהן מקובלות על רוב הפוסקים —
@@ -1618,7 +1619,7 @@
                         אינם חלים עליהם. הערבה הפכה לאזור מרכזי לאספקת ירקות
                         בשנת השמיטה לציבור הרחב.
                     </div>
-                    <p style="font-size: 0.95em;">
+                    <p class="fs-0.95em">
                         חלק מן הפוסקים מעדיפים גידולי ערבה על פני מצע מנותק
                         (כי הראשונים מבוססים על גבולות גאוגרפיים ברורים, ולא
                         על מעקף טכני), אך שני הפתרונות תקפים בפועל.
@@ -1686,7 +1687,7 @@
                         <strong>בכל ספק</strong> — לפנות לרב או לארגון כושרות /
                         מכון התורה והארץ.
                     </div>
-                    <p style="font-size: 0.95em; margin-top: 1em;">
+                    <p class="fs-0.95em mt-1em">
                         בשקף הבא נסיים את חלק א' בשתי המצוות הנוספות —
                         <strong>חדש וכלאיים</strong>.
                     </p>
@@ -1702,11 +1703,11 @@
 
                 <div class="warning-box">
                     <strong>חדש — תבואה חדשה לפני קרבן העומר</strong>
-                    <p style="font-style: italic; text-align: center;">
+                    <p class="quote-center">
                         "וְלֶחֶם וְקָלִי וְכַרְמֶל לֹא תֹאכְלוּ עַד עֶצֶם הַיּוֹם הַזֶּה,
                         עַד הֲבִיאֲכֶם אֶת קָרְבַּן אֱלֹהֵיכֶם."
                     </p>
-                    <p style="text-align: left; font-size: 0.9em; color: var(--text-muted);">
+                    <p class="source-line">
                         ויקרא כג, יד
                     </p>
                     <p>
@@ -1714,7 +1715,7 @@
                         אסורה באכילה עד ט"ז בניסן של השנה הבאה. בזמן הבית
                         קרבן העומר מתיר; בלא בית מקדש — עצם היום מתיר.
                     </p>
-                    <p style="font-size: 0.95em;">
+                    <p class="fs-0.95em">
                         <strong>בארץ</strong> — כמעט אין שאלה: רוב התבואה ידועה
                         כ"ישנה". <strong>בחו"ל</strong> — נחלקו הפוסקים אם חדש
                         נוהג שם מן התורה (השו"ע, יו"ד רצג, מחמיר); רבים מן
@@ -1725,11 +1726,11 @@
 
                 <div class="example-box">
                     <strong>כלאיים — איסור ערבוב מינים</strong>
-                    <p style="font-style: italic; text-align: center;">
+                    <p class="quote-center">
                         "בְּהֶמְתְּךָ לֹא תַרְבִּיעַ כִּלְאַיִם, שָׂדְךָ לֹא תִזְרַע
                         כִּלְאָיִם, וּבֶגֶד כִּלְאַיִם שַׁעַטְנֵז לֹא יַעֲלֶה עָלֶיךָ."
                     </p>
-                    <p style="text-align: left; font-size: 0.9em; color: var(--text-muted);">
+                    <p class="source-line">
                         ויקרא יט, יט
                     </p>
                     <p>איסור הכלאיים מתחלק לכמה תחומים:</p>
@@ -1767,7 +1768,7 @@
                         הכרם ולהרכבת עצים בגינה פרטית. בלבישה: בדיקת שעטנז
                         במעבדה לפני שימוש בבגדים הכוללים צמר.
                     </div>
-                    <p style="font-size: 0.95em; margin-top: 1em;">
+                    <p class="fs-0.95em mt-1em">
                         בכך מסתיים חלק א' של המצגת. בשקף הבא נעבור לחלק ב' —
                         תולעים בפירות ובירקות.
                     </p>
@@ -1803,23 +1804,23 @@
                         בשונה מאיסורי הבשר, שמעטים נתקלים בהם ביום־יום, נושא
                         התולעים נוגע לכל ארוחה ביתית.
                     </p>
-                    <p style="font-size: 0.95em;">
+                    <p class="fs-0.95em">
                         נגענו בקצרה בעקרונות חומרת האיסור כבר במצגת "מן החי" (תולעים בדגים);
                         כאן נרחיב ונראה כיצד הם מתורגמים למעשה בפירות ובירקות.
                     </p>
                 </div>
 
-                <details class="example-box" style="transition: all 0.2s ease;">
-                    <summary style="cursor: pointer; user-select: none; padding: 0.2em 0; list-style-position: inside;"><strong>המקור בתורה</strong></summary>
+                <details class="example-box ease-200">
+                    <summary class="summary-toggle"><strong>המקור בתורה</strong></summary>
                     <p>
                         התורה חוזרת ומזהירה על שרצים בכמה מקומות בפרק יא בויקרא,
                         ובסופו היא מסכמת בלשון חריפה במיוחד:
                     </p>
-                    <p style="font-style: italic; text-align: center;">
+                    <p class="quote-center">
                         "אַל תְּשַׁקְּצוּ אֶת נַפְשֹׁתֵיכֶם בְּכָל הַשֶּׁרֶץ הַשֹּׁרֵץ,
                         וְלֹא תִטַּמְּאוּ בָּהֶם וְנִטְמֵתֶם בָּם."
                     </p>
-                    <p style="text-align: left; font-size: 0.9em; color: var(--text-muted);">
+                    <p class="source-line">
                         ויקרא יא, מג
                     </p>
                     <p>
@@ -1842,7 +1843,7 @@
                     <div class="list-item">
                         <strong>שרץ המים</strong> — ארבעה לאוין.
                     </div>
-                    <p style="font-size: 0.95em;">
+                    <p class="fs-0.95em">
                         ה"פרי חדש" (יו"ד פד) מסביר שהתורה הרבתה לאוין משום שהאיסור
                         מצוי מאוד בירקות, בקטניות ובפירות, ואי אפשר להישמר ממנו בלא תשומת לב יתרה.
                     </p>
@@ -1883,7 +1884,7 @@
                         אחריות ייחודית: גם כאשר קיימת השגחה על גידולים מבוקרים, חובת
                         הבדיקה חוזרת אל הצרכן בכל ארוחה ביתית — בין שהיא כשכבה נוספת על השגחה קיימת, בין שאין השגחה כלל.
                     </p>
-                    <p style="font-size: 0.95em;">
+                    <p class="fs-0.95em">
                         בשקפים הבאים נראה מהו חרק האסור על־פי ההלכה, אילו ירקות נחשבים נגועים, מהו 'מיעוט המצוי' המחייב בדיקה, ומהן דרכי הבדיקה המעשיות.
                     </p>
                 </div>
@@ -1919,7 +1920,7 @@
                         מתבטלת ככל איסור רגיל. דין ה"ברייה" שאינה בטלה אפילו
                         באלף, שנדון בשקף הקודם, אמור דווקא בשרץ השלם.
                     </p>
-                    <p style="text-align: left; font-size: 0.9em; color: var(--text-muted);">
+                    <p class="source-line">
                         ויקרא יא, מא–מג; שולחן ערוך, יורה דעה, סימן פד
                     </p>
                 </div>
@@ -1930,11 +1931,11 @@
                         שאלה יסודית: האם כל יצור זעיר אסור, גם אם הוא בלתי נראה?
                         הפוסקים השיבו בעקרון מנחה אחד, שמקורו בערוך השולחן:
                     </p>
-                    <p style="font-style: italic; text-align: center;">
+                    <p class="quote-center">
                         "לא אסרה התורה אלא תולעים הנראים בעין בחוש הראייה הטבעי...
                         שלא ניתנה תורה למלאכים."
                     </p>
-                    <p style="text-align: left; font-size: 0.9em; color: var(--text-muted);">
+                    <p class="source-line">
                         ערוך השולחן, יורה דעה, פד, לו
                     </p>
                     <p>
@@ -1945,20 +1946,20 @@
                     </p>
                 </div>
 
-                <details class="example-box" style="transition: all 0.2s ease;">
-                    <summary style="cursor: pointer; user-select: none; padding: 0.2em 0; list-style-position: inside;"><strong>מדוע חיידקים אינם בכלל האיסור?</strong></summary>
+                <details class="example-box ease-200">
+                    <summary class="summary-toggle"><strong>מדוע חיידקים אינם בכלל האיסור?</strong></summary>
                     <p>
                         המים, האוויר והמזון מלאים ביצורים זעירים — חיידקים,
                         אמבות, נבגים — שגילה המדע. אם כן, האם השתייה והנשימה
                         אסורות? ערוך השולחן מבאר במפורש:
                     </p>
-                    <p style="font-style: italic;">
+                    <p class="fst-italic">
                         "המים מותרים לשתייה, משום שלא אסרה התורה במה שאין העין
                         שולטת... שאם לא כן, הרי כל האוויר מלא ברואים דקים מן
                         הדקים, וכשהאדם פותח את פיו בולע כמה מהם — ולא יעלה על
                         הדעת לאסור את הנשימה."
                     </p>
-                    <p style="text-align: left; font-size: 0.9em; color: var(--text-muted);">
+                    <p class="source-line">
                         ערוך השולחן, יורה דעה, פד, לו; וראו גם בינת אדם, סימן לד
                     </p>
                     <p>
@@ -1987,7 +1988,7 @@
                         רואה אותה" (דרכי תשובה, פד, ס"ק טו, בשם דבר שאול ויוסף
                         דעת). לפי גישה זו, כל שניתן לזהותו בעין חזקה — נאסר.
                     </div>
-                    <p style="font-size: 0.95em;">
+                    <p class="fs-0.95em">
                         להלכה, רוב הפוסקים נוקטים שהקריטריון הוא זיהוי חרק יחיד
                         בעין הטבעית; כתם הניכר שאי אפשר להבחין בפרט בודד בתוכו —
                         אינו אוסר.
@@ -2017,12 +2018,12 @@
                         לשטוף ידיים וסכין, שלא יעברו כנימות מהן אל הפלחים בעת
                         ההפרדה או החיתוך.
                     </div>
-                    <p style="font-size: 0.95em;">
+                    <p class="fs-0.95em">
                         הרב שלמה זלמן אוירבך נטה תחילה להקל בכנימות אלו, מתוך
                         שאינן ניכרות בחיותן ובתנועתן; אולם הסכים בסופו של דבר
                         שכיוון שניתן לזהותן אל מול האור — דין שרצים יש בהן.
                     </p>
-                    <p style="text-align: left; font-size: 0.9em; color: var(--text-muted);">
+                    <p class="source-line">
                         שמירת שבת כהלכתה, א, פרק ג, הערה קה
                     </p>
                 </div>
@@ -2081,14 +2082,14 @@
                         — חייבים בדיקה לפני אכילה (ראו שו"ע יו"ד פד; ביאור הש"ך
                         יו"ד לט, ס"ק ח).
                     </p>
-                    <p style="font-size: 0.95em;">
+                    <p class="fs-0.95em">
                         השיעור אינו מוחלט: יש פוסקים שמחמירים החל מ-5%, ויש שמקלים
                         עד 15%. בפועל, גופי הכשרות נוקטים בשיעור 10% ככלל אצבע.
                     </p>
                 </div>
 
-                <details class="example-box" style="transition: all 0.2s ease;">
-                    <summary style="cursor: pointer; user-select: none; padding: 0.2em 0; list-style-position: inside;"><strong>למה דווקא 10%?</strong></summary>
+                <details class="example-box ease-200">
+                    <summary class="summary-toggle"><strong>למה דווקא 10%?</strong></summary>
                     <p>
                         חז"ל ניסחו את הכלל "רוב מתיר" — שאם רוב המקרים בסדר, הולכים
                         אחריהם ואין חוששים למיעוט. אך מתי המיעוט "מצוי" דיו לדרוש
@@ -2151,7 +2152,7 @@
                         גוש קטיף, בית יוסף, אלון ועוד מספקות ירקות מנוקים תחת
                         השגחה, על בסיס תקנים שקבעו המכון או הבד"ץ.
                     </div>
-                    <p style="font-size: 0.95em;">
+                    <p class="fs-0.95em">
                         בשקף הבא נראה את החלוקה המעשית של הירקות והפירות לפי
                         רמת הנגיעות, ואת הדרישות שכל קטגוריה מטילה.
                     </p>
@@ -2263,7 +2264,7 @@
                         <strong>הימנעות במקרים גבוליים</strong> — ויתור על מאכל
                         שאי אפשר לבדוק כראוי, או החלפתו במאכל אחר.
                     </div>
-                    <p style="font-size: 0.95em;">
+                    <p class="fs-0.95em">
                         בשקפים הבאים נראה את שיטות הבדיקה המעשיות לעלים,
                         לקטניות ולפירות עדינים.
                     </p>
@@ -2297,13 +2298,13 @@
                         ההפרדה אינה רק טכנית: יש פוסקים שדורשים את שני השלבים, ויש
                         שמסתפקים בניקוי יסודי לבדו — מחלוקת שתפורט בהמשך השקף.
                     </p>
-                    <p style="text-align: left; font-size: 0.9em; color: var(--text-muted);">
+                    <p class="source-line">
                         שולחן ערוך, יורה דעה, סימן פד; פניני הלכה, כשרות ב', פרק כג
                     </p>
                 </div>
 
-                <details class="example-box" style="transition: all 0.2s ease;">
-                    <summary style="cursor: pointer; user-select: none; padding: 0.2em 0; list-style-position: inside;"><strong>זיהוי החרקים הזעירים</strong></summary>
+                <details class="example-box ease-200">
+                    <summary class="summary-toggle"><strong>זיהוי החרקים הזעירים</strong></summary>
                     <p>
                         העין הבלתי־מאומנת מתמקדת בחרקים שלמים בגודל מילימטרים. אולם
                         החרקים המצויים כיום בעלים זעירים בהרבה ובצבע דומה לצבע
@@ -2324,7 +2325,7 @@
                         העלה. המנהרות נראות כקווים בהירים, ובסופן ניתן לראות זחל
                         זעיר אל מול האור.
                     </div>
-                    <p style="text-align: left; font-size: 0.9em; color: var(--text-muted);">
+                    <p class="source-line">
                         פניני הלכה, כשרות ב', פרק כג
                     </p>
                 </details>
@@ -2354,18 +2355,18 @@
                         עלים מול שולחן אור או מנורה חזקה, ולוודא שאין מנהרות או
                         חרקים שנותרו.
                     </div>
-                    <p style="font-size: 0.95em;">
+                    <p class="fs-0.95em">
                         בגידולים מיוחדים תחת השגחה (גוש קטיף, בית יוסף, אלון
                         ודומיהם) רמת הנגיעות נמוכה ממיעוט המצוי, ולפי כל השיטות די
                         בשטיפה בסיסית.
                     </p>
-                    <p style="text-align: left; font-size: 0.9em; color: var(--text-muted);">
+                    <p class="source-line">
                         פניני הלכה, כשרות ב', פרק כג; ילקוט יוסף, איסור והיתר ג', סימן פד
                     </p>
                 </div>
 
-                <details class="example-box" style="transition: all 0.2s ease;">
-                    <summary style="cursor: pointer; user-select: none; padding: 0.2em 0; list-style-position: inside;"><strong>שיטות עזר ייחודיות</strong></summary>
+                <details class="example-box ease-200">
+                    <summary class="summary-toggle"><strong>שיטות עזר ייחודיות</strong></summary>
                     <div class="list-item">
                         <strong>חימום העלים לזיהוי</strong> — בקירור החרקים נרדמים
                         ואינם נעים. כדי לזהותם לפני הניקוי, מניחים את העלים בשמש
@@ -2382,7 +2383,7 @@
                         השרייה במים לכמה דקות גורמת לתולעים, אם ישנן, לצוף על פני
                         המים. לאחר מכן מסננים ובודקים את הקטניות בעת הפיזור.
                     </div>
-                    <p style="text-align: left; font-size: 0.9em; color: var(--text-muted);">
+                    <p class="source-line">
                         ילקוט יוסף, איסור והיתר ג', סימן פד
                     </p>
                 </details>
@@ -2395,7 +2396,7 @@
                         ואוכלים את השאר; אך אם נמצאו שלוש או ארבע תולעים, הוחזקה
                         הקדרה בנגיעות — הרוטב מותר על ידי סינון, והירקות עצמם נאסרים.
                     </p>
-                    <p style="text-align: left; font-size: 0.9em; color: var(--text-muted);">
+                    <p class="source-line">
                         שולחן ערוך, יורה דעה, סימן פד, ט
                     </p>
                     <div class="list-item">
@@ -2464,7 +2465,7 @@
                         בפרי בעודו מחובר לעץ נחשב כ"שורץ על הארץ" ואסור מן
                         התורה, גם אם לא יצא בפועל מן הפרי.
                     </p>
-                    <p style="text-align: left; font-size: 0.9em; color: var(--text-muted);">
+                    <p class="source-line">
                         שולחן ערוך, יורה דעה, פד, ו; פניני הלכה, כשרות ב', פרק כג, יג
                     </p>
                 </div>
@@ -2485,13 +2486,13 @@
                         מוציאים את הגרעין, ובודקים את חלל הגרעין ואת הרקמה
                         שסביבו לאיתור תולעים או הפרשות.
                     </div>
-                    <p style="text-align: left; font-size: 0.9em; color: var(--text-muted);">
+                    <p class="source-line">
                         ילקוט יוסף, איסור והיתר ב', דין תמרים
                     </p>
                 </div>
 
-                <details class="example-box" style="transition: all 0.2s ease;">
-                    <summary style="cursor: pointer; user-select: none; padding: 0.2em 0; list-style-position: inside;"><strong>מבחן המים לתאנים</strong></summary>
+                <details class="example-box ease-200">
+                    <summary class="summary-toggle"><strong>מבחן המים לתאנים</strong></summary>
                     <p>
                         לתאנה שלא נמצאו בה תולעים בבדיקה החיצונית, הציע הרב יצחק
                         יוסף שיטת בדיקה משלימה המבוססת על תנועת התולעים במים:
@@ -2509,7 +2510,7 @@
                         <strong>שלב ג</strong> — אם נמצאו תולעים, אין לאכול את
                         התאנה כלל, שכן אין ביטחון שיצאו ממנה כל התולעים.
                     </div>
-                    <p style="text-align: left; font-size: 0.9em; color: var(--text-muted);">
+                    <p class="source-line">
                         ילקוט יוסף, איסור והיתר ב', דין תאנים
                     </p>
                 </details>
@@ -2537,7 +2538,7 @@
                         שלא מצויות בהם תולעים רבות, אין חובה לבדוק כל פרט ופרט,
                         אלא במבט כללי בעת האכילה.
                     </div>
-                    <p style="text-align: left; font-size: 0.9em; color: var(--text-muted);">
+                    <p class="source-line">
                         פניני הלכה, כשרות ב', פרק כג, יג; ילקוט יוסף, איסור והיתר ב', עמ' רטו
                     </p>
                 </div>
@@ -2563,7 +2564,7 @@
                         סימני ריקבון מקומיים, יש לבדוק את הרקמה סביב הריקבון,
                         שכן השרצים מצויים שם.
                     </div>
-                    <p style="text-align: left; font-size: 0.9em; color: var(--text-muted);">
+                    <p class="source-line">
                         שולחן ערוך, יורה דעה, פד, ו; פניני הלכה, כשרות ב', פרק כג
                     </p>
                 </div>
@@ -2675,7 +2676,7 @@
                 </div>
 
                 <!-- ============ חלק א: מצוות התלויות בארץ ============ -->
-                <div class="definition-box" style="margin-top: 1.5em; border-right-width: 5px;">
+                <div class="definition-box mt-1.5em bdrw-5px">
                     <strong>חלק א: מצוות התלויות בארץ (שקפים 4–12)</strong>
                 </div>
 
@@ -2692,7 +2693,7 @@
                         <strong>תשובה נכונה: ג</strong><br>
                         תוצרת שלא הופרשה נקראת "טבל" ואסורה באכילה מן התורה, עד שיופרשו ממנה כל המתנות.
                         <div class="source">מקור: רמב"ם הלכות תרומות; שולחן ערוך יו"ד שלא</div>
-                        <span class="slide-link-span" onclick="goToSlide(5); event.stopPropagation();" style="margin-top: 10px; display: inline-block;">← לפירוט בשקף 5</span>
+                        <span class="slide-link-span mt-10px d-inline-block" onclick="goToSlide(5); event.stopPropagation();">← לפירוט בשקף 5</span>
                     </div>
                 </div>
 
@@ -2709,7 +2710,7 @@
                         <strong>תשובה נכונה: ד</strong><br>
                         התרומות (כ-3%, לכוהן) ומעשר ראשון (כ-9%, ללוי) יוצאים מרשותו — יחד כ-12%. המעשר השני נשאר שלו (נאכל בקדושה או נפדה), ולכן רוב היבול נותר אצלו.
                         <div class="source">מקור: פניני הלכה כשרות א, ז</div>
-                        <span class="slide-link-span" onclick="goToSlide(5); event.stopPropagation();" style="margin-top: 10px; display: inline-block;">← לפירוט בשקף 5</span>
+                        <span class="slide-link-span mt-10px d-inline-block" onclick="goToSlide(5); event.stopPropagation();">← לפירוט בשקף 5</span>
                     </div>
                 </div>
 
@@ -2726,7 +2727,7 @@
                         <strong>תשובה נכונה: א</strong><br>
                         בימינו כל ישראל בחזקת טמאי מת, והכוהן אינו יכול לאכול תרומה בטהרה. לכן מפרישים שיעור כלשהו, עוטפים בכבוד ומסלקים בנפרד — אך אין נותנים לכוהן.
                         <div class="source">מקור: רמ"א יו"ד שלא, יט</div>
-                        <span class="slide-link-span" onclick="goToSlide(5); event.stopPropagation();" style="margin-top: 10px; display: inline-block;">← לפירוט בשקף 5</span>
+                        <span class="slide-link-span mt-10px d-inline-block" onclick="goToSlide(5); event.stopPropagation();">← לפירוט בשקף 5</span>
                     </div>
                 </div>
 
@@ -2743,7 +2744,7 @@
                         <strong>תשובה נכונה: ב</strong><br>
                         מעשר שני נפדה על פרוטה במטבע שיוחד לכך, ובכך הפרי נעשה חולין ומותר באכילה. המטבע "סופג" את הקדושה עד שמתמלא ומחללים אותו על מטבע חדש.
                         <div class="source">מקור: דברים יד, כד–כה; שולחן ערוך יו"ד שלא</div>
-                        <span class="slide-link-span" onclick="goToSlide(6); event.stopPropagation();" style="margin-top: 10px; display: inline-block;">← לפירוט בשקף 6</span>
+                        <span class="slide-link-span mt-10px d-inline-block" onclick="goToSlide(6); event.stopPropagation();">← לפירוט בשקף 6</span>
                     </div>
                 </div>
 
@@ -2760,7 +2761,7 @@
                         <strong>תשובה נכונה: ד</strong><br>
                         בשנים א, ב, ד, ה מפרישים מעשר שני; בשנים ג, ו — מעשר עני, הניתן לעני או ששוויו לצדקה. בשנה השביעית (שמיטה) אין הפרשת מעשרות כלל.
                         <div class="source">מקור: רמב"ם הלכות מעשר א</div>
-                        <span class="slide-link-span" onclick="goToSlide(5); event.stopPropagation();" style="margin-top: 10px; display: inline-block;">← לפירוט בשקף 5</span>
+                        <span class="slide-link-span mt-10px d-inline-block" onclick="goToSlide(5); event.stopPropagation();">← לפירוט בשקף 5</span>
                     </div>
                 </div>
 
@@ -2777,7 +2778,7 @@
                         <strong>תשובה נכונה: ג</strong><br>
                         בשונה מתרומות ומעשרות שהבעלים מפריש ונותן, מתנות עניים נעזבות במקומן בשדה ובכרם, והעני בא ולוקטן בעצמו.
                         <div class="source">מקור: ויקרא יט, ט–י; רמב"ם הלכות מתנות עניים א</div>
-                        <span class="slide-link-span" onclick="goToSlide(7); event.stopPropagation();" style="margin-top: 10px; display: inline-block;">← לפירוט בשקף 7</span>
+                        <span class="slide-link-span mt-10px d-inline-block" onclick="goToSlide(7); event.stopPropagation();">← לפירוט בשקף 7</span>
                     </div>
                 </div>
 
@@ -2794,7 +2795,7 @@
                         <strong>תשובה נכונה: א</strong><br>
                         פרט (ענבים בודדים שנפלו) ועוללות (אשכולות קטנים ולא־מפותחים) הם מתנות הכרם. לקט מיוחד לתבואה, ופאה ושכחה נוהגות בכל היבולים.
                         <div class="source">מקור: ויקרא יט, י; משנה מסכת פאה</div>
-                        <span class="slide-link-span" onclick="goToSlide(7); event.stopPropagation();" style="margin-top: 10px; display: inline-block;">← לפירוט בשקף 7</span>
+                        <span class="slide-link-span mt-10px d-inline-block" onclick="goToSlide(7); event.stopPropagation();">← לפירוט בשקף 7</span>
                     </div>
                 </div>
 
@@ -2811,7 +2812,7 @@
                         <strong>תשובה נכונה: א</strong><br>
                         החיוב חל על הבצק לאחר הלישה — קמח בפני עצמו פטור. מפרישים מחמשת מיני דגן בלבד, לאחר הלישה ולפני האפייה.
                         <div class="source">מקור: במדבר טו, כ; משנה חלה א, א</div>
-                        <span class="slide-link-span" onclick="goToSlide(8); event.stopPropagation();" style="margin-top: 10px; display: inline-block;">← לפירוט בשקף 8</span>
+                        <span class="slide-link-span mt-10px d-inline-block" onclick="goToSlide(8); event.stopPropagation();">← לפירוט בשקף 8</span>
                     </div>
                 </div>
 
@@ -2828,7 +2829,7 @@
                         <strong>תשובה נכונה: ד</strong><br>
                         בימינו חיוב חלה מדרבנן בכל מקום, ובחו"ל הוסיפו חכמים חיוב מיוחד "כדי שלא תשתכח תורת חלה מישראל".
                         <div class="source">מקור: גמרא בכורות כז ע"א; שולחן ערוך יו"ד שכב, א</div>
-                        <span class="slide-link-span" onclick="goToSlide(8); event.stopPropagation();" style="margin-top: 10px; display: inline-block;">← לפירוט בשקף 8</span>
+                        <span class="slide-link-span mt-10px d-inline-block" onclick="goToSlide(8); event.stopPropagation();">← לפירוט בשקף 8</span>
                     </div>
                 </div>
 
@@ -2845,7 +2846,7 @@
                         <strong>תשובה נכונה: ד</strong><br>
                         פירות שלוש השנים הראשונות אסורים באכילה ובהנאה. בשנה הרביעית (רבעי) נפדים ואז מותרים, ומשנה חמישית — חולין לכל דבר.
                         <div class="source">מקור: ויקרא יט, כג; שולחן ערוך יו"ד רצד</div>
-                        <span class="slide-link-span" onclick="goToSlide(9); event.stopPropagation();" style="margin-top: 10px; display: inline-block;">← לפירוט בשקף 9</span>
+                        <span class="slide-link-span mt-10px d-inline-block" onclick="goToSlide(9); event.stopPropagation();">← לפירוט בשקף 9</span>
                     </div>
                 </div>
 
@@ -2862,7 +2863,7 @@
                         <strong>תשובה נכונה: ג</strong><br>
                         בארץ "ספיקא דאורייתא לחומרא". בחו"ל הקלו, וספק ערלה מותר — ולכן פירות מסחריים בחו"ל מותרים על פי רוב, אף שגיל המטעים אינו ידוע.
                         <div class="source">מקור: שולחן ערוך יו"ד רצד, ט</div>
-                        <span class="slide-link-span" onclick="goToSlide(9); event.stopPropagation();" style="margin-top: 10px; display: inline-block;">← לפירוט בשקף 9</span>
+                        <span class="slide-link-span mt-10px d-inline-block" onclick="goToSlide(9); event.stopPropagation();">← לפירוט בשקף 9</span>
                     </div>
                 </div>
 
@@ -2879,7 +2880,7 @@
                         <strong>תשובה נכונה: ד</strong><br>
                         השמיטה האחרונה הייתה תשפ"ב (2021–2022), והבאה תהיה תשפ"ט (2028–2029). השמיטות חוזרות מדי שבע שנים.
                         <div class="source">מקור: מבוא להלכות שמיטה</div>
-                        <span class="slide-link-span" onclick="goToSlide(10); event.stopPropagation();" style="margin-top: 10px; display: inline-block;">← לפירוט בשקף 10</span>
+                        <span class="slide-link-span mt-10px d-inline-block" onclick="goToSlide(10); event.stopPropagation();">← לפירוט בשקף 10</span>
                     </div>
                 </div>
 
@@ -2896,7 +2897,7 @@
                         <strong>תשובה נכונה: ב</strong><br>
                         לפני השמיטה מוכרים את הקרקע לנוכרי במכירה הלכתית; איסורי המלאכה פוקעים, ואין קדושת שביעית בפירות. נחלקו הפוסקים בקבלת ההיתר.
                         <div class="source">מקור: "שבת הארץ" לראי"ה קוק</div>
-                        <span class="slide-link-span" onclick="goToSlide(11); event.stopPropagation();" style="margin-top: 10px; display: inline-block;">← לפירוט בשקף 11</span>
+                        <span class="slide-link-span mt-10px d-inline-block" onclick="goToSlide(11); event.stopPropagation();">← לפירוט בשקף 11</span>
                     </div>
                 </div>
 
@@ -2913,7 +2914,7 @@
                         <strong>תשובה נכונה: א</strong><br>
                         בית הדין שוכר פועלים לעבודות המותרות ומחלק את היבול, והפירות נשארים בקדושת שביעית. הצרכן משלם רק את הוצאות הקטיף וההובלה, לא את ערך הפירות.
                         <div class="source">מקור: תוספתא שביעית ח, א</div>
-                        <span class="slide-link-span" onclick="goToSlide(11); event.stopPropagation();" style="margin-top: 10px; display: inline-block;">← לפירוט בשקף 11</span>
+                        <span class="slide-link-span mt-10px d-inline-block" onclick="goToSlide(11); event.stopPropagation();">← לפירוט בשקף 11</span>
                     </div>
                 </div>
 
@@ -2930,7 +2931,7 @@
                         <strong>תשובה נכונה: ד</strong><br>
                         רוב הציבור החרדי צורך בשמיטה תוצרת שגדלה מחוץ לארץ (וכן מצע מנותק וגידולי ערבה), שאין בה קדושת שביעית. הציבור הציוני־דתי סומך בעיקר על היתר המכירה.
                         <div class="source">מקור: פניני הלכה, שביעית ויובל</div>
-                        <span class="slide-link-span" onclick="goToSlide(11); event.stopPropagation();" style="margin-top: 10px; display: inline-block;">← לפירוט בשקף 11</span>
+                        <span class="slide-link-span mt-10px d-inline-block" onclick="goToSlide(11); event.stopPropagation();">← לפירוט בשקף 11</span>
                     </div>
                 </div>
 
@@ -2947,7 +2948,7 @@
                         <strong>תשובה נכונה: ב</strong><br>
                         תבואה מחמשת מיני דגן שהשרישה לאחר ט"ז בניסן אסורה עד ט"ז בניסן של השנה הבאה. בארץ כמעט אין שאלה; בחו"ל היא עולה בקמחים ובוויסקי.
                         <div class="source">מקור: ויקרא כג, יד; שולחן ערוך יו"ד רצג</div>
-                        <span class="slide-link-span" onclick="goToSlide(12); event.stopPropagation();" style="margin-top: 10px; display: inline-block;">← לפירוט בשקף 12</span>
+                        <span class="slide-link-span mt-10px d-inline-block" onclick="goToSlide(12); event.stopPropagation();">← לפירוט בשקף 12</span>
                     </div>
                 </div>
 
@@ -2964,12 +2965,12 @@
                         <strong>תשובה נכונה: ד</strong><br>
                         זריעת תבואה או ירק בתוך כרם אוסרת את היבול ואת הענבים שגדלו יחד — באכילה ובהנאה. זהו האיסור היחיד בכלאיים שיש לו השלכה ישירה על אכילה.
                         <div class="source">מקור: דברים כב, ט; שולחן ערוך יו"ד רצו, א</div>
-                        <span class="slide-link-span" onclick="goToSlide(12); event.stopPropagation();" style="margin-top: 10px; display: inline-block;">← לפירוט בשקף 12</span>
+                        <span class="slide-link-span mt-10px d-inline-block" onclick="goToSlide(12); event.stopPropagation();">← לפירוט בשקף 12</span>
                     </div>
                 </div>
 
                 <!-- ============ חלק ב: תולעים בפירות וירקות ============ -->
-                <div class="definition-box" style="margin-top: 1.5em; border-right-width: 5px;">
+                <div class="definition-box mt-1.5em bdrw-5px">
                     <strong>חלק ב: תולעים בפירות ובירקות (שקפים 14–19)</strong>
                 </div>
 
@@ -2986,7 +2987,7 @@
                         <strong>תשובה נכונה: ג</strong><br>
                         משום שהוא שלם וניכר, אינו מתבטל — ותולעת אחת אוסרת את כל המאכל. התנאי: שיהיה שלם; חתיכת תולעת מתבטלת בשישים ככל איסור.
                         <div class="source">מקור: שולחן ערוך יו"ד ק, א</div>
-                        <span class="slide-link-span" onclick="goToSlide(14); event.stopPropagation();" style="margin-top: 10px; display: inline-block;">← לפירוט בשקף 14</span>
+                        <span class="slide-link-span mt-10px d-inline-block" onclick="goToSlide(14); event.stopPropagation();">← לפירוט בשקף 14</span>
                     </div>
                 </div>
 
@@ -3003,7 +3004,7 @@
                         <strong>תשובה נכונה: א</strong><br>
                         "לא אסרה התורה אלא תולעים הנראים בעין... שלא ניתנה תורה למלאכים". יצורים הנראים רק במיקרוסקופ או בזכוכית מגדלת אינם בכלל האיסור.
                         <div class="source">מקור: ערוך השולחן יו"ד פד, לו</div>
-                        <span class="slide-link-span" onclick="goToSlide(15); event.stopPropagation();" style="margin-top: 10px; display: inline-block;">← לפירוט בשקף 15</span>
+                        <span class="slide-link-span mt-10px d-inline-block" onclick="goToSlide(15); event.stopPropagation();">← לפירוט בשקף 15</span>
                     </div>
                 </div>
 
@@ -3020,7 +3021,7 @@
                         <strong>תשובה נכונה: ג</strong><br>
                         השיעור המקובל למיעוט המצוי הוא כעשרה אחוזים. מתחתיו אין חובת בדיקה; מעליו עוברים אל "מוחזק בנגיעות" שמצריך טיפול מיוחד.
                         <div class="source">מקור: חולין יא ע"א; פניני הלכה כשרות כג</div>
-                        <span class="slide-link-span" onclick="goToSlide(16); event.stopPropagation();" style="margin-top: 10px; display: inline-block;">← לפירוט בשקף 16</span>
+                        <span class="slide-link-span mt-10px d-inline-block" onclick="goToSlide(16); event.stopPropagation();">← לפירוט בשקף 16</span>
                     </div>
                 </div>
 
@@ -3037,7 +3038,7 @@
                         <strong>תשובה נכונה: ב</strong><br>
                         עלים ירוקים ועשבי תיבול (חסה, פטרוזיליה, כוסברה, נענע) ופירות עדינים מוחזקים בנגיעות, ובדיקה רגילה אינה מספיקה. הפירות בעלי קליפה — נקיים בדרך כלל.
                         <div class="source">מקור: פניני הלכה כשרות כג; ילקוט יוסף איסור והיתר ג, פד</div>
-                        <span class="slide-link-span" onclick="goToSlide(17); event.stopPropagation();" style="margin-top: 10px; display: inline-block;">← לפירוט בשקף 17</span>
+                        <span class="slide-link-span mt-10px d-inline-block" onclick="goToSlide(17); event.stopPropagation();">← לפירוט בשקף 17</span>
                     </div>
                 </div>
 
@@ -3054,7 +3055,7 @@
                         <strong>תשובה נכונה: ג</strong><br>
                         מציאת שלוש-ארבע תולעים מחזיקה את הקדרה בנגיעות. הרוטב מותר לאחר סינון; הירקות עצמם נאסרים, שכן הם רכים והשטיפה דוחפת את התולעת פנימה.
                         <div class="source">מקור: שולחן ערוך יו"ד פד, ט</div>
-                        <span class="slide-link-span" onclick="goToSlide(18); event.stopPropagation();" style="margin-top: 10px; display: inline-block;">← לפירוט בשקף 18</span>
+                        <span class="slide-link-span mt-10px d-inline-block" onclick="goToSlide(18); event.stopPropagation();">← לפירוט בשקף 18</span>
                     </div>
                 </div>
 
@@ -3071,7 +3072,7 @@
                         <strong>תשובה נכונה: ב</strong><br>
                         התולעים מצויים סמוך לגרעין, ולכן חוצים את התמר לכל אורכו ובודקים את הרקמה שסביב הגרעין. טריים ומיובשים כאחד טעונים בדיקה.
                         <div class="source">מקור: ילקוט יוסף איסור והיתר ב; פניני הלכה כשרות כג, יג</div>
-                        <span class="slide-link-span" onclick="goToSlide(19); event.stopPropagation();" style="margin-top: 10px; display: inline-block;">← לפירוט בשקף 19</span>
+                        <span class="slide-link-span mt-10px d-inline-block" onclick="goToSlide(19); event.stopPropagation();">← לפירוט בשקף 19</span>
                     </div>
                 </div>
 
@@ -3088,11 +3089,11 @@
                         <strong>תשובה נכונה: א</strong><br>
                         זחל שבקע מביצה שהוטלה בפרי בעודו מחובר לעץ אסור מן התורה גם אם לא יצא, ולכן יש לפתוח כל פרי כזה ולבדוק את פנימיותו.
                         <div class="source">מקור: שולחן ערוך יו"ד פד, ו; פניני הלכה כשרות כג</div>
-                        <span class="slide-link-span" onclick="goToSlide(19); event.stopPropagation();" style="margin-top: 10px; display: inline-block;">← לפירוט בשקף 19</span>
+                        <span class="slide-link-span mt-10px d-inline-block" onclick="goToSlide(19); event.stopPropagation();">← לפירוט בשקף 19</span>
                     </div>
                 </div>
 
-                <div class="positive-box" style="margin-top: 2em;">
+                <div class="positive-box mt-2em">
                     <strong>סוף החידון</strong>
                     <p>
                         סיימתם 24 שאלות המכסות את חלקי מצגת זו (מצוות התלויות בארץ, ותולעים
@@ -3119,7 +3120,7 @@
                     </p>
                 </div>
 
-                <div class="definition-box" style="border-right-width: 5px;">
+                <div class="definition-box bdrw-5px">
                     <strong>שלושת ספרי היסוד של הסדרה</strong>
                     <div class="list-item">
                         <strong>"ואכלת ושבעת — מדריך להלכות כשרות"</strong>
@@ -3214,7 +3215,7 @@
                     </div>
                 </div>
 
-                <div class="definition-box" style="border-right-width: 5px;">
+                <div class="definition-box bdrw-5px">
                     <strong>שולחן ערוך והגהות הרמ"א — סימנים שצוטטו</strong>
                     <div class="list-item">
                         <strong>סימן ק</strong> — ביטול ברוב ודין "ברייה" שאינה
@@ -3327,7 +3328,7 @@
                     </p>
                 </div>
 
-                <div class="positive-box" style="margin-top: 2em;">
+                <div class="positive-box mt-2em">
                     <strong>תודה על העיון</strong>
                     <p>
                         "וִהְיִיתֶם קְדֹשִׁים לֵאלֹהֵיכֶם" (במדבר טו, מ).
