@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he" class="rtl-mode" data-theme="tefila">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ברכות הנהנין — מבוא ויסודות</title>
+
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+
+    <link rel="stylesheet" href="../css/tefila-birchot.css">
+    <link rel="stylesheet" href="../css/utilities-extracted.css">
+</head>
+
+<body>
+    <!-- כפתור פתיחת סיידבר במובייל -->
+    <button class="sidebar-toggle" id="sidebar-toggle" aria-label="פתיחת רשימת שקפים">☰</button>
+
+    <!-- סיידבר ימני: רשימת שקפים -->
+    <aside class="slides-sidebar" id="slides-sidebar" aria-label="ניווט בין שקפים">
+        <div class="sidebar-header">
+            <h3>תוכן המצגת</h3>
+        </div>
+        <ul class="sidebar-list" id="sidebar-list">
+            <!-- מיוצר אוטומטית על ידי navigation.js -->
+        </ul>
+        <div class="sidebar-footer">
+            <div class="mode-selector" role="radiogroup" aria-label="בחירת מצב תצוגה">
+                <div class="mode-toggle">
+                    <button class="mode-btn active" data-mode="light" onclick="changeMode('light')" role="radio"
+                        aria-checked="true">☀️ בהיר</button>
+                    <button class="mode-btn" data-mode="dark" onclick="changeMode('dark')" role="radio"
+                        aria-checked="false">🌙 כהה</button>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <div class="slideshow-container" id="slideshow-container">
+        <div class="slide active title-slide">
+            <div class="fs-3em mb-15px">🕶️</div>
+            <h1>מבוא ויסודות הברכה</h1>
+            <div class="title-ornament"></div>
+            <div class="title-sub">מהי ברכה, מקומה בין המצוות, ונוסח הברכה ומשמעותה</div>
+            <div class="title-meta">
+                מבוסס על: פניני הלכה ברכות · קיצור שו"ע ילקוט יוסף · וזאת הברכה
+            </div>
+        </div>
+
+                <div class="slide section-slide">
+            <div class="section-slide-inner">
+                <span class="section-kicker">חלק א</span>
+                <h2>יסודות הברכה</h2>
+                <p class="section-sub">מהי ברכה, מקומה בשבע מצוות דרבנן, סוגי הברכות וחשיבותן בחיי היום-יום</p>
+            </div>
+        </div>
+
+                <div class="slide">
+
+    <div class="slide-header">        <h1>מהי ברכה?</h1>
+        <div class="subtitle">הרעיון שעומד מאחורי הברכות</div>
+    </div>
+    <p>ברכה היא אמירה קצרה של שבח והודאה לה', שאדם אומר לפני שנהנה מדבר שבעולם. הברכה מבטאת הכרה בכך שכל הטוב מגיע מהקב"ה, ולכן ראוי להודות לו לפני שנהנים.</p>
+
+    <div class="source-box">
+        <div class="source-label">📖 מסכת ברכות לה, א</div>
+        "אָסוּר לוֹ לָאָדָם שֶׁיֵּהָנֶה מִן הָעוֹלָם הַזֶּה בְּלֹא בְּרָכָה, וְכָל הַנֶּהֱנֶה מִן הָעוֹלָם הַזֶּה בְּלֹא בְּרָכָה – מָעַל"
+    </div>
+
+    <p>חכמים הסבירו זאת באמצעות שני פסוקים בתהלים שלכאורה סותרים זה את זה:</p>
+    <div class="two-cols">
+        <div class="card">
+            <div class="card-title">לפני הברכה</div>
+            <div class="bracha-text fs-1em">"לַה' הָאָרֶץ וּמְלוֹאָהּ" (תהלים כד)</div>
+            <div class="card-text">הכל שייך לה' – הנהנה בלי ברכה כאילו גוזל מקדשי שמיים</div>
+        </div>
+        <div class="card">
+            <div class="card-title">אחרי הברכה</div>
+            <div class="bracha-text fs-1em">"וְהָאָרֶץ נָתַן לִבְנֵי אָדָם" (תהלים קטו)</div>
+            <div class="card-text">אחרי שמברכים – ה' "נותן" לנו רשות ליהנות</div>
+        </div>
+    </div>
+
+    <div class="highlight-box success">
+        <div class="highlight-box-title">💡 הרעיון המרכזי</div>
+        הברכה היא מעין "כרטיס כניסה" – דרכה אנחנו מכירים בכך שה' הוא מקור כל טוב, וכך אנחנו מקבלים רשות ליהנות מעולמו.
+    </div>
+        </div>
+
+                <div class="slide">
+
+    <div class="slide-header">        <h1>ברכות – אחת משבע מצוות דרבנן</h1>
+        <div class="subtitle">מצווה שחכמים תיקנו לחזק את הקשר בינינו לבורא</div>
+    </div>
+
+    <div class="section-title">מהתורה ומדרבנן</div>
+    <p>רוב הברכות <strong>לא נצטוו במפורש בתורה</strong>. התורה לא ציוותה לברך לפני אכילת תפוח או שתיית מים. שתי ברכות בלבד חיובן מן התורה:</p>
+    <div class="two-cols">
+        <div class="card">
+            <div class="card-icon">📜</div>
+            <div class="card-title">ברכת המזון</div>
+            <div class="card-text">"וְאָכַלְתָּ וְשָׂבָעְתָּ וּבֵרַכְתָּ" (דברים ח, י) – מצווה מהתורה לברך אחרי אכילת לחם</div>
+        </div>
+        <div class="card">
+            <div class="card-icon">📜</div>
+            <div class="card-title">ברכת התורה</div>
+            <div class="card-text">יש ראשונים הסוברים שחיובה מהתורה; אולם הלכה למעשה לפי שו"ע ופוסקים רבים – מדרבנן (שו"ע רט, ג)</div>
+        </div>
+    </div>
+
+    <p>את <strong>כל שאר הברכות</strong> – ברכות הנהנין, ברכות המצוות, ברכות השבח – <strong>חז"ל הם שתיקנו</strong>, כדי לחזק את החיבור בין ישראל לאביהם שבשמים. לכל הנאה והנאה, לכל מצווה ומצווה, קבעו חכמים ברכה מיוחדת.</p>
+
+    <div class="section-title">שבע מצוות דרבנן</div>
+    <p>הברכות הן אחת מתוך <strong>שבע מצוות עשה שתיקנו חכמים</strong>. בניגוד לגזירות ותקנות שהן סייגים למצוות קיימות, שבע מצוות אלו הן מצוות עשה חדשות שחכמים חידשו. יחד עם תרי"ג מצוות התורה, הן עולות לתר"ך (620) – בגימטריה <strong>"כתר"</strong> תורה:</p>
+
+    <div class="table-container">
+        <table>
+            <thead><tr><th>#</th><th>מצווה</th><th>תיאור קצר</th></tr></thead>
+            <tbody>
+                <tr class="bg-v-primary-bg fw-600"><td>1</td><td>🙏 ברכות</td><td>ברכות הנהנין, ברכות המצוות, ברכות השבח וההודאה</td></tr>
+                <tr><td>2</td><td>💧 נטילת ידיים</td><td>ליטול ידיים לפני אכילת לחם</td></tr>
+                <tr><td>3</td><td>🔗 עירובין</td><td>עירוב חצרות ועירוב תחומין לשבת</td></tr>
+                <tr><td>4</td><td>🕯️ נר שבת</td><td>הדלקת נרות שבת</td></tr>
+                <tr><td>5</td><td>🕎 נר חנוכה</td><td>הדלקת נרות חנוכה</td></tr>
+                <tr><td>6</td><td>📖 מקרא מגילה</td><td>קריאת מגילת אסתר בפורים</td></tr>
+                <tr><td>7</td><td>🎵 הלל</td><td>אמירת הלל בחגים ובראשי חודשים</td></tr>
+            </tbody>
+        </table>
+    </div>
+    
+        </div>
+
+                <div class="slide">
+
+    <div class="slide-header">        <h1>סוגי ברכות</h1>
+        <div class="subtitle">ארבע קטגוריות – ואנחנו עוסקים באחת מהן</div>
+    </div>
+
+    <p>חכמים תיקנו ברכות על מגוון רחב של פעולות והנאות בחיי היומיום. ניתן לחלקן לארבע קטגוריות עיקריות:</p>
+
+    <div class="cards-grid">
+        <div class="card bd-2px-solid-v-primary sh-0-4px-16px-v-shadow-md">
+            <div class="card-icon">🍎</div>
+            <div class="card-title fs-1.1em">ברכות הנהנין ⬅️ הנושא שלנו!</div>
+            <div class="card-text">ברכות על <strong>הנאות הגוף</strong>: אכילה, שתייה, הרחת בשמים. מברכים לפני ההנאה ולאחריה. לדוגמה: "בורא פרי העץ", "שהכל נהיה בדברו".</div>
+        </div>
+        <div class="card">
+            <div class="card-icon">✡️</div>
+            <div class="card-title">ברכות המצוות</div>
+            <div class="card-text">ברכות שמברכים <strong>לפני קיום מצווה</strong>. נוסח: "אשר קדשנו במצוותיו וציוונו...". לדוגמה: להדליק נר של שבת, על נטילת ידיים, לשבת בסוכה, להניח תפילין.</div>
+        </div>
+        <div class="card">
+            <div class="card-icon">🌈</div>
+            <div class="card-title">ברכות השבח וההודאה</div>
+            <div class="card-text">ברכות על <strong>חוויות ואירועים</strong>: ברכות הראייה (על קשת – "זוכר הברית", על ברק – "עושה מעשה בראשית", על הים – "שעשה את הים הגדול"), שהחיינו, הגומל, ברכות השחר.</div>
+        </div>
+        <div class="card">
+            <div class="card-icon">🤲</div>
+            <div class="card-title">ברכות התפילה</div>
+            <div class="card-text">ברכות שהן חלק מ<strong>סדר התפילה</strong>: שמונה עשרה (עמידה), ברכות קריאת שמע, ברכות ההפטרה ועוד.</div>
+        </div>
+    </div>
+
+    <div class="highlight-box">
+        <div class="highlight-box-title">📌 המצגת הזו עוסקת בברכות הנהנין</div>
+        נלמד: מה מברכים לפני ואחרי אכילה ושתייה, באיזה סדר, ומה עושים כשמסופקים.
+    </div>
+        </div>
+
+                <div class="slide">
+
+    <div class="slide-header">        <h1>חשיבות הברכה בחיי היומיום</h1>
+        <div class="subtitle">קדושה בתוך הרגעים הפשוטים</div>
+    </div>
+
+    <div class="cards-grid">
+        <div class="card">
+            <div class="card-icon">🙏</div>
+            <div class="card-title">הכרת הטוב</div>
+            <div class="card-text">הברכה מפתחת את המודעות לטוב שבחיינו. במקום לקחת הכל כמובן מאליו, אנו עוצרים לרגע ומודים.</div>
+        </div>
+        <div class="card">
+            <div class="card-icon">✨</div>
+            <div class="card-title">קדושה ביומיום</div>
+            <div class="card-text">היהדות מאמינה שאפילו פעולות פשוטות כמו אכילה ושתייה יכולות להפוך לחוויה רוחנית.</div>
+        </div>
+        <div class="card">
+            <div class="card-icon">🔗</div>
+            <div class="card-title">חיבור לבורא</div>
+            <div class="card-text">כל ברכה היא רגע של חיבור אישי עם ה' – גם בלי להיות בבית כנסת.</div>
+        </div>
+        <div class="card">
+            <div class="card-icon">👁️</div>
+            <div class="card-title">מודעות והנאה</div>
+            <div class="card-text">על פי ריה"ל בספר הכוזרי (מאמר ג), הברכות נועדו להעלות את מעשי היומיום למדרגה רוחנית ולהגביר את המודעות לטוב שבחיינו.</div>
+        </div>
+    </div>
+
+    <div class="source-box">
+        <div class="source-label">📖 מנחות מג, ב; פניני הלכה ברכות, פרק א</div>
+        חכמים תיקנו שאדם יברך מאה ברכות בכל יום, כדי שכל יום יהיה מלא בהכרת טובו של הקב"ה.
+    </div>
+        </div>
+
+                <div class="slide section-slide">
+            <div class="section-slide-inner">
+                <span class="section-kicker">חלק ב</span>
+                <h2>נוסח הברכה ומשמעותה</h2>
+                <p class="section-sub">פירוש מילות הברכה: "ברוך", "אתה", ה' אלוהינו מלך העולם, ותוכן ההתקשרות</p>
+            </div>
+        </div>
+
+                <div class="slide">
+
+    <div class="slide-header">        <h1>פירוש מילות הברכה</h1>
+        <div class="subtitle">מסע לעומק הנוסח: "ברוך אתה ה' אלוהינו מלך העולם..."</div>
+    </div>
+    <p>חכמים תיקנו שכל ברכה חייבת לכלול "שם ומלכות" – הזכרת שם ה' ומלכותו. מי שהשמיט אחד מיסודות אלה, לא יצא ידי חובתו (ברכות מ, ב; שו"ע רי"ד, א). אך מעבר לכלל ההלכתי, כל מילה בנוסח הברכה נושאת עומק רעיוני מופלא. נעמיק בכל מילה ומילה:</p>
+
+    <div class="bracha-text fs-1.4em ls-2px">בָּרוּךְ &nbsp; אַתָּה &nbsp; ה' &nbsp; אֱלֹהֵינוּ &nbsp; מֶלֶךְ הָעוֹלָם &nbsp; ...</div>
+    
+        </div>
+
+                <div class="slide">
+
+    <div class="slide-header">        <h1>"בָּרוּךְ" – ריבוי והתברכות</h1>
+        <div class="subtitle">המילה הראשונה בכל ברכה</div>
+    </div>
+
+    <p>משמעות השורש ב-ר-ך בלשון חז"ל היא <strong>ריבוי, תוספת והשפעה</strong>. השורש מופיע בתנ"ך גם בהקשר חקלאי:</p>
+
+    <div class="example-box">
+        <div class="example-label">🌱 המשמעות המקורית: הַבְרָכָה</div>
+        <p>כשמקופפים ענף של עץ ומכניסים אותו לאדמה כדי שישתרש ויצמיח עץ חדש – לפעולה הזו קוראים <strong>"הברכה"</strong>. מעץ אחד נוצר ריבוי, תוספת חיים חדשים. כך גם כשאנחנו מברכים: אנחנו מרבים את גילוי ה' בעולם.</p>
+    </div>
+
+    <div class="section-title">שלושה פירושים מרכזיים</div>
+    <div class="cards-grid">
+        <div class="card">
+            <div class="card-icon">🌊</div>
+            <div class="card-title">בְּרֵכָה – מקור השפע</div>
+            <div class="card-text">הרשב"א (שו"ת ח"ה, סי' נ"ב): "ברכה" מלשון "בריכת מים" – כשם שבריכה מלאה מים, כך ה' הוא מקור כל הברכות והשפע בעולם.</div>
+        </div>
+        <div class="card">
+            <div class="card-icon">✖️2️⃣</div>
+            <div class="card-title">ריבוי – ב', ר', כ'</div>
+            <div class="card-text">המהר"ל (נתיב העבודה, פ"ב): האותיות ב(=2), ר(=200), כ(=20) – כולן השנייה ברמתן המספרית. כולן מסמלות את עצם ההכפלה – תחילת הריבוי.</div>
+        </div>
+        <div class="card">
+            <div class="card-icon">💡</div>
+            <div class="card-title">תוספת שפע לעולם</div>
+            <div class="card-text">ר' חיים מוולוז'ין (נפש החיים, שער ב', פ"ב): כשאנו מברכים – אנו מרבים את השפע האלוקי בעולם. "ברוך" הוא פעולה, לא רק תיאור.</div>
+        </div>
+    </div>
+
+    <div class="source-box">
+        <div class="source-label">📖 ספר החינוך</div>
+        "ברוך" – שם תואר: ה' הוא מבורך, "כל הברכות כלולות בו והוא מלך עליהם לשלחם על כל אשר יחפוץ".
+    </div>
+
+    <div class="highlight-box success">
+        <div class="highlight-box-title">💡 הרעיון המרכזי</div>
+        כשאנו אומרים "ברוך" – אנחנו לא רק מתארים את ה'. אנחנו <strong>פועלים</strong>: מרבים את הופעת השכינה בעולם, פותחים צינור של שפע, ויוצרים קשר בין ההנאה הגשמית לבוראה.
+    </div>
+        </div>
+
+                <div class="slide">
+
+    <div class="slide-header">        <h1>"אַתָּה" – פנייה ישירה, ללא אמצעי</h1>
+        <div class="subtitle">גוף שני – מדרגה מיוחדת של קרבה</div>
+    </div>
+
+    <p>שימו לב לדבר מופלא: כשאנחנו מברכים, אנחנו פונים ישירות אל ה', <strong>בגוף שני</strong> – "אתה". לא "הוא", לא "הבורא", אלא <strong>"אתה"</strong> – כמו שמדברים עם מי שעומד ממש מולנו.</p>
+
+    <div class="highlight-box">
+        <div class="highlight-box-title">🔑 מדוע זה כל כך משמעותי?</div>
+        בניגוד לתחושה הטבעית של ריחוק מהבורא, היהדות מלמדת שאפשר ואף ראוי לפנות אליו ישירות – ללא מתווכים וללא אמצעים. כל יהודי, בכל מקום, יכול לעמוד ולומר: <strong>"ברוך אתה"</strong> – מול הקב"ה פנים אל פנים.
+    </div>
+
+    <div class="section-title">נוכח ונסתר – סוד הנוסח</div>
+    <p>הברכה פותחת ב"ברוך <strong>אתה</strong>" (גוף שני – נוכח), אך ממשיכה ב"שהכל נהיה <strong>בדברו</strong>" (גוף שלישי – נסתר). למה המעבר הזה?</p>
+
+    <div class="source-box">
+        <div class="source-label">📖 הרשב"א (שו"ת ח"ה, סי' נ"ב)</div>
+        שני יסודות מרכזיים: האחד – שמציאות ה' ודאית ואין בה ספק. והשני – שאמיתת מהותו אינה מושגת. "ברוך אתה" – כמדבר עם מי שנוכח לפנינו. "אשר קדשנו" – בלשון נסתר, כי את מהותו אין אנו יכולים להשיג.
+    </div>
+
+    <div class="source-box">
+        <div class="source-label">📖 פניני הלכה ברכות, פרק א</div>
+        בתחילת הברכה אנו פונים אליו ישירות: "ברוך אתה ה' אלוהינו". אולם לאחר מכן עוברים לדבר אליו כאל נסתר – שאז אנו מתכוונים כלפי מה שלגמרי מעבר להשגתנו. שם ה' רומז למדרגה עליונה, שרק מעט מזער ממנה מתגלה אלינו. ואילו "אלוהינו" רומז למה שמתגלה.
+    </div>
+
+    <div class="highlight-box success">
+        <div class="highlight-box-title">💡 התנועה שבברכה</div>
+        הברכה משלבת קרבה וריחוק, אהבה ויראה. "אתה" – את ה' שאני מרגיש קרוב אלי. "בדברו" – את ה' שאינני יכול להשיג את מהותו. שני הצדדים גם יחד.
+    </div>
+        </div>
+
+                <div class="slide">
+
+    <div class="slide-header">        <h1>ה' · אלוהינו · מלך העולם</h1>
+        <div class="subtitle">שלוש שכבות של הכרה באלוקות</div>
+    </div>
+
+    <div class="cards-grid">
+        <div class="card bdr-4px-solid-v-primary">
+            <div class="card-icon">🔤</div>
+            <div class="card-title">"ה'" – שם הוויה (י-ה-ו-ה)</div>
+            <div class="card-text">
+                שם הוויה (י-ה-ו-ה) נקרא בפינו "אדוני" – <strong>אדון הכל</strong>. שם זה רומז ל"היה, הווה, ויהיה" – ה' שמעבר לזמן, שמחייה את הכל בכל רגע מחדש.<br><br>
+                שם זה מתייחס ל<strong>מידת הרחמים וההשגחה</strong> – ה' שמנהיג את העולם ברחמים ומשגיח על כל פרט ופרט.
+            </div>
+        </div>
+
+        <div class="card bdr-4px-solid-v-accent">
+            <div class="card-icon">⚡</div>
+            <div class="card-title">"אֱלֹהֵינוּ" – בעל היכולת</div>
+            <div class="card-text">
+                שם "אלוהים" מביע את הכוח האלוקי: <strong>תקיף, בעל הכוחות והיכולות כולם</strong>.<br><br>
+                לא ככוח מוגבל – אלא בעל היכולת המוחלטת. בורא העולם, קובע חוקי הטבע, ומנהל את הדין.<br><br>
+                הסיומת <strong>"ינו"</strong> – <em>אלוהינו שלנו</em> – מבטאת את הקשר הייחודי. לא רק "אלוהים" באופן מופשט, אלא אלוהינו – שיש לנו יחסים אישיים עמו.
+            </div>
+        </div>
+
+        <div class="card bdr-4px-solid-v-primary-light">
+            <div class="card-icon">👑</div>
+            <div class="card-title">"מֶלֶךְ הָעוֹלָם"</div>
+            <div class="card-text">
+                <strong>קביעת היחס בינינו לבינו</strong> – הוא המלך ואנחנו נתיניו. לא שותפים שווים, לא כוח עיוור – אלא מלך שיש לו קשר אישי עם כל נתין.<br><br>
+                "העולם" – מלכותו על <em>כל</em> המציאות, לא רק על עם ישראל, לא רק על מקום אחד, אלא על כל העולם כולו.
+            </div>
+        </div>
+    </div>
+
+    <div class="source-box">
+        <div class="source-label">📖 ברכות מ, ב; שו"ע רי"ד, א; פניני הלכה ברכות יב, ד</div>
+        "כל ברכה שאין בה הזכרת שם ומלכות – אינה ברכה." ארבעה יסודות מעכבים: "ברוך", שם ה', מלכות ("מלך העולם"), ותוכן הברכה.
+    </div>
+        </div>
+
+                <div class="slide">
+
+    <div class="slide-header">        <h1>המשך הברכה – תוכן ההתקשרות</h1>
+        <div class="subtitle">"...בורא פרי העץ" / "...שהכל נהיה בדברו"</div>
+    </div>
+
+    <p>אחרי שהנחנו את היסודות – "ברוך אתה ה' אלוהינו מלך העולם" – מגיע <strong>תוכן הברכה</strong>: על איזו הנאה, מצווה או חוויה אנחנו מייחסים את ההתקשרות הזו?</p>
+
+    <div class="highlight-box success">
+        <div class="highlight-box-title">🔗 המנגנון הרוחני של הברכה</div>
+        <p>המילים שלאחר "מלך העולם" הן הנקודה שבה אנחנו <strong>יוצרים קישור</strong> בין המעשה הגשמי – אכילת תפוח, שתיית מים, הנאה מריח – לבין הקב"ה. אנחנו מצהירים: הפרי הזה לא צמח סתם, אלא הקב"ה <strong>"בורא פרי העץ"</strong>. הדבר הזה לא קיים סתם, אלא <strong>"הכל נהיה בדברו"</strong>.</p>
+    </div>
+
+    <div class="section-title">מה קורה כשמברכים?</div>
+    <div class="two-cols">
+        <div class="card">
+            <div class="card-title">בלי ברכה</div>
+            <div class="card-text">הנאה גשמית מנותקת ממקורה. כאילו גוזלים מן העולם – נהנים בלי להכיר מהיכן בא הטוב.</div>
+        </div>
+        <div class="card">
+            <div class="card-title">עם ברכה</div>
+            <div class="card-text">ההנאה מתחברת למקורה. אנחנו מרבים את הופעת ה' בעולם – כל תפוח שאוכלים הופך לגילוי של הבורא.</div>
+        </div>
+    </div>
+
+    <div class="source-box">
+        <div class="source-label">📖 פניני הלכה ברכות, פרק א</div>
+        כשם שראוי לאדם שמקבל מתנות מחברו להודות באופן ייחודי על כל מתנה, ואילו זה שמודה על הכל בנוסח סתמי מראה שאינו מבחין במהות המתנה – כך ראוי לאדם לנהוג כלפי שמים. לפיכך תיקנו חכמים ברכה מיוחדת לכל סוג וסוג של מאכל.
+    </div>
+
+    <div class="example-box">
+        <div class="example-label">📋 לסיכום – מבנה הברכה כמסע רוחני</div>
+        <p>
+        <strong>"ברוך"</strong> – אני מרבה את השפע האלוקי בעולם<br>
+        <strong>"אתה"</strong> – בפנייה ישירה, ללא אמצעי, פנים אל פנים<br>
+        <strong>"ה'"</strong> – אל הנצחי, היה הווה ויהיה, מנהיג ברחמים<br>
+        <strong>"אלוהינו"</strong> – בעל היכולת המוחלטת, שלנו, קרוב ואישי<br>
+        <strong>"מלך העולם"</strong> – מלך על כל המציאות, ואני נתינו<br>
+        <strong>"...בורא פרי העץ"</strong> – ועכשיו, ברגע הזה, אני מחבר את הפרי הזה שבידי – לבוראו
+        </p>
+    </div>
+        </div>
+
+                <div class="slide section-slide">
+            <div class="section-slide-inner">
+                <span class="section-kicker">חלק ג</span>
+                <h2>חזרה וסיכום</h2>
+                <p class="section-sub">סיכום נקודות המפתח, שאלות לחזרה עצמית ורשימת המקורות</p>
+            </div>
+        </div>
+
+                <div class="slide">
+
+    <div class="slide-header">
+        <h1>סיכום — מבוא ויסודות הברכה</h1>
+        <div class="subtitle">נקודות מפתח לחזרה</div>
+    </div>
+    <p>לפני שנצלול לפרטי הברכות, אלה היסודות שראוי לזכור:</p>
+
+    <div class="table-container">
+        <table>
+            <thead><tr><th>נושא</th><th>עיקר העניין</th></tr></thead>
+            <tbody>
+                <tr><td>מהי ברכה</td><td>שבח והודאה לה' סביב ההנאה; "אסור ליהנות מן העולם בלא ברכה" (ברכות לה, א)</td></tr>
+                <tr><td>מקור החיוב</td><td>רוב הברכות מדרבנן; מן התורה – ברכת המזון (דברים ח, י). הברכות = אחת משבע מצוות דרבנן</td></tr>
+                <tr><td>ארבע קטגוריות</td><td>הנהנין · המצוות · השבח וההודאה · התפילה. המצגת עוסקת בברכות הנהנין</td></tr>
+                <tr><td>שם ומלכות</td><td>כל ברכה חייבת הזכרת שם ה' ומלכות; בלעדיהם אינה ברכה (ברכות מ, ב; שו"ע רי"ד, א)</td></tr>
+                <tr><td>נוסח הברכה</td><td>ברוך (ריבוי ושפע) · אתה (פנייה ישירה) · ה' (נצחי, רחמים) · אלוהינו (בעל היכולת, אישי) · מלך העולם (מלכות על הכל)</td></tr>
+                <tr><td>מאה ברכות</td><td>חכמים תיקנו לברך מאה ברכות בכל יום (מנחות מג, ב)</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="highlight-box success mt-24px">
+        <div class="highlight-box-title">💡 המשך המסלול</div>
+        <p>מכאן נעבור אל הברכות עצמן: הברכות הראשונות (לפני האכילה), הברכות האחרונות (לאחריה), והברכות המיוחדות.</p>
+    </div>
+        </div>
+
+                <div class="slide">
+
+    <div class="slide-header">
+        <h1>חידון – בדוק את עצמך!</h1>
+        <div class="subtitle">14 שאלות ביסודות הברכה ובנוסח הברכה – בדוק את עצמך!</div>
+    </div>
+                <div class="question">
+                <div class="question-text">1. מהי, בקצרה, "ברכה"?</div>
+                <div class="options">
+                    <div class="option"><span class="option-letter">א</span><span>תפילה ארוכה שאומרים שלוש פעמים ביום</span></div>
+                    <div class="option"><span class="option-letter">ב</span><span>אמירת שבח והודאה לה' סביב הנאה שבעולם</span></div>
+                    <div class="option"><span class="option-letter">ג</span><span>בקשה מה' שיברך את מעשה ידינו</span></div>
+                    <div class="option"><span class="option-letter">ד</span><span>פרק תהילים שאומרים לפני האוכל</span></div>
+                </div>
+                <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                <div class="answer-box">
+                    <strong>תשובה נכונה: ב</strong><br>
+                    ✅ ברכה היא אמירה קצרה של שבח והודאה לה', שבה אנו מכירים שכל הטוב מגיע ממנו (ברכות לה, א).
+            <button class="ref-btn" onclick="showSlide(2)">← ראה שקף 3</button>
+                </div>
+            </div>
+                <div class="question">
+                <div class="question-text">2. הנהנה מן העולם הזה בלא ברכה – כמי הוא נחשב?</div>
+                <div class="options">
+                    <div class="option"><span class="option-letter">א</span><span>כמי ששכח וייפטר בהרהור</span></div>
+                    <div class="option"><span class="option-letter">ב</span><span>כמי שעבר על איסור דרבנן קל</span></div>
+                    <div class="option"><span class="option-letter">ג</span><span>כאילו מעל ונהנה מקודשי שמים</span></div>
+                    <div class="option"><span class="option-letter">ד</span><span>אין בכך כלום, הברכה רשות</span></div>
+                </div>
+                <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                <div class="answer-box">
+                    <strong>תשובה נכונה: ג</strong><br>
+                    ✅ "אסור לו לאדם שיהנה מן העולם הזה בלא ברכה... כאילו מעל" (ברכות לה, א): הכל שייך לה', והברכה היא הרשות ליהנות.
+            <button class="ref-btn" onclick="showSlide(2)">← ראה שקף 3</button>
+                </div>
+            </div>
+                <div class="question">
+                <div class="question-text">3. איזו ברכה חיובה מפורש מן התורה?</div>
+                <div class="options">
+                    <div class="option"><span class="option-letter">א</span><span>ברכת "שהכל" על מים</span></div>
+                    <div class="option"><span class="option-letter">ב</span><span>ברכת בורא נפשות</span></div>
+                    <div class="option"><span class="option-letter">ג</span><span>ברכת המזון לאחר אכילת לחם</span></div>
+                    <div class="option"><span class="option-letter">ד</span><span>ברכת "בורא פרי העץ"</span></div>
+                </div>
+                <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                <div class="answer-box">
+                    <strong>תשובה נכונה: ג</strong><br>
+                    ✅ "ואכלת ושבעת וברכת" (דברים ח, י) – ברכת המזון היא מן התורה. את שאר ברכות הנהנין תיקנו חכמים.
+            <button class="ref-btn" onclick="showSlide(3)">← ראה שקף 4</button>
+                </div>
+            </div>
+                <div class="question">
+                <div class="question-text">4. ברכות הנהנין (על אכילה ושתייה) – מה מקור חיובן?</div>
+                <div class="options">
+                    <div class="option"><span class="option-letter">א</span><span>כולן מן התורה</span></div>
+                    <div class="option"><span class="option-letter">ב</span><span>מדברי חכמים (דרבנן)</span></div>
+                    <div class="option"><span class="option-letter">ג</span><span>מנהג בלבד, ללא חיוב</span></div>
+                    <div class="option"><span class="option-letter">ד</span><span>חציין מהתורה וחציין מדרבנן</span></div>
+                </div>
+                <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                <div class="answer-box">
+                    <strong>תשובה נכונה: ב</strong><br>
+                    ✅ רוב הברכות, וברכות הנהנין בכללן, תוקנו על ידי חכמים כדי לחזק את הקשר בין ישראל לאביהם שבשמים.
+            <button class="ref-btn" onclick="showSlide(3)">← ראה שקף 4</button>
+                </div>
+            </div>
+                <div class="question">
+                <div class="question-text">5. הברכות נמנות כאחת מ...</div>
+                <div class="options">
+                    <div class="option"><span class="option-letter">א</span><span>עשרת הדיברות</span></div>
+                    <div class="option"><span class="option-letter">ב</span><span>שבע מצוות בני נח</span></div>
+                    <div class="option"><span class="option-letter">ג</span><span>שבע מצוות עשה מדרבנן</span></div>
+                    <div class="option"><span class="option-letter">ד</span><span>שלוש עשרה מידות</span></div>
+                </div>
+                <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                <div class="answer-box">
+                    <strong>תשובה נכונה: ג</strong><br>
+                    ✅ הברכות הן אחת משבע מצוות עשה שתיקנו חכמים (לצד נטילת ידיים, עירובין, נר שבת, נר חנוכה, מקרא מגילה והלל).
+            <button class="ref-btn" onclick="showSlide(3)">← ראה שקף 4</button>
+                </div>
+            </div>
+                <div class="question">
+                <div class="question-text">6. לאיזו קטגוריה שייכת הברכה "בורא פרי העץ" על תפוח?</div>
+                <div class="options">
+                    <div class="option"><span class="option-letter">א</span><span>ברכות המצוות</span></div>
+                    <div class="option"><span class="option-letter">ב</span><span>ברכות השבח וההודאה</span></div>
+                    <div class="option"><span class="option-letter">ג</span><span>ברכות הנהנין</span></div>
+                    <div class="option"><span class="option-letter">ד</span><span>ברכות התפילה</span></div>
+                </div>
+                <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                <div class="answer-box">
+                    <strong>תשובה נכונה: ג</strong><br>
+                    ✅ ברכה על הנאת הגוף (אכילה, שתייה, ריח) היא מברכות הנהנין – נושא המצגת.
+            <button class="ref-btn" onclick="showSlide(4)">← ראה שקף 5</button>
+                </div>
+            </div>
+                <div class="question">
+                <div class="question-text">7. ברכה שמברכים לפני קיום מצווה ("אשר קדשנו במצוותיו וציוונו") נקראת:</div>
+                <div class="options">
+                    <div class="option"><span class="option-letter">א</span><span>ברכת הנהנין</span></div>
+                    <div class="option"><span class="option-letter">ב</span><span>ברכת המצוות</span></div>
+                    <div class="option"><span class="option-letter">ג</span><span>ברכת השבח</span></div>
+                    <div class="option"><span class="option-letter">ד</span><span>ברכה מעין שלוש</span></div>
+                </div>
+                <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                <div class="answer-box">
+                    <strong>תשובה נכונה: ב</strong><br>
+                    ✅ ברכות המצוות נאמרות לפני קיום מצווה, כגון נטילת ידיים, הדלקת נר או ישיבה בסוכה.
+            <button class="ref-btn" onclick="showSlide(4)">← ראה שקף 5</button>
+                </div>
+            </div>
+                <div class="question">
+                <div class="question-text">8. ברכת "שהחיינו" על בגד חדש שייכת ל...</div>
+                <div class="options">
+                    <div class="option"><span class="option-letter">א</span><span>ברכות הנהנין</span></div>
+                    <div class="option"><span class="option-letter">ב</span><span>ברכות המצוות</span></div>
+                    <div class="option"><span class="option-letter">ג</span><span>ברכות השבח וההודאה</span></div>
+                    <div class="option"><span class="option-letter">ד</span><span>ברכות התפילה</span></div>
+                </div>
+                <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                <div class="answer-box">
+                    <strong>תשובה נכונה: ג</strong><br>
+                    ✅ שהחיינו, ברכות הראייה והגומל הן ברכות השבח וההודאה – על חוויות ואירועים.
+            <button class="ref-btn" onclick="showSlide(4)">← ראה שקף 5</button>
+                </div>
+            </div>
+                <div class="question">
+                <div class="question-text">9. כמה ברכות תיקנו חכמים לאדם לברך בכל יום?</div>
+                <div class="options">
+                    <div class="option"><span class="option-letter">א</span><span>שבע</span></div>
+                    <div class="option"><span class="option-letter">ב</span><span>שמונה עשרה</span></div>
+                    <div class="option"><span class="option-letter">ג</span><span>מאה</span></div>
+                    <div class="option"><span class="option-letter">ד</span><span>שש מאות ושלוש עשרה</span></div>
+                </div>
+                <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                <div class="answer-box">
+                    <strong>תשובה נכונה: ג</strong><br>
+                    ✅ חכמים תיקנו מאה ברכות בכל יום, כדי שכל יום יהיה מלא בהכרת טובו של הקב"ה (מנחות מג, ב).
+            <button class="ref-btn" onclick="showSlide(5)">← ראה שקף 6</button>
+                </div>
+            </div>
+                <div class="question">
+                <div class="question-text">10. מהם היסודות ההכרחיים שבלעדיהם "אין זו ברכה"?</div>
+                <div class="options">
+                    <div class="option"><span class="option-letter">א</span><span>אורך מסוים ומניין של עשרה</span></div>
+                    <div class="option"><span class="option-letter">ב</span><span>הזכרת שם ה' ומלכותו ("שם ומלכות")</span></div>
+                    <div class="option"><span class="option-letter">ג</span><span>עמידה ופנייה לכיוון ירושלים</span></div>
+                    <div class="option"><span class="option-letter">ד</span><span>אמירה בלשון הקודש דווקא</span></div>
+                </div>
+                <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                <div class="answer-box">
+                    <strong>תשובה נכונה: ב</strong><br>
+                    ✅ "כל ברכה שאין בה הזכרת שם ומלכות – אינה ברכה" (ברכות מ, ב; שו"ע רי"ד, א).
+            <button class="ref-btn" onclick="showSlide(10)">← ראה שקף 11</button>
+                </div>
+            </div>
+                <div class="question">
+                <div class="question-text">11. מה משמעות השורש ב-ר-ך בלשון חז"ל?</div>
+                <div class="options">
+                    <div class="option"><span class="option-letter">א</span><span>כריעה והשתחוויה בלבד</span></div>
+                    <div class="option"><span class="option-letter">ב</span><span>ריבוי, תוספת והשפעה</span></div>
+                    <div class="option"><span class="option-letter">ג</span><span>בקשה ותחינה</span></div>
+                    <div class="option"><span class="option-letter">ד</span><span>שתיקה והתבוננות</span></div>
+                </div>
+                <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                <div class="answer-box">
+                    <strong>תשובה נכונה: ב</strong><br>
+                    ✅ השורש ב-ר-ך עניינו ריבוי ותוספת (כמו "הברכה" של ענף המצמיח עץ חדש, וכמו "ברֵכה" – מקור מים). בברכה אנו מרבים את גילוי ה' בעולם.
+            <button class="ref-btn" onclick="showSlide(8)">← ראה שקף 9</button>
+                </div>
+            </div>
+                <div class="question">
+                <div class="question-text">12. הברכה פותחת ב"ברוך אתה" (נוכח) וממשיכה בלשון נסתר. מדוע?</div>
+                <div class="options">
+                    <div class="option"><span class="option-letter">א</span><span>טעות שהשתרשה בנוסח</span></div>
+                    <div class="option"><span class="option-letter">ב</span><span>כדי לקצר את הברכה</span></div>
+                    <div class="option"><span class="option-letter">ג</span><span>מציאות ה' ודאית וקרובה (נוכח), אך מהותו נעלה מהשגתנו (נסתר)</span></div>
+                    <div class="option"><span class="option-letter">ד</span><span>כדי להזכיר את העבר ואת העתיד</span></div>
+                </div>
+                <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                <div class="answer-box">
+                    <strong>תשובה נכונה: ג</strong><br>
+                    ✅ לפי הרשב"א: "ברוך אתה" – פנייה ישירה, שכן מציאותו ודאית; ולשון הנסתר – שאת אמיתת מהותו איננו יכולים להשיג.
+            <button class="ref-btn" onclick="showSlide(9)">← ראה שקף 10</button>
+                </div>
+            </div>
+                <div class="question">
+                <div class="question-text">13. מה מבטאת סיומת הברכה "מלך העולם"?</div>
+                <div class="options">
+                    <div class="option"><span class="option-letter">א</span><span>שה' מלך רק על עם ישראל</span></div>
+                    <div class="option"><span class="option-letter">ב</span><span>מלכות ה' על כל המציאות, ואנו נתיניו</span></div>
+                    <div class="option"><span class="option-letter">ג</span><span>בקשה שה' ימלוך לעתיד לבוא</span></div>
+                    <div class="option"><span class="option-letter">ד</span><span>שה' שולט רק בשמים</span></div>
+                </div>
+                <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                <div class="answer-box">
+                    <strong>תשובה נכונה: ב</strong><br>
+                    ✅ "מלך העולם" קובע את היחס בינינו לבינו – הוא המלך על כל המציאות ואנו נתיניו, מלך שיש לו קשר אישי עם כל נתין.
+            <button class="ref-btn" onclick="showSlide(10)">← ראה שקף 11</button>
+                </div>
+            </div>
+                <div class="question">
+                <div class="question-text">14. מדוע תיקנו חכמים ברכה מיוחדת לכל סוג של מאכל, ולא ברכה אחת כללית?</div>
+                <div class="options">
+                    <div class="option"><span class="option-letter">א</span><span>כדי להאריך את זמן הסעודה</span></div>
+                    <div class="option"><span class="option-letter">ב</span><span>כדי להבחין במהות כל מתנה ולהודות עליה כראוי</span></div>
+                    <div class="option"><span class="option-letter">ג</span><span>משום מחלוקת שלא הוכרעה</span></div>
+                    <div class="option"><span class="option-letter">ד</span><span>כדי להקשות על הזכירה</span></div>
+                </div>
+                <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                <div class="answer-box">
+                    <strong>תשובה נכונה: ב</strong><br>
+                    ✅ כמקבל מתנות המודה על כל מתנה בפני עצמה ומראה שהוא מבחין במהותה – כך תיקנו חכמים ברכה מיוחדת לכל סוג מאכל (פניני הלכה ברכות א).
+            <button class="ref-btn" onclick="showSlide(11)">← ראה שקף 12</button>
+                </div>
+            </div>
+        </div>
+
+                <div class="slide">
+
+    <div class="slide-header">
+        <h1>מקורות</h1>
+        <div class="subtitle">מקורות ליסודות הברכה ולנוסחה</div>
+    </div>
+
+    <div class="section-title">ספרי הלכה ראשיים</div>
+    <div class="table-container">
+        <table>
+            <thead><tr><th>ספר</th><th>מחבר</th><th>נושא</th></tr></thead>
+            <tbody>
+                <tr><td><strong>שולחן ערוך אורח חיים</strong></td><td>מרן הרב יוסף קארו; רמ"א</td><td>המקור ההלכתי המרכזי</td></tr>
+                <tr><td><strong>משנה ברורה</strong></td><td>החפץ חיים, ר' ישראל מאיר הכהן</td><td>פסיקה מעשית</td></tr>
+                <tr><td><strong>פניני הלכה – ברכות</strong></td><td>הרב אליעזר מלמד</td><td>המקור העיקרי לפסיקה מעשית במצגת. זמין חינם: ph.yhb.org.il</td></tr>
+                <tr><td><strong>ילקוט יוסף – ברכות</strong></td><td>הרב יצחק יוסף</td><td>פסיקה ספרדית מפורטת. yalkut.info</td></tr>
+                <tr><td><strong>וזאת הברכה</strong></td><td>הרב אלכסנדר מנדלבוים</td><td>מדריך מעשי עם מפתח לפי מאכלים</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section-title">סימנים עיקריים לנושאי המצגת</div>
+    <div class="table-container">
+        <table>
+            <thead><tr><th>נושא</th><th>מקור</th></tr></thead>
+            <tbody>
+                <tr><td>נוסח הברכה – שם ומלכות</td><td>ברכות מ, ב; שו"ע או"ח רי"ד</td></tr>
+                <tr><td>חיוב ברכת המזון מן התורה</td><td>דברים ח, י; שו"ע או"ח קפ"ד</td></tr>
+                <tr><td>ברכת התורה</td><td>שו"ע או"ח ר"ט</td></tr>
+                <tr><td>מאה ברכות בכל יום</td><td>מנחות מג, ב; שו"ע או"ח מ"ו</td></tr>
+                <tr><td>יסודות הברכה ומשמעותה</td><td>פניני הלכה ברכות, פרק א; פרק יב</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section-title">מקורות נוספים שנזכרו</div>
+    <p>מסכת ברכות (גמרא) · רמב"ם הלכות ברכות · כוזרי מאמר ג · רשב"א שו"ת ח"ה · נפש החיים · ספר החינוך</p>
+
+    <div class="highlight-box success mt-24px">
+        <div class="highlight-box-title">🌟 לסיום</div>
+        <p>"אסור לו לאדם שיהנה מן העולם הזה בלא ברכה" (ברכות לה, א)</p>
+        <p>כל ברכה היא רגע של עצירה, הכרת תודה, וחיבור לבורא עולם.</p>
+    </div>
+        </div>
+    </div>
+    <!-- סוף slideshow-container -->
+
+    <!-- פס ניווט תחתון קבוע -->
+    <nav class="navigation-controls" aria-label="ניווט בין שקפים">
+        <button class="nav-btn" onclick="previousSlide()" id="prev-btn" aria-label="שקף קודם">▶ קודם</button>
+        <div class="slide-counter">
+            <span id="current-slide" aria-live="polite" aria-atomic="true">1</span>
+            /
+            <span id="total-slides">1</span>
+        </div>
+        <button class="nav-btn" onclick="nextSlide()" id="next-btn" aria-label="שקף הבא">הבא ◀</button>
+    </nav>
+
+    <!-- קבצי JS משותפים — סדר טעינה חשוב -->
+    <script src="../js/navigation.js"></script>
+    <script src="../js/theme.js"></script>
+    <script src="../js/quiz.js"></script>
+</body>
+
+</html>
