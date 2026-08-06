@@ -790,3 +790,239 @@
     background: var(--bg-white);
     border-color: var(--primary-color);
 }
+
+/* ============================================================
+   גלריית איורים להמחשת מלאכה (Illustration gallery)
+   שימוש: <div class="melacha-figures"> ובתוכו <figure class="melacha-figure">
+   עם <img> ו-<figcaption>. רספונסיבי, תומך במצב בהיר/כהה ו-RTL.
+   ============================================================ */
+.melacha-figures {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+}
+
+.melacha-figure {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.melacha-figure:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.melacha-figure > img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    background: var(--bg-lightest-gray);
+}
+
+.melacha-figure figcaption {
+    padding: 10px 12px;
+    text-align: center;
+    font-size: 0.9em;
+    line-height: 1.4;
+    color: var(--text-secondary);
+    border-top: 3px solid var(--primary-color);
+}
+
+.melacha-figure figcaption strong {
+    color: var(--primary-color);
+}
+
+/* ---- קרוסלה בתוך כרטיס מלאכה (דפדוף בין תמונות) ---- */
+.melacha-carousel { position: relative; outline: none; }
+.melacha-carousel:focus-visible {
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary-color) 35%, transparent);
+    border-radius: 12px;
+}
+
+.mc-viewport {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    background: var(--bg-lightest-gray);
+    overflow: hidden;
+}
+
+.mc-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease;
+}
+.mc-slide.is-active { opacity: 1; visibility: visible; }
+.mc-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    cursor: zoom-in;
+}
+
+/* כיתוב מרחף לתמונה הנוכחית */
+.mc-cap {
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    padding: 8px 10px;
+    font-size: 0.86em;
+    font-weight: 600;
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(to top, rgba(20, 14, 8, 0.74), rgba(20, 14, 8, 0));
+    pointer-events: none;
+}
+
+/* חצי ניווט */
+.mc-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--bg-white) 82%, transparent);
+    color: var(--primary-color);
+    font-size: 0.9em;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    opacity: 0;
+    transition: opacity 0.25s ease, background 0.2s ease;
+    z-index: 2;
+}
+.melacha-carousel:hover .mc-arrow,
+.melacha-carousel:focus-within .mc-arrow { opacity: 1; }
+.mc-arrow:hover { background: var(--bg-white); }
+.mc-prev { right: 8px; }
+.mc-next { left: 8px; }
+@media (hover: none) { .mc-arrow { opacity: 0.92; } }
+
+/* נקודות מיקום */
+.mc-dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    padding: 9px 0 3px;
+}
+.mc-dot {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: var(--border-medium);
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+.mc-dot.is-active { background: var(--primary-color); transform: scale(1.3); }
+
+/* תצוגה מוגדלת (Lightbox) */
+.mc-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(15, 10, 6, 0.86);
+    cursor: zoom-out;
+    animation: mc-fade 0.2s ease;
+}
+.mc-lightbox img {
+    max-width: 92vw;
+    max-height: 86vh;
+    border-radius: 10px;
+    box-shadow: var(--shadow-lg);
+}
+.mc-lb-cap {
+    position: absolute;
+    bottom: 20px;
+    inset-inline: 0;
+    text-align: center;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.05em;
+    pointer-events: none;
+}
+.mc-lb-close {
+    position: absolute;
+    top: 16px;
+    inset-inline-start: 20px;
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.16);
+    color: #fff;
+    font-size: 1.3em;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+.mc-lb-close:hover { background: rgba(255, 255, 255, 0.3); }
+
+@keyframes mc-fade { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+    .mc-slide, .mc-lightbox { transition: none; animation: none; }
+}
+
+/* ============================================================
+   השוואת אסור/מותר — זוג תמונות בשורת תנאי (בורר)
+   האסור מסומן ב-✗ אדום, המותר ב-✓ ירוק.
+   ============================================================ */
+.borer-compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 12px 0 4px;
+}
+.bc-item {
+    border: 2px solid var(--border-light);
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--bg-white);
+    box-shadow: var(--shadow-sm);
+}
+.bc-item img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    cursor: zoom-in;
+}
+.bc-tag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 8px 10px;
+    font-weight: 700;
+    font-size: 0.92em;
+    color: #fff;
+}
+.bc-ico { font-size: 1.1em; line-height: 1; }
+.bc-forbidden { border-color: #C0392B; }
+.bc-forbidden .bc-tag { background: #C0392B; }
+.bc-allowed { border-color: #3F8F3A; }
+.bc-allowed .bc-tag { background: #3F8F3A; }
+
+@media (max-width: 480px) {
+    .borer-compare { gap: 8px; }
+    .bc-tag { font-size: 0.8em; padding: 6px; gap: 4px; }
+}
