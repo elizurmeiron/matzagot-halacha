@@ -7,6 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700;900&family=Heebo:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/pesach-checklist.css">
     <link rel="stylesheet" href="../css/utilities-extracted.css">
+    <link rel="stylesheet" href="../css/components.css" />
 </head>
 <body>
 
@@ -62,6 +63,19 @@
       <button class="glossary-close" onclick="closeGlossary()">✕</button>
     </div>
     <div class="glossary-body">
+
+      <div class="img-slot img-slot--carousel" data-figcaption="<strong>חמש שיטות הכשרה</strong> — מהחמורה לקלה">
+        <div class="img-part" data-src="./images/kasher-01-hagalah-boiling.png" data-caption="הגעלה"
+             data-note="סיר גדול של מים רותחים גועשים, כלי נטבל בו במלקחיים, אבן לוהטת בקרקעית המעלה את הרתיחה"></div>
+        <div class="img-part" data-src="./images/kasher-02-iruy-pouring.png" data-caption="עירוי רותחים"
+             data-note="קומקום שופך זרם מים רותחים רציף על משטח שיש נקי — הכשרת משטח שאי אפשר לטבול"></div>
+        <div class="img-part" data-src="./images/kasher-03-shriya-glass-soak.png" data-caption="שרייה 72 שעות"
+             data-note="כוסות זכוכית שקועות בקערת מים קרים לשלוש יממות — הכשרה לספרדים לכוסות שתייה קרה"></div>
+        <div class="img-part" data-src="./images/kasher-04-soap-scrub.png" data-caption="ניקוי עם סבון"
+             data-note="יד עם ספוג ובועות סבון משפשפת כלי — הסבון פוגם את הטעם הבלוע"></div>
+        <div class="img-part" data-src="./images/kasher-05-libun-glowing.png" data-caption="ליבון"
+             data-note="שבכת כיריים או רשת מחוממת עד זוהר חום, מבער מכוון אליה — הכשרה חמורה בחום ישיר"></div>
+      </div>
 
       <div class="glossary-entry" id="gentry-hagshalah">
         <div class="glossary-entry-title">
@@ -159,6 +173,7 @@
       <span class="cat-chevron">▲</span>
     </div>
     <div class="items-list" data-section="nikui">
+      <div class="img-slot" data-src="./images/counter-sink-iruy.png" data-caption="עירוי על שיש וכיור" data-note="משטח שיש וכיור נירוסטה נקיים, קומקום שופך עליהם מים רותחים — הכשרת המטבח בעירוי"></div>
       <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">כיור נירוסטה / ברזל</div><div class="item-note">ניקוי יסודי + עירוי מים רותחים — מספיק גם למחמירים</div></div><span class="item-tag tag-iruy">עירוי רותחים</span></div>
       <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">כיור קרמי / פולימר</div><div class="item-note">ניקוי יסודי + עירוי רותחים. לאחר מכן אין להניח כלים חמים ואין להשתמש במים חמים ישירות בכיור. אשכנזים נוהגים להחמיר ולהשתמש בגיגית ייעודית לפסח</div></div><span class="item-tag tag-iruy">עירוי רותחים</span></div>
       <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">ברז ומוצא המים</div><div class="item-note">ניקוי חיצוני מספיק לצורך הכשרה. פירוק מסננת — מומלץ כתחזוקה שוטפת אך אינו מעכב</div></div><span class="item-tag tag-nikui">ניקוי</span></div>
@@ -187,6 +202,8 @@
       <span class="cat-chevron">▲</span>
     </div>
     <div class="items-list" data-section="nikui">
+      <div class="img-slot" data-src="./images/oven-kashering.png" data-caption="ליבון תנור" data-note="דלת תנור פתוחה, פנים נקי, קווי חום עולים מהדפנות הפנימיות — הכשרת התנור בליבון"></div>
+      <div class="img-slot" data-src="./images/microwave-steam-cup.png" data-caption="עירוי במיקרוגל" data-note="כוס מים במיקרוגל פולטת אדים הממלאים את התא — הכשרת המיקרוגל באדים"></div>
       <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">כיריים / גז — שבכות</div><div class="item-note">ניקוי יסודי, הדלקה עד לוהט כ-15 דקות (ליבון)</div></div><span class="item-tag tag-libun">ליבון</span></div>
       <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">כיריים חשמלי / אינדוקציה</div><div class="item-note">ניקוי יסודי של המשטח, הדלקה על חום מקסימלי. אין צורך לכסות לוחות — הכשרה מתבצעת בחום ישיר</div></div><span class="item-tag tag-libun">ליבון</span></div>
       <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">תנור חשמלי / גז</div><div class="item-note">ניקוי מוחלט (כולל שימוש בספריי תנור אם נדרש) + הדלקה על חום מקסימלי כשעה. הדפנות הפנימיות מתכשרות בחום.</div></div><span class="item-tag tag-libun">ליבון</span></div>
@@ -330,6 +347,7 @@
   <div class="note-card">
     <strong>🕯️ סדר בדיקת חמץ:</strong> בדיקת חמץ נעשית בליל י"ד בניסן (ערב פסח), לאחר צאת הכוכבים. מדליקים נר, אומרים ברכה, ובודקים בסדר שיטתי מחדר לחדר — מהמקומות הפחות נקיים לנקיים.
   </div>
+  <div class="img-slot" data-src="./images/bedikat-chametz-candle-cabinet.png" data-caption="בדיקת חמץ לאור הנר" data-note="יד וצללית מאירות בנר דק לתוך ארון מטבח פתוח וחשוך, אלומת אור על הפינות והמדפים — אווירת ליל הבדיקה"></div>
   <div class="note-card bdrc-v-red">
     <strong>⚠️ מקומות שכדאי לבדוק לפני ליל הבדיקה:</strong> מקומות שאין אפשרות לבדוק בלילה — כגון <strong>משרד</strong>, <strong>מחסן שאינו ליד הבית</strong>, מגרש חניה מקורה וכדומה — כדאי לבדוק מספר ימים לפני, ביום. הבדיקה הלילית מתמקדת במקומות הנגישים בבית.
   </div>
@@ -363,6 +381,7 @@
       <span class="cat-chevron">▲</span>
     </div>
     <div class="items-list" data-section="bedika">
+      <div class="img-slot" data-src="./images/bedika-tools-set.png" data-caption="ערכת בדיקת חמץ" data-note="מערך כלי הבדיקה יחד — נר שעווה דק דולק, נוצה, כף עץ, שקית נייר, ועשר חתיכות לחם עטופות"></div>
       <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">הכנת נר דק / פנס</div><div class="item-note">נר שעוה יחיד ודק, או פנס חזק — לא מנורת חשמל בלבד</div></div><span class="item-tag tag-check">הכנה</span></div>
       <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">הנחת 10 חתיכות לחם</div><div class="item-note">מנהג — לעטוף כל חתיכה בנייר בנפרד, לזכרון כי מצאנו חמץ בבדיקה</div></div><span class="item-tag tag-check">מנהג</span></div>
       <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">הכנת נוצה / מברשת קטנה וכף ושקית</div><div class="item-note">לאיסוף החמץ שנמצא. נוצה יפה ונוסטלגית, אבל כל מברשת קטנה — ואפילו ביד — כשרה לכך</div></div><span class="item-tag tag-check">הכנה</span></div>
@@ -495,6 +514,7 @@
       <span class="cat-chevron">▲</span>
     </div>
     <div class="items-list" data-section="seder">
+      <div class="img-slot" data-src="./images/seder-plate.png" data-caption="קערת הסדר" data-note="קערת הסדר במבט-על ובה ששת המרכיבים במקומם — זרוע, ביצה, מרור, חזרת, חרוסת, כרפס — לצידה קערית מי מלח"></div>
       <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">זרוע — עצם עוף קלויה</div><div class="item-note">זכר לקרבן פסח. עדיף עוף (צוואר / כנף) — קל לקלות ומצוי. לחלופין עצם בהמה.</div></div><span class="item-tag tag-prep">הכנה</span></div>
       <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">ביצה קשה / קלויה</div><div class="item-note">זכר לקרבן החגיגה; רצוי גם לקלות קלות</div></div><span class="item-tag tag-prep">הכנה</span></div>
       <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">מרור — חסה / עלי חריין</div><div class="item-note">עלי חסה או שורש חריין — מרירות העבדות</div></div><span class="item-tag tag-prep">הכנה</span></div>
@@ -513,6 +533,7 @@
       <span class="cat-chevron">▲</span>
     </div>
     <div class="items-list" data-section="seder">
+      <div class="img-slot" data-src="./images/three-matzot-four-cups.png" data-caption="שלוש מצות וארבע כוסות" data-note="שלוש מצות עגולות זו על זו ומכוסות במפית, ולצידן ארבע כוסות יין וקנקן"></div>
       <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">שלוש מצות לקערה (מכוסות)</div><div class="item-note">מכוסות במפית — כהן לוי ישראל</div></div><span class="item-tag tag-prep">הכנה</span></div>
       <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">מצות לכלל המסובים</div><div class="item-note">כמות מספקת — כזית לכל אחד, 4 פעמים</div></div><span class="item-tag tag-prep">הכנה</span></div>
       <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">יין / מיץ ענבים</div><div class="item-note">4 כוסות לכל אחד — לפחות 86 מ"ל לכל כוס</div></div><span class="item-tag tag-prep">הכנה</span></div>
@@ -643,6 +664,7 @@
       <span class="cat-chevron">▲</span>
     </div>
     <div class="items-list" data-section="shopping">
+      <div class="img-slot" data-src="./images/mechirat-chametz-sealed-cupboard.png" data-caption="מכירת חמץ" data-note="מזווה שבו מוצרי חמץ ארוזים ומכוסים, ולידו שטר מכירה חתום"></div>
       <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">הגדות לכל המסובים</div></div><span class="item-tag tag-buy">קנייה</span></div>
       <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">נרות יום טוב</div><div class="item-note">לשתי לילות — נר ארוך / שבת</div></div><span class="item-tag tag-buy">קנייה</span></div>
       <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">שטר מכירת חמץ לרב</div><div class="item-note">לבצע לפני ערב פסח — גם אונליין</div></div><span class="item-tag tag-buy">מסמך</span></div>
@@ -684,6 +706,7 @@
       <span class="cat-chevron">▲</span>
     </div>
     <div class="items-list" data-section="erev">
+      <div class="img-slot" data-src="./images/srefat-chametz-burning.png" data-caption="שריפת חמץ" data-note="מדורה קטנה בפח מתכת ובה נשרפות חתיכות לחם, ידיים אנונימיות מוסיפות שאריות חמץ — ביעור בבוקר י״ד"></div>
       <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">בדיקת זמן שריפת חמץ (שעה חמישית)</div><div class="item-note">בדוק לוח זמנים לפסח — שעת איסור אכילה ושריפה</div></div><span class="item-tag tag-prep">זמן</span></div>
       <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">אכילת חמץ אחרון — לפני שעה רביעית</div><div class="item-note">אחרי כן — אסור לאכול חמץ</div></div><span class="item-tag tag-prep">אכילה</span></div>
       <div class="item" onclick="toggleItem(this)"><div class="item-check"></div><div class="item-body"><div class="item-name">שריפת חמץ — ביעור חמץ</div><div class="item-note">שריפת כל החמץ שנאסף + 10 חתיכות הבדיקה</div></div><span class="item-tag tag-prep">מצווה</span></div>
@@ -714,6 +737,8 @@
 </main>
 
 <script src="../js/pesach-checklist.js"></script>
+<script src="../js/carousel.js"></script>
+<script src="../js/image-slots.js"></script>
 </body>
 </html>
 
