@@ -1093,3 +1093,76 @@
 /* placeholder בתוך השוואה — יחס 4:3 כתמונה, לגובה זהה בשני הצדדים */
 .bc-item.is-ph { padding: 0; }
 .bc-item .img-ph { width: 100%; aspect-ratio: 4 / 3; min-height: 0; border-radius: 0; }
+
+/* ========================================
+   Roadmap strip — "where are we" indicator
+   (used by the yom-tov deck; generic for any deck)
+   ======================================== */
+.roadmap-strip {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 8px;
+    margin: 0 0 18px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--primary-color) 6%, var(--bg-white));
+    border: 1px solid var(--mode-border-light);
+    font-size: 0.88em;
+}
+.rs-step {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: 999px;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+.rs-step:hover { background: color-mix(in srgb, var(--primary-color) 12%, var(--bg-white)); color: var(--primary-dark); }
+.rs-letter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1.5px solid currentColor;
+    font-size: 0.85em;
+    font-weight: bold;
+}
+.rs-step.is-done { color: var(--text-secondary); }
+.rs-step.is-done .rs-letter { background: var(--text-secondary); color: var(--bg-white); border-color: transparent; }
+.rs-step.is-current {
+    background: var(--primary-color);
+    color: var(--text-white);
+    font-weight: bold;
+    box-shadow: var(--shadow-sm);
+}
+.rs-step.is-current .rs-letter { background: var(--bg-white); color: var(--primary-color); border-color: transparent; }
+.rs-arrow { color: var(--text-muted); opacity: 0.7; }
+.rs-sub { display: inline-flex; gap: 3px; margin-inline-start: 4px; }
+.rs-sub b {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    font-size: 0.78em;
+    font-weight: bold;
+    border: 1.5px solid currentColor;
+    opacity: 0.6;
+    cursor: pointer;
+}
+.rs-sub b.is-done { opacity: 0.9; }
+.rs-step.is-current .rs-sub b.is-done { opacity: 0.75; }
+.rs-sub b.is-current { opacity: 1; background: var(--bg-white); color: var(--primary-color); border-color: transparent; transform: scale(1.12); }
+.roadmap-strip.is-legend .rs-step { color: var(--text-secondary); }
+.roadmap-strip.is-legend .rs-step .rs-letter { border-color: var(--primary-color); color: var(--primary-color); }
+@media (max-width: 600px) {
+    .roadmap-strip { border-radius: 16px; font-size: 0.8em; }
+    .rs-arrow { display: none; }
+}
